@@ -2,2045 +2,1598 @@
 <html lang="en" translate="no">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OHANA Clean Solutions — Premium residential cleaning in Silicon Valley & the Bay Area. Serving 26+ cities including San Jose, Palo Alto, San Francisco & more. Book your cleaning in 60 seconds.">
-<meta name="theme-color" content="#0a0a0a">
-<meta property="og:title" content="OHANA Clean Solutions — Silicon Valley Premium Cleaning">
-<meta property="og:description" content="Premium residential cleaning across the Bay Area. Trusted by homeowners in 26+ cities. Book in 60 seconds.">
-<meta property="og:image" content="bath-after.jpg.jpeg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="google" content="notranslate">
 <title>OHANA Clean Solutions — Premium Cleaning Silicon Valley & Bay Area</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="bath-after.jpg.jpeg">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<meta name="description" content="Premium residential cleaning in Silicon Valley & Bay Area. Deep clean, move-out, Airbnb turnover. San Jose, Palo Alto, SF and 20+ cities. Instant quote in 60 seconds.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OHANA Clean Solutions — Silicon Valley Premium Cleaning">
+<meta property="og:description" content="Trusted by Bay Area homeowners. Book in 60 seconds. Deep clean, move-out, Airbnb turnover.">
+<meta property="og:image" content="https://ohana-website-woad.vercel.app/1000344482.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ohana-website-woad.vercel.app/1000344482.jpg">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "OHANA Clean Solutions LLC",
-  "image": "bath-after.jpg.jpeg",
-  "telephone": "+16693176911",
-  "email": "ohannacleann@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "San Jose",
-    "addressRegion": "CA",
-    "addressCountry": "US"
-  },
-  "areaServed": "San Jose, Palo Alto, Mountain View, Santa Clara, Cupertino, Sunnyvale, Redwood City, Fremont, Menlo Park, Los Altos, Campbell, Los Gatos, Saratoga, Milpitas, San Mateo, Burlingame, Oakland, San Francisco, Union City, Newark, Hayward, Daly City, Foster City, Atherton, Morgan Hill",
-  "description": "Premium residential cleaning services across Silicon Valley and the Bay Area. Deep cleaning, move-in/out, regular and Airbnb turnover cleaning.",
-  "priceRange": "$$",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "350",
-    "bestRating": "5"
-  },
-  "url": "https://ohanacleansolutions.com"
-}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"OHANA Clean Solutions LLC","telephone":"+16693176911","email":"ohannacleann@gmail.com","address":{"@type":"PostalAddress","addressRegion":"CA","addressCountry":"US"},"areaServed":["San Jose","Palo Alto","Mountain View","Santa Clara","Cupertino","Sunnyvale","Fremont","Oakland","San Francisco","Redwood City","Menlo Park","Burlingame","San Mateo"],"priceRange":"$$","serviceType":["Residential Cleaning","Deep Cleaning","Move-Out Cleaning","Airbnb Turnover"]}
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <style>
-/* ═══════════════════════════════════════════════
-   TOKENS
-═══════════════════════════════════════════════ */
-:root {
-  --gold:        #c9a84c;
-  --gold-light:  #e2c97e;
-  --gold-dim:    rgba(201,168,76,0.12);
-  --gold-glow:   rgba(201,168,76,0.25);
-  --bg:          #0a0a0a;
-  --surface:     #101010;
-  --surface2:    #161616;
-  --text:        #f0ece4;
-  --muted:       rgba(240,236,228,0.45);
-  --faint:       rgba(240,236,228,0.18);
-  --border:      rgba(201,168,76,0.14);
-  --border-dim:  rgba(240,236,228,0.08);
+/* ═══ TOKENS ═══ */
+:root{
+  --gold:#c9a84c;--gold-l:#e2c97e;--gold-d:rgba(201,168,76,.1);--gold-g:rgba(201,168,76,.22);
+  --bg:#070707;--s1:#0d0d0d;--s2:#121212;--s3:#181818;
+  --tx:#ede9e1;--mu:rgba(237,233,225,.42);--fa:rgba(237,233,225,.14);
+  --br:rgba(201,168,76,.14);--bd:rgba(237,233,225,.07);
 }
-
-/* ═══════════════════════════════════════════════
-   RESET & BASE
-═══════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;font-size:16px;}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'DM Sans',sans-serif;
-  font-weight:300;
-  line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-::-webkit-scrollbar{width:3px;}
-::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;
+  font-weight:300;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+::-webkit-scrollbar{width:2px;}
+::-webkit-scrollbar-thumb{background:var(--gold);}
 a{text-decoration:none;color:inherit;}
-button{cursor:pointer;font-family:'DM Sans',sans-serif;}
-input,select,textarea{font-family:'DM Sans',sans-serif;}
+button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;}
+input,select{font-family:'DM Sans',sans-serif;}
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;}
 
-/* ═══════════════════════════════════════════════
-   TYPOGRAPHY HELPERS
-═══════════════════════════════════════════════ */
-.t-label{
-  font-size:10px;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);display:flex;align-items:center;gap:10px;
-}
-.t-label::before{
-  content:'';display:block;width:20px;height:1px;
-  background:var(--gold);opacity:.6;flex-shrink:0;
-}
-.t-headline{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(40px,5.5vw,72px);
-  font-weight:300;line-height:1.08;letter-spacing:-.01em;
-}
-.t-headline em{font-style:italic;color:var(--gold);}
-.t-sub{font-size:14px;color:var(--muted);line-height:1.85;font-weight:300;}
+/* ═══ UTIL ═══ */
+.wrap{max-width:1160px;margin:0 auto;padding:0 48px;}
+@media(max-width:768px){.wrap{padding:0 22px;}}
+section{padding:96px 0;}
+@media(max-width:768px){section{padding:64px 0;}}
 
-/* ═══════════════════════════════════════════════
-   LAYOUT
-═══════════════════════════════════════════════ */
-.wrap{max-width:1200px;margin:0 auto;padding:0 48px;}
-section{padding:100px 0;}
-@media(max-width:768px){
-  .wrap{padding:0 20px;}
-  section{padding:70px 0;}
-  /* Ensure sticky CTA (56px height) never covers any interactive element */
-  body{padding-bottom:68px;}
-  /* Minimum 44px tap targets on all interactive elements (Apple HIG) */
-  .btn-next,.btn-back,.btn-primary,.btn-ghost,.nav-book{min-height:44px;}
-  .calc-step-tab{min-height:44px;display:flex;align-items:center;justify-content:center;font-size:8px;}
-  .faq-q{padding:18px 0;min-height:44px;}
-  .contact-method{min-height:48px;}
-  .size-card{padding:16px 12px;}
-  /* Calculator right panel — full width on mobile, no sticky */
-  .calc-right{position:static !important;}
-  /* Hero headline safe sizing */
-  .hero-h1{font-size:clamp(40px,10vw,72px);}
-  /* Final CTA padding */
-  .final-cta{padding:40px 24px;}
-}
+.label{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:10px;}
+.label::before{content:'';width:18px;height:1px;background:var(--gold);opacity:.55;flex-shrink:0;}
+.headline{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,68px);
+  font-weight:300;line-height:1.07;letter-spacing:-.01em;}
+.headline em{font-style:italic;color:var(--gold);}
+.sub{font-size:13.5px;color:var(--mu);line-height:1.88;font-weight:300;}
 
-/* ═══════════════════════════════════════════════
-   SCROLL REVEAL
-═══════════════════════════════════════════════ */
-.reveal{
-  opacity:0;transform:translateY(24px);
-  transition:opacity .75s ease,transform .75s ease;
-}
-.reveal.visible{opacity:1;transform:none;}
-.reveal-d1{transition-delay:.1s;}
-.reveal-d2{transition-delay:.2s;}
-.reveal-d3{transition-delay:.3s;}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+.rv.on{opacity:1;transform:none;}
+.rv.d1{transition-delay:.1s;}.rv.d2{transition-delay:.2s;}.rv.d3{transition-delay:.3s;}
 
-/* ═══════════════════════════════════════════════
-   NAV
-═══════════════════════════════════════════════ */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  height:68px;
-  background:rgba(10,10,10,.82);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-}
-.nav-inner{
-  max-width:1200px;margin:0 auto;padding:0 48px;
-  height:100%;display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{display:flex;flex-direction:column;gap:2px;}
-.nav-logo-main{
-  font-family:'Cormorant Garamond',serif;
-  font-size:20px;font-weight:600;letter-spacing:.14em;color:var(--gold);line-height:1;
-}
-.nav-logo-sub{font-size:8.5px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;}
-.nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{
-  font-size:11px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--muted);transition:color .25s;
-}
-.nav-links a:hover{color:var(--gold);}
-.nav-right{display:flex;align-items:center;gap:18px;}
-.nav-phone{font-size:12px;color:var(--muted);letter-spacing:.04em;}
-.nav-book{
-  background:var(--gold);color:#0a0a0a;border:none;
-  padding:9px 22px;font-size:10.5px;font-weight:500;
-  letter-spacing:.18em;text-transform:uppercase;
-  transition:background .25s,transform .2s;
-}
-.nav-book:hover{background:var(--gold-light);transform:translateY(-1px);}
-@media(max-width:900px){
-  .nav-links{display:none;}
-  .nav-phone{display:none;}
-  .nav-inner{padding:0 20px;}
-}
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:2000;height:64px;
+  background:rgba(7,7,7,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--br);}
+.ni{max-width:1160px;margin:0 auto;padding:0 48px;height:100%;
+  display:flex;align-items:center;justify-content:space-between;}
+.nl{display:flex;flex-direction:column;gap:1px;}
+.nlm{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;
+  letter-spacing:.15em;color:var(--gold);line-height:1;}
+.nls{font-size:7.5px;letter-spacing:.24em;color:var(--mu);text-transform:uppercase;}
+.nlinks{display:flex;gap:28px;list-style:none;}
+.nlinks a{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);transition:color .2s;}
+.nlinks a:hover{color:var(--gold);}
+.nr{display:flex;align-items:center;gap:16px;}
+.nph{font-size:11.5px;color:var(--mu);}
+.nbk{background:var(--gold);color:#070707;padding:9px 22px;font-size:10px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;transition:background .2s,transform .15s;}
+.nbk:hover{background:var(--gold-l);transform:translateY(-1px);}
+@media(max-width:880px){.nlinks{display:none;}.nph{display:none;}.ni{padding:0 22px;}}
 
-/* Mobile sticky CTA */
-.mobile-cta{
-  display:none;
-  position:fixed;bottom:0;left:0;right:0;z-index:300;
-  background:var(--gold);color:#0a0a0a;
-  padding:16px 16px calc(16px + env(safe-area-inset-bottom));
-  text-align:center;
-  font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-  border-top:1px solid rgba(201,168,76,.4);
-  min-height:56px;
-}
-@media(max-width:768px){.mobile-cta{display:block;}}
+/* mobile cta */
+.mcta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:2000;
+  background:var(--gold);color:#070707;padding:15px;text-align:center;
+  font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;}
+@media(max-width:768px){.mcta{display:block;}}
 
-/* ═══════════════════════════════════════════════
-   1. HERO
-═══════════════════════════════════════════════ */
-#hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding-bottom:80px;
-  position:relative;overflow:hidden;
-}
-
-.hero-bg{
-  position:absolute;inset:0;
+/* ═══ HERO ═══ */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding-bottom:76px;position:relative;overflow:hidden;}
+.hbg{position:absolute;inset:0;
   background:
-    linear-gradient(to bottom, rgba(10,10,10,.15) 0%, rgba(10,10,10,.55) 50%, rgba(10,10,10,.95) 100%),
-    url('bath-after.jpg.jpeg') center/cover no-repeat;
-}
+    linear-gradient(to bottom,rgba(7,7,7,.08) 0%,rgba(7,7,7,.45) 45%,rgba(7,7,7,.97) 100%),
+    linear-gradient(to right, rgba(7,7,7,.4) 0%, rgba(7,7,7,0) 55%),
+    url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=85') center/cover no-repeat;}
+.hbg::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 55% at 10% 70%,rgba(201,168,76,.07) 0%,transparent 65%);}
+.hc{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 48px;
+  animation:hf 1s ease forwards;opacity:0;transform:translateY(28px);}
+@keyframes hf{to{opacity:1;transform:none;}}
+@media(max-width:768px){.hc{padding:0 22px;}}
+.hey{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:22px;display:flex;align-items:center;gap:11px;}
+.hey::before{content:'';display:block;width:28px;height:1px;background:var(--gold);opacity:.55;}
+.hh1{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,7vw,96px);
+  font-weight:300;line-height:1.02;letter-spacing:-.025em;margin-bottom:22px;}
+.hh1 em{font-style:italic;color:var(--gold);}
+.hsub{font-size:14px;color:var(--mu);font-weight:300;margin-bottom:40px;
+  max-width:380px;line-height:1.82;}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{background:var(--gold);color:#070707;padding:15px 36px;font-size:10.5px;
+  font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  transition:background .2s,transform .15s,box-shadow .2s;}
+.btn-p:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.28);}
+.btn-g{background:transparent;color:var(--tx);border:1px solid rgba(237,233,225,.2);
+  padding:14px 30px;font-size:10.5px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;transition:border-color .2s,color .2s;}
+.btn-g:hover{border-color:var(--gold);color:var(--gold);}
+.hstats{display:flex;gap:44px;margin-top:52px;padding-top:28px;
+  border-top:1px solid var(--bd);flex-wrap:wrap;}
+.hsv{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--gold);margin-bottom:4px;}
+.hsl{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);}
 
-/* Subtle gold vignette */
-.hero-bg::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 20% 60%, rgba(201,168,76,.06) 0%, transparent 70%);
-}
+/* ticker */
+.ticker{background:var(--s1);border-top:1px solid var(--br);border-bottom:1px solid var(--br);
+  padding:13px 0;overflow:hidden;}
+.ttrack{display:flex;width:max-content;animation:tick 30s linear infinite;}
+@keyframes tick{to{transform:translateX(-50%);}}
+.ti{display:flex;align-items:center;gap:8px;padding:0 36px;white-space:nowrap;}
+.tp{width:3px;height:3px;background:var(--gold);border-radius:50%;}
+.tt{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mu);}
 
-.hero-content{
-  position:relative;z-index:2;
-  max-width:1200px;margin:0 auto;padding:0 48px;
-  animation:heroFade 1.1s ease forwards;
-  opacity:0;transform:translateY(30px);
-}
-@keyframes heroFade{to{opacity:1;transform:none;}}
-@media(max-width:768px){.hero-content{padding:0 20px;}}
+/* ═══ REAL TRANSFORMATIONS ═══ */
+#transformations{background:var(--s1);}
+.ba-hdr{display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:52px;padding-bottom:32px;border-bottom:1px solid var(--br);flex-wrap:wrap;gap:18px;}
 
-.hero-eyebrow{
-  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:24px;
-  display:flex;align-items:center;gap:12px;
-}
-.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);opacity:.6;}
-
-.hero-h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(52px,7vw,100px);
-  font-weight:300;line-height:1.02;
-  letter-spacing:-.02em;margin-bottom:24px;
-}
-.hero-h1 em{font-style:italic;color:var(--gold);}
-
-.hero-sub{
-  font-size:15px;color:var(--muted);font-weight:300;
-  letter-spacing:.03em;margin-bottom:44px;max-width:380px;line-height:1.8;
-}
-
-.hero-btns{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
-
-.btn-primary{
-  background:var(--gold);color:#0a0a0a;border:none;
-  padding:15px 38px;font-size:11px;font-weight:500;
-  letter-spacing:.18em;text-transform:uppercase;
-  transition:background .25s,transform .2s;
-}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
-
-.btn-ghost{
-  background:transparent;color:var(--text);
-  border:1px solid rgba(240,236,228,.22);
-  padding:14px 32px;font-size:11px;font-weight:300;
-  letter-spacing:.15em;text-transform:uppercase;
-  display:flex;align-items:center;gap:9px;
-  transition:border-color .25s,color .25s;
-}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-
-.hero-stats{
-  display:flex;gap:48px;margin-top:56px;
-  padding-top:32px;border-top:1px solid var(--border-dim);
-  flex-wrap:wrap;
-}
-.hero-stat-val{
-  font-family:'Cormorant Garamond',serif;
-  font-size:28px;font-weight:300;color:var(--gold);
-  line-height:1;margin-bottom:5px;
-}
-.hero-stat-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
-
-/* ═══════════════════════════════════════════════
-   TRUST TICKER
-═══════════════════════════════════════════════ */
-.trust-bar{
-  background:var(--surface);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:14px 0;overflow:hidden;
-}
-.trust-track{
-  display:flex;width:max-content;
-  animation:ticker 24s linear infinite;
-}
-@keyframes ticker{to{transform:translateX(-50%);}}
-.trust-item{
-  display:flex;align-items:center;gap:9px;
-  padding:0 40px;white-space:nowrap;
-}
-.trust-pip{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
-.trust-txt{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
-
-/* ═══════════════════════════════════════════════
-   2. BEFORE & AFTER
-═══════════════════════════════════════════════ */
-#before-after{background:var(--surface);}
-
-.ba-header{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  margin-bottom:60px;padding-bottom:36px;border-bottom:1px solid var(--border);
-  flex-wrap:wrap;gap:20px;
-}
-
-/* Slider */
-.ba-wrap{
-  position:relative;max-width:960px;margin:0 auto;
-  border:1px solid var(--border);overflow:hidden;user-select:none;
-}
-.ba-slider{position:relative;height:500px;}
-@media(max-width:768px){.ba-slider{height:280px;}}
-
-.ba-layer{
-  position:absolute;inset:0;
-  display:flex;align-items:stretch;
-}
-.ba-img{
-  width:100%;height:100%;object-fit:cover;display:block;
-}
-.ba-reveal{
-  position:absolute;inset:0;overflow:hidden;
-  clip-path:inset(0 50% 0 0);
-}
-.ba-tag{
-  position:absolute;bottom:20px;
-  font-size:9px;letter-spacing:.22em;text-transform:uppercase;
-  padding:5px 12px;
-  background:rgba(10,10,10,.85);border:1px solid var(--border);
-}
-.ba-tag-before{left:20px;color:var(--muted);}
-.ba-tag-after{right:20px;color:var(--gold);}
-
-.ba-handle{
-  position:absolute;top:0;bottom:0;left:50%;
-  width:2px;background:var(--gold);
-  transform:translateX(-50%);cursor:ew-resize;z-index:10;
-}
-.ba-handle-btn{
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:42px;height:42px;border-radius:50%;
-  background:var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  color:#0a0a0a;font-size:15px;font-weight:600;
-  box-shadow:0 0 28px rgba(201,168,76,.55);
-}
-
-/* Caption + overlay */
-.ba-caption{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:32px 28px 20px;
-  background:linear-gradient(transparent,rgba(10,10,10,.9));
-  pointer-events:none;
-}
-.ba-caption-label{
-  font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
-  margin-bottom:4px;
-}
-.ba-caption-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:22px;font-weight:300;color:var(--text);
-}
+/* Main viewer */
+.ba-viewer{position:relative;width:100%;height:520px;overflow:hidden;
+  border:1px solid var(--br);background:var(--s2);margin-bottom:10px;}
+@media(max-width:768px){.ba-viewer{height:280px;}}
+.ba-img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .45s ease;}
+.ba-badge{position:absolute;top:18px;left:18px;z-index:5;
+  background:rgba(7,7,7,.92);border:1px solid var(--gold);
+  padding:7px 16px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);cursor:pointer;transition:all .2s;}
+.ba-badge:hover,.ba-badge.after{background:var(--gold);color:#070707;}
+.ba-cap{position:absolute;bottom:0;left:0;right:0;
+  padding:44px 24px 20px;
+  background:linear-gradient(transparent,rgba(7,7,7,.9));pointer-events:none;}
+.ba-cap-lbl{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.ba-cap-ttl{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:var(--tx);}
+.ba-arr{position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(7,7,7,.72);border:1px solid var(--br);color:var(--tx);
+  font-size:20px;width:40px;height:40px;display:flex;align-items:center;
+  justify-content:center;cursor:pointer;transition:all .2s;z-index:5;}
+.ba-arr:hover{border-color:var(--gold);color:var(--gold);}
+.ba-prev{left:14px;}.ba-next{right:14px;}
 
 /* Thumbnails */
-.ba-thumbs{
-  display:flex;gap:10px;margin-top:12px;
-  overflow-x:auto;padding-bottom:4px;
-}
-.ba-thumb{
-  flex-shrink:0;width:90px;height:56px;
-  border:1px solid var(--border-dim);
-  overflow:hidden;cursor:pointer;transition:border-color .25s;
-  position:relative;
-}
-.ba-thumb.active{border-color:var(--gold);}
-.ba-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.6);}
-.ba-thumb.active img{filter:brightness(.85);}
-.ba-thumb-label{
-  position:absolute;bottom:0;left:0;right:0;
-  font-size:8px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold);text-align:center;padding:3px 4px;
-  background:rgba(10,10,10,.75);
-}
+.ba-thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;}
+.ba-th{flex-shrink:0;width:104px;height:66px;border:1px solid var(--bd);
+  overflow:hidden;cursor:pointer;transition:border-color .2s;position:relative;}
+.ba-th.on{border-color:var(--gold);}
+.ba-th img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.6);}
+.ba-th.on img{filter:brightness(.88);}
+.ba-th-lbl{position:absolute;bottom:0;left:0;right:0;font-size:7.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);text-align:center;padding:3px 4px;background:rgba(7,7,7,.8);}
 
-/* ═══════════════════════════════════════════════
-   3. QUOTE CALCULATOR
-═══════════════════════════════════════════════ */
+/* ═══ CALCULATOR ═══ */
 #calculator{background:var(--bg);}
-
-.calc-layout{
-  display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start;
-}
-@media(max-width:900px){.calc-layout{grid-template-columns:1fr;gap:48px;}}
-
-.calc-left{}
-.calc-right{
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:40px;
-  position:sticky;top:88px;
-}
-@media(max-width:900px){.calc-right{position:static;}}
+.calc-wrap{display:grid;grid-template-columns:1fr 1.08fr;gap:72px;align-items:start;}
+@media(max-width:880px){.calc-wrap{grid-template-columns:1fr;gap:44px;}}
 
 /* Steps */
-.calc-steps{display:flex;margin-bottom:36px;border:1px solid var(--border);}
-.calc-step-tab{
-  flex:1;padding:11px 6px;text-align:center;
-  font-size:9px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--muted);border-right:1px solid var(--border);
-  cursor:pointer;transition:all .25s;
-}
-.calc-step-tab:last-child{border-right:none;}
-.calc-step-tab.active{background:var(--gold-dim);color:var(--gold);}
-.calc-step-tab.done{color:rgba(201,168,76,.45);}
+.steps{display:flex;border:1px solid var(--br);margin-bottom:32px;}
+.stab{flex:1;padding:10px 4px;text-align:center;font-size:8.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mu);border-right:1px solid var(--br);
+  cursor:pointer;transition:all .2s;}
+.stab:last-child{border-right:none;}
+.stab.on{background:var(--gold-d);color:var(--gold);}
+.stab.done{color:rgba(201,168,76,.38);}
 
-.calc-panel{display:none;}
-.calc-panel.active{display:block;animation:fadeUp .35s ease forwards;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+.cp{display:none;}
+.cp.on{display:block;animation:fu .3s ease forwards;}
+@keyframes fu{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
 
 /* Form elements */
-.f-group{margin-bottom:18px;}
-.f-label{
-  display:block;font-size:9.5px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:8px;
-}
-.f-input,.f-select{
-  width:100%;
-  background:var(--surface2);border:1px solid var(--border-dim);
-  color:var(--text);padding:13px 16px;
-  font-size:13.5px;font-weight:300;outline:none;
-  transition:border-color .25s;appearance:none;-webkit-appearance:none;
-}
-.f-input:focus,.f-select:focus{border-color:var(--gold);}
-.f-input::placeholder{color:rgba(240,236,228,.2);}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-@media(max-width:480px){.f-row{grid-template-columns:1fr;}}
-
-.f-select-wrap{position:relative;}
-.f-select-wrap::after{
-  content:'↓';position:absolute;right:14px;top:50%;
-  transform:translateY(-50%);color:var(--muted);font-size:10px;pointer-events:none;
-}
+.fg{margin-bottom:16px;}
+.fl{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mu);margin-bottom:7px;}
+.fi,.fs{width:100%;background:var(--s2);border:1px solid var(--bd);color:var(--tx);
+  padding:12px 15px;font-size:13px;font-weight:300;outline:none;
+  transition:border-color .2s;appearance:none;-webkit-appearance:none;}
+.fi:focus,.fs:focus{border-color:var(--gold);}
+.fi::placeholder{color:rgba(237,233,225,.18);}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:460px){.frow{grid-template-columns:1fr;}}
+.fsw{position:relative;}
+.fsw::after{content:'↓';position:absolute;right:13px;top:50%;transform:translateY(-50%);
+  color:var(--mu);font-size:9.5px;pointer-events:none;}
 
 /* Size cards */
-.size-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px;}
-@media(max-width:480px){.size-cards{grid-template-columns:1fr;}}
-.size-card{
-  background:var(--surface2);border:1px solid var(--border-dim);
-  padding:18px 16px;cursor:pointer;transition:all .25s;text-align:center;
-  position:relative;overflow:hidden;
-}
-.size-card::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;
-  height:2px;background:var(--gold);transform:scaleX(0);
-  transform-origin:left;transition:transform .3s;
-}
-.size-card:hover{border-color:rgba(201,168,76,.3);}
-.size-card.selected{border-color:var(--gold);background:var(--gold-dim);}
-.size-card.selected::after{transform:scaleX(1);}
-.sc-name{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--text);margin-bottom:4px;}
-.sc-desc{font-size:10.5px;color:var(--muted);letter-spacing:.04em;margin-bottom:6px;}
-.sc-time{font-size:9.5px;color:var(--gold);letter-spacing:.1em;}
-.sc-price{font-size:12px;color:var(--gold);margin-top:6px;font-weight:500;}
+.scards{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:4px;}
+@media(max-width:440px){.scards{grid-template-columns:1fr;}}
+.sc{background:var(--s2);border:1px solid var(--bd);padding:16px 14px;
+  cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .28s;}
+.sc:hover{border-color:rgba(201,168,76,.28);}
+.sc.on{border-color:var(--gold);background:var(--gold-d);}
+.sc.on::after{transform:scaleX(1);}
+.sc-name{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--tx);margin-bottom:3px;}
+.sc-d{font-size:10px;color:var(--mu);margin-bottom:4px;}
+.sc-t{font-size:9px;color:var(--gold);letter-spacing:.08em;}
+
+/* Condition cards */
+.ccards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:4px;}
+@media(max-width:440px){.ccards{grid-template-columns:1fr;}}
+.cc{background:var(--s2);border:1px solid var(--bd);padding:14px 12px;
+  cursor:pointer;transition:all .2s;text-align:center;}
+.cc:hover{border-color:rgba(201,168,76,.28);}
+.cc.on{border-color:var(--gold);background:var(--gold-d);}
+.cc-ico{font-size:18px;margin-bottom:6px;}
+.cc-n{font-size:12px;color:var(--tx);margin-bottom:2px;}
+.cc-d{font-size:9.5px;color:var(--mu);}
+.cc-mul{font-size:9px;color:var(--gold);margin-top:4px;letter-spacing:.06em;}
 
 /* Extras */
-.extras{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;}
-.extra{
-  display:flex;align-items:center;gap:9px;
-  background:var(--surface2);border:1px solid var(--border-dim);
-  padding:11px 13px;cursor:pointer;
-  font-size:12px;color:var(--muted);transition:all .25s;
-}
-.extra.on{border-color:var(--gold);background:var(--gold-dim);color:var(--text);}
-.extra-box{
-  width:13px;height:13px;border:1px solid var(--border-dim);
-  flex-shrink:0;display:flex;align-items:center;justify-content:center;
-  font-size:9px;transition:all .25s;
-}
-.extra.on .extra-box{background:var(--gold);border-color:var(--gold);color:#0a0a0a;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:4px;}
+.ex{display:flex;align-items:center;gap:8px;background:var(--s2);
+  border:1px solid var(--bd);padding:10px 12px;cursor:pointer;
+  font-size:11.5px;color:var(--mu);transition:all .2s;}
+.ex.on{border-color:var(--gold);background:var(--gold-d);color:var(--tx);}
+.exb{width:12px;height:12px;border:1px solid var(--bd);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:8px;transition:all .2s;}
+.ex.on .exb{background:var(--gold);border-color:var(--gold);color:#070707;}
 
 /* Contact method */
-.contact-methods{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;}
-.contact-method{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  border:1px solid var(--border-dim);padding:12px;cursor:pointer;
-  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--muted);transition:all .25s;background:var(--surface2);
-}
-.contact-method.on{border-color:var(--gold);color:var(--gold);background:var(--gold-dim);}
-.contact-method-icon{font-size:14px;}
+.cmethods{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:4px;}
+.cm{display:flex;align-items:center;justify-content:center;gap:7px;
+  border:1px solid var(--bd);padding:11px;cursor:pointer;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--mu);
+  transition:all .2s;background:var(--s2);}
+.cm.on{border-color:var(--gold);color:var(--gold);background:var(--gold-d);}
 
 /* Buttons */
-.btn-next{
-  width:100%;background:var(--gold);color:#0a0a0a;border:none;
-  padding:16px;font-size:11px;font-weight:500;letter-spacing:.2em;
-  text-transform:uppercase;transition:background .25s,transform .2s;margin-top:8px;
-}
-.btn-next:hover{background:var(--gold-light);transform:translateY(-1px);}
-.btn-back{
-  width:100%;background:transparent;color:var(--muted);
-  border:1px solid var(--border-dim);padding:12px;
-  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  transition:all .25s;margin-top:10px;
-}
-.btn-back:hover{border-color:var(--muted);color:var(--text);}
+.btn-n{width:100%;background:var(--gold);color:#070707;padding:15px;
+  font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  transition:background .2s,transform .15s;margin-top:8px;}
+.btn-n:hover{background:var(--gold-l);transform:translateY(-1px);}
+.btn-b{width:100%;background:transparent;color:var(--mu);border:1px solid var(--bd);
+  padding:11px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  transition:all .2s;margin-top:8px;}
+.btn-b:hover{border-color:var(--mu);color:var(--tx);}
+.btn-wa{width:100%;background:#1DA851;color:#fff;padding:14px;
+  font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  transition:all .2s;margin-top:8px;}
+.btn-wa:hover{background:#18a047;transform:translateY(-1px);}
 
-/* Price panel (right side) */
-.price-panel-title{
-  font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:24px;
+/* coverage banner */
+#cov-ok{display:none;background:var(--gold-d);border:1px solid var(--br);
+  padding:11px 15px;margin-bottom:16px;font-size:11px;color:var(--gold);}
+#custom-msg{display:none;padding:11px 15px;border:1px solid var(--bd);
+  background:var(--s2);font-size:11px;color:var(--mu);margin-bottom:12px;}
+
+/* Price panel */
+.pp{background:var(--s1);border:1px solid var(--br);padding:38px;
+  position:sticky;top:84px;}
+@media(max-width:880px){.pp{position:static;}}
+.pp-ttl{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
+.pp-lines{border-top:1px solid var(--bd);}
+.pp-line{display:flex;justify-content:space-between;padding:12px 0;
+  border-bottom:1px solid var(--bd);font-size:12px;}
+.pp-lbl{color:var(--mu);}.pp-val{color:var(--tx);}
+.pp-total-row{display:flex;justify-content:space-between;align-items:flex-end;padding:18px 0 0;}
+.pp-total-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mu);}
+.pp-total-val{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;
+  color:var(--gold);line-height:1;}
+.pp-split{margin:14px 0;padding:13px 15px;background:var(--gold-d);border:1px solid var(--br);
+  display:flex;justify-content:space-between;}
+.pp-si{text-align:center;}
+.pp-sv{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;
+  color:var(--gold);display:block;margin-bottom:2px;}
+.pp-sl{font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);}
+.pp-div{width:1px;background:var(--br);}
+.pp-hint{text-align:center;font-size:10px;color:var(--mu);margin-top:11px;letter-spacing:.03em;}
+
+/* ═══ COVERAGE MAP — FERRARI EDITION ═══ */
+#coverage{background:#050505;padding:0;}
+.cov-intro{padding:80px 48px 40px;max-width:1160px;margin:0 auto;}
+@media(max-width:768px){.cov-intro{padding:56px 22px 28px;}}
+
+/* Main layout */
+.cov-wrap{
+  display:flex;
+  min-height:640px;
+  border-top:1px solid rgba(201,168,76,.1);
 }
-.price-lines{border-top:1px solid var(--border-dim);}
-.price-line{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:13px 0;border-bottom:1px solid var(--border-dim);
-  font-size:12.5px;
+@media(max-width:768px){.cov-wrap{flex-direction:column;min-height:auto;}}
+
+/* Side panel */
+.cov-side{
+  width:200px;flex-shrink:0;
+  background:#050505;
+  border-right:1px solid rgba(201,168,76,.1);
+  padding:32px 20px;
+  display:flex;flex-direction:column;
+  gap:0;
 }
-.pl-label{color:var(--muted);}
-.pl-value{color:var(--text);}
-.price-total-row{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  padding:20px 0 0;
+@media(max-width:768px){.cov-side{width:100%;flex-direction:row;flex-wrap:wrap;gap:20px;border-right:none;border-bottom:1px solid rgba(201,168,76,.1);padding:20px;}}
+
+.cov-side-tag{
+  font-size:7px;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(201,168,76,.55);margin-bottom:14px;
 }
-.pt-label{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
-.pt-value{
+.cov-side-title{
   font-family:'Cormorant Garamond',serif;
-  font-size:44px;font-weight:300;color:var(--gold);line-height:1;
+  font-size:20px;font-weight:300;line-height:1.2;
+  color:#ede9e1;margin-bottom:8px;
 }
-.deposit-split{
-  margin:16px 0;padding:14px 16px;
-  background:var(--gold-dim);border:1px solid var(--border);
-  display:flex;justify-content:space-between;font-size:12px;
+.cov-side-title em{font-style:italic;color:#c9a84c;}
+.cov-side-sub{
+  font-size:10px;color:rgba(237,233,225,.4);
+  line-height:1.7;margin-bottom:28px;
 }
-.ds-item{text-align:center;}
-.ds-val{
+
+/* KPI stats */
+.cov-kpis{display:flex;flex-direction:column;gap:18px;margin-bottom:auto;}
+@media(max-width:768px){.cov-kpis{flex-direction:row;gap:24px;}}
+.cov-kpi{display:flex;align-items:center;gap:10px;}
+.cov-kpi-ico{
+  width:28px;height:28px;border:1px solid rgba(201,168,76,.2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:11px;color:#c9a84c;
+}
+.cov-kpi-val{
   font-family:'Cormorant Garamond',serif;
-  font-size:22px;font-weight:300;color:var(--gold);
-  display:block;margin-bottom:3px;
+  font-size:20px;font-weight:300;color:#c9a84c;line-height:1;
 }
-.ds-lbl{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
-.ds-div{width:1px;background:var(--border);}
+.cov-kpi-lbl{font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,233,225,.35);}
 
-/* ═══════════════════════════════════════════════
-   4. COVERAGE MAP
-═══════════════════════════════════════════════ */
-#coverage{background:var(--surface);}
-
-.map-layout{
-  display:grid;grid-template-columns:260px 1fr;gap:0;
-  border:1px solid var(--border);
-  min-height:580px;
+/* Legend */
+.cov-legend{
+  margin-top:28px;padding:12px 14px;
+  border:1px solid rgba(201,168,76,.15);
+  background:rgba(201,168,76,.04);
 }
-@media(max-width:900px){.map-layout{grid-template-columns:1fr;}}
-
-.map-sidebar{
-  background:var(--surface2);
-  border-right:1px solid var(--border);
-  padding:32px 24px;display:flex;flex-direction:column;gap:0;
+.cov-legend-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.cov-legend-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#c9a84c;flex-shrink:0;
+  box-shadow:0 0 6px rgba(201,168,76,.7);
 }
-.ms-title{
+.cov-legend-name{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;}
+.cov-legend-desc{font-size:8px;color:rgba(237,233,225,.35);line-height:1.5;}
+
+/* Map area */
+.cov-map{flex:1;position:relative;min-height:640px;}
+@media(max-width:768px){.cov-map{min-height:420px;}}
+#omap{width:100%;height:100%;min-height:640px;}
+@media(max-width:768px){#omap{min-height:420px;}}
+
+/* Service label top-right */
+.cov-map-tag{
+  position:absolute;top:14px;right:14px;z-index:600;
+  background:rgba(5,5,5,.88);
+  border:1px solid rgba(201,168,76,.25);
+  padding:6px 13px;
+  font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#c9a84c;
+  display:flex;align-items:center;gap:7px;
+  pointer-events:none;
+}
+.cov-map-tag-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#c9a84c;box-shadow:0 0 6px rgba(201,168,76,.9);
+  animation:tagPulse 2s ease-in-out infinite;
+}
+@keyframes tagPulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+
+
+/* Bottom stats bar */
+.cov-stats-bar{
+  display:flex;justify-content:center;align-items:center;gap:64px;
+  padding:20px 48px;
+  background:#050505;
+  border-top:1px solid rgba(201,168,76,.1);
+  flex-wrap:wrap;gap:32px;
+}
+@media(max-width:768px){.cov-stats-bar{padding:18px 22px;gap:20px;}}
+.csb-item{text-align:center;}
+.csb-val{
   font-family:'Cormorant Garamond',serif;
-  font-size:22px;font-weight:300;color:var(--text);
-  margin-bottom:8px;line-height:1.2;
+  font-size:28px;font-weight:300;color:#c9a84c;
+  line-height:1;display:block;margin-bottom:4px;
 }
-.ms-sub{font-size:11.5px;color:var(--muted);line-height:1.7;margin-bottom:24px;}
+.csb-lbl{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:rgba(237,233,225,.35);}
 
-.ms-legend{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
-.ms-leg-item{display:flex;align-items:center;gap:9px;font-size:10.5px;color:var(--muted);}
-.ms-dot-gold{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(201,168,76,.6);flex-shrink:0;}
-.ms-dot-review{width:9px;height:9px;border-radius:50%;background:#e2c97e;border:1.5px solid var(--gold);flex-shrink:0;}
-
-.ms-cities{display:flex;flex-direction:column;gap:0;flex:1;margin-top:8px;}
-.ms-city{
-  display:flex;align-items:center;gap:9px;
-  padding:9px 0;border-bottom:1px solid var(--border-dim);
-  font-size:11.5px;color:var(--muted);transition:color .2s;cursor:pointer;
+/* Trust bar */
+.trust-bar{
+  display:flex;justify-content:space-around;align-items:center;
+  padding:18px 48px;border-top:1px solid rgba(201,168,76,.1);
+  background:#070707;flex-wrap:wrap;gap:14px;
 }
-.ms-city:hover{color:var(--gold);}
-.ms-city-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;opacity:.7;}
+@media(max-width:768px){.trust-bar{padding:16px 22px;}}
+.tb-item{display:flex;align-items:center;gap:10px;}
+.tb-ttl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#ede9e1;font-weight:500;}
+.tb-sub{font-size:9px;color:rgba(237,233,225,.38);}
 
-.map-container{position:relative;}
-#ohana-map{width:100%;height:100%;min-height:580px;}
-@media(max-width:900px){#ohana-map{min-height:400px;}}
+/* Real boundary glow filter */
+.ohana-real-boundary{
+  filter:drop-shadow(0 0 8px rgba(201,168,76,.45));
+}
 
-/* Review card that pops up */
-.review-float{
-  position:absolute;right:16px;top:16px;z-index:400;
-  width:220px;background:rgba(10,10,10,.95);
-  border:1px solid var(--border);padding:18px;
-  display:none;animation:fadeUp .3s ease;
+/* Glow marker dot */
+.ohana-glow-marker{
+  width:14px;height:14px;border-radius:50%;
+  background:#c9a84c;
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 0 10px #c9a84c,0 0 24px rgba(201,168,76,.75),0 0 48px rgba(201,168,76,.45);
+  animation:ohanaPulse 2.7s infinite ease-in-out;
 }
-.rf-type{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
-.rf-city{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--text);margin-bottom:10px;}
-.rf-stars{color:var(--gold);font-size:11px;margin-bottom:7px;}
-.rf-text{font-size:11.5px;color:var(--muted);line-height:1.65;font-style:italic;
-  border-left:2px solid rgba(201,168,76,.3);padding-left:9px;margin-bottom:8px;}
-.rf-author{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,236,228,.3);}
-.rf-close{
-  position:absolute;top:10px;right:12px;background:none;border:none;
-  color:var(--muted);font-size:14px;padding:0;line-height:1;
+@keyframes ohanaPulse{
+  0%{transform:scale(1);opacity:.85;}
+  50%{transform:scale(1.55);opacity:1;}
+  100%{transform:scale(1);opacity:.85;}
 }
+
+/* City label on map */
+.ohana-marker-label{
+  background:transparent !important;
+  border:0 !important;
+  color:rgba(255,255,255,.88) !important;
+  font-size:11px !important;
+  font-weight:500 !important;
+  text-shadow:0 2px 10px rgba(0,0,0,.95) !important;
+  box-shadow:none !important;
+}
+
+/* City boundary tooltip */
+.ohana-city-tooltip{
+  background:rgba(5,5,5,.85) !important;
+  color:#c9a84c !important;
+  border:1px solid rgba(201,168,76,.35) !important;
+  border-radius:6px !important;
+  font-size:10px !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  box-shadow:none !important;
+}
+
+/* Premium popup wrapper */
+.ohana-popup-wrap .leaflet-popup-content-wrapper{
+  background:rgba(5,5,5,.96) !important;
+  border:1px solid rgba(201,168,76,.28) !important;
+  border-radius:0 !important;
+  box-shadow:0 20px 60px rgba(0,0,0,.85) !important;
+  backdrop-filter:blur(20px) !important;
+  padding:0 !important;
+}
+.ohana-popup-wrap .leaflet-popup-tip{
+  background:rgba(5,5,5,.96) !important;
+}
+.ohana-popup-wrap .leaflet-popup-content{
+  margin:0 !important;
+}
+
+/* ═══ FAQs ═══ */
+#faqs{background:var(--bg);}
+.faqs-grid{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start;}
+@media(max-width:880px){.faqs-grid{grid-template-columns:1fr;gap:44px;}}
+.faq-list{border-top:1px solid var(--bd);}
+.faq-item{border-bottom:1px solid var(--bd);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;
+  padding:20px 0;cursor:pointer;font-size:14px;font-weight:300;color:var(--tx);
+  letter-spacing:.01em;transition:color .2s;gap:14px;}
+.faq-q:hover{color:var(--gold);}
+.faq-ico{width:21px;height:21px;border:1px solid var(--bd);display:flex;
+  align-items:center;justify-content:center;flex-shrink:0;font-size:11.5px;
+  color:var(--gold);transition:transform .28s,background .2s;}
+.faq-item.open .faq-ico{transform:rotate(45deg);background:var(--gold-d);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .38s ease;}
+.faq-item.open .faq-a{max-height:220px;}
+.faq-ai{padding:0 0 20px;font-size:13px;color:var(--mu);line-height:1.88;font-weight:300;}
+
+/* Trust side */
+.trust-stack{border:1px solid var(--br);margin-top:28px;}
+.tr{display:flex;align-items:flex-start;gap:16px;padding:20px 22px;
+  border-bottom:1px solid var(--br);transition:background .2s;}
+.tr:last-child{border-bottom:none;}
+.tr:hover{background:var(--s1);}
+.tr-ico{width:34px;height:34px;border:1px solid var(--br);display:flex;
+  align-items:center;justify-content:center;flex-shrink:0;font-size:13px;color:var(--gold);}
+.tr-ttl{font-size:12.5px;font-weight:500;color:var(--tx);margin-bottom:3px;}
+.tr-d{font-size:11.5px;color:var(--mu);line-height:1.6;}
+
+/* Final CTA */
+.fcta{margin-top:72px;padding:52px 44px;background:var(--s1);
+  border:1px solid var(--br);text-align:center;}
+.fcta-lbl{font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.fcta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);
+  font-weight:300;line-height:1.1;margin-bottom:14px;}
+.fcta-h em{font-style:italic;color:var(--gold);}
+.fcta-s{font-size:13px;color:var(--mu);margin-bottom:28px;}
+.fcta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
+.fi2{max-width:1160px;margin:0 auto;padding:0 48px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;
+  padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--bd);}
+.flogo-m{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;
+  letter-spacing:.14em;color:var(--gold);}
+.flogo-s{font-size:8px;letter-spacing:.2em;color:var(--mu);text-transform:uppercase;margin-top:2px;}
+.flinks{display:flex;gap:24px;flex-wrap:wrap;}
+.flinks a{font-size:10.5px;color:var(--mu);transition:color .2s;}
+.flinks a:hover{color:var(--gold);}
+.fsoc{display:flex;gap:8px;}
+.fsb{width:30px;height:30px;border:1px solid var(--bd);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:var(--mu);transition:all .2s;}
+.fsb:hover{border-color:var(--gold);color:var(--gold);}
+.fb{max-width:1160px;margin:0 auto;padding:0 48px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fc{font-size:10px;color:rgba(237,233,225,.2);letter-spacing:.03em;}
+.fleg{display:flex;gap:18px;}
+.fleg a{font-size:10px;color:rgba(237,233,225,.2);transition:color .2s;}
+.fleg a:hover{color:var(--mu);}
+@media(max-width:768px){.fi2,.fb{padding:0 22px;}.fi2{flex-direction:column;align-items:flex-start;}}
 
 /* Leaflet overrides */
-.leaflet-container{background:#0c0f12 !important;font-family:'DM Sans',sans-serif;}
-.leaflet-control-zoom a{
-  background:#111 !important;color:var(--gold) !important;
-  border-color:rgba(201,168,76,.2) !important;
-}
+.leaflet-container{background:#090c10 !important;font-family:'DM Sans',sans-serif !important;}
+.leaflet-control-zoom a{background:#0f0f0f !important;color:var(--gold) !important;border-color:rgba(201,168,76,.18) !important;}
 .leaflet-control-zoom a:hover{background:#1a1a1a !important;}
 .leaflet-control-attribution{display:none !important;}
 .leaflet-popup-content-wrapper{
-  background:#0e0e0e !important;border:1px solid rgba(201,168,76,.25) !important;
-  border-radius:0 !important;box-shadow:0 12px 48px rgba(0,0,0,.8) !important;padding:0 !important;
+  background:rgba(5,5,5,.95) !important;
+  border:1px solid rgba(201,168,76,.28) !important;
+  border-radius:0 !important;
+  box-shadow:0 20px 60px rgba(0,0,0,.8),0 0 0 1px rgba(201,168,76,.08) !important;
+  padding:0 !important;
+  backdrop-filter:blur(20px);
 }
-.leaflet-popup-content{margin:0 !important;min-width:210px;}
-.leaflet-popup-tip{background:#0e0e0e !important;}
-.leaflet-popup-close-button{color:rgba(201,168,76,.5) !important;top:8px !important;right:10px !important;font-size:16px !important;}
-.ohana-popup{padding:18px 20px;}
-.ohana-popup-type{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
-.ohana-popup-city{font-family:'Cormorant Garamond',serif;font-size:18px;color:#f0ece4;margin-bottom:8px;}
-.ohana-popup-stars{color:#c9a84c;font-size:10.5px;margin-bottom:6px;}
-.ohana-popup-review{font-size:11.5px;color:rgba(240,236,228,.55);line-height:1.65;font-style:italic;
+.leaflet-popup-content{margin:0 !important;min-width:200px;}
+.leaflet-popup-tip{background:rgba(5,5,5,.95) !important;}
+.leaflet-popup-close-button{
+  color:rgba(201,168,76,.5) !important;
+  top:8px !important;right:10px !important;
+  font-size:16px !important;
+}
+.op{padding:16px 18px;}
+.op-type{font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.op-stars{color:#c9a84c;font-size:10.5px;margin-bottom:6px;letter-spacing:2px;}
+.op-rev{font-size:11.5px;color:rgba(237,233,225,.7);line-height:1.65;font-style:italic;
   border-left:2px solid rgba(201,168,76,.3);padding-left:9px;margin-bottom:8px;}
-.ohana-popup-author{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,236,228,.28);}
+.op-auth{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,233,225,.25);}
 
-/* ═══════════════════════════════════════════════
-   5. FAQS + TRUST
-═══════════════════════════════════════════════ */
-#faqs{background:var(--bg);}
-
-.faqs-layout{
-  display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;
-}
-@media(max-width:900px){.faqs-layout{grid-template-columns:1fr;gap:48px;}}
-
-/* Accordion */
-.faq-list{border-top:1px solid var(--border-dim);}
-.faq-item{border-bottom:1px solid var(--border-dim);}
-.faq-q{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:22px 0;cursor:pointer;
-  font-size:14.5px;font-weight:300;color:var(--text);
-  letter-spacing:.01em;transition:color .25s;gap:16px;
-}
-.faq-q:hover{color:var(--gold);}
-.faq-icon{
-  width:22px;height:22px;border:1px solid var(--border-dim);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;font-size:12px;color:var(--gold);
-  transition:transform .3s,background .25s;
-}
-.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold-dim);}
-.faq-a{
-  max-height:0;overflow:hidden;
-  transition:max-height .4s ease,padding .4s ease;
-}
-.faq-item.open .faq-a{max-height:200px;}
-.faq-a-inner{
-  padding:0 0 22px;font-size:13.5px;color:var(--muted);
-  line-height:1.85;font-weight:300;
-}
-
-/* Trust side */
-.trust-side{}
-.trust-items{display:flex;flex-direction:column;gap:0;margin-top:32px;border:1px solid var(--border);}
-.trust-item-row{
-  display:flex;align-items:flex-start;gap:18px;
-  padding:22px 24px;border-bottom:1px solid var(--border);
-  transition:background .25s;
-}
-.trust-item-row:last-child{border-bottom:none;}
-.trust-item-row:hover{background:var(--surface);}
-.ti-icon{
-  width:36px;height:36px;border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;font-size:14px;color:var(--gold);
-}
-.ti-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px;letter-spacing:.02em;}
-.ti-desc{font-size:12px;color:var(--muted);line-height:1.6;}
-
-/* Final CTA */
-.final-cta{
-  margin-top:64px;padding:56px 48px;
-  background:var(--surface);border:1px solid var(--border);
-  text-align:center;
-}
-.final-cta-label{
-  font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:20px;
-}
-.final-cta-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(32px,4vw,52px);font-weight:300;
-  line-height:1.1;margin-bottom:16px;
-}
-.final-cta-title em{font-style:italic;color:var(--gold);}
-.final-cta-sub{font-size:13.5px;color:var(--muted);margin-bottom:32px;}
-.final-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-
-/* ═══════════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════════ */
-footer{
-  background:var(--surface);
-  border-top:1px solid var(--border);
-  padding:44px 0 24px;
-}
-.footer-inner{
-  max-width:1200px;margin:0 auto;padding:0 48px;
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:20px;
-  padding-bottom:24px;margin-bottom:24px;
-  border-bottom:1px solid var(--border-dim);
-}
-.footer-logo-main{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;letter-spacing:.14em;color:var(--gold);}
-.footer-logo-sub{font-size:8.5px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;margin-top:2px;}
-.footer-links-row{display:flex;gap:28px;flex-wrap:wrap;}
-.footer-links-row a{font-size:11px;color:var(--muted);letter-spacing:.08em;transition:color .25s;}
-.footer-links-row a:hover{color:var(--gold);}
-.footer-social{display:flex;gap:10px;}
-.soc{
-  width:32px;height:32px;border:1px solid var(--border-dim);
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;color:var(--muted);transition:all .25s;
-}
-.soc:hover{border-color:var(--gold);color:var(--gold);}
-.footer-bottom{
-  max-width:1200px;margin:0 auto;padding:0 48px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
-}
-.footer-copy{font-size:10.5px;color:rgba(240,236,228,.22);letter-spacing:.04em;}
-.footer-legal{display:flex;gap:20px;}
-.footer-legal a{font-size:10.5px;color:rgba(240,236,228,.22);transition:color .25s;}
-.footer-legal a:hover{color:var(--muted);}
-@media(max-width:768px){
-  .footer-inner,.footer-bottom{padding:0 20px;}
-  .footer-inner{flex-direction:column;align-items:flex-start;}
-}
-/* ── CAROUSEL ── */
-.car-main{
-  position:relative;width:100%;height:520px;
-  overflow:hidden;border:1px solid var(--border);
-  background:var(--surface2);
-}
-@media(max-width:768px){.car-main{height:300px;}}
-.car-img{
-  width:100%;height:100%;object-fit:cover;
-  display:block;
-  transition:opacity .5s ease;
-}
-.car-toggle{
-  position:absolute;top:20px;left:20px;
-  background:rgba(10,10,10,.85);
-  border:1px solid var(--gold);
-  padding:8px 18px;cursor:pointer;
-  font-size:10px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--gold);
-  transition:all .25s;z-index:5;
-}
-.car-toggle:hover{background:var(--gold);color:#0a0a0a;}
-.car-caption{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:40px 24px 20px;
-  background:linear-gradient(transparent,rgba(10,10,10,.85));
-  pointer-events:none;
-}
-.car-caption-label{
-  font-size:10px;letter-spacing:.24em;
-  text-transform:uppercase;color:var(--gold);margin-bottom:5px;
-}
-.car-caption-sub{
-  font-family:'Cormorant Garamond',serif;
-  font-size:20px;font-weight:300;color:var(--text);
-}
-.car-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(10,10,10,.7);border:1px solid var(--border);
-  color:var(--text);font-size:22px;width:40px;height:40px;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;transition:all .25s;z-index:5;
-}
-.car-arrow:hover{border-color:var(--gold);color:var(--gold);}
-.car-prev{left:16px;}
-.car-next{right:16px;}
-.car-thumbs{
-  display:flex;gap:10px;padding:12px 0;
-  overflow-x:auto;
-}
-.car-thumb{
-  flex-shrink:0;width:110px;height:70px;
-  border:1px solid var(--border-dim);
-  overflow:hidden;cursor:pointer;
-  transition:border-color .25s;position:relative;
-}
-.car-thumb.active{border-color:var(--gold);}
-.car-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.65);}
-.car-thumb.active img{filter:brightness(.9);}
-.car-thumb-lbl{
-  position:absolute;bottom:0;left:0;right:0;
-  font-size:8px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold);text-align:center;
-  padding:3px 4px;background:rgba(10,10,10,.75);
-}
-/* ── COVERAGE NEW LAYOUT ── */
-.cov-layout{
-  display:grid;
-  grid-template-columns:220px 1fr 240px;
-  min-height:560px;
-  border-top:1px solid var(--border);
-}
-@media(max-width:1000px){
-  .cov-layout{grid-template-columns:1fr;}
-}
-.cov-left{
-  background:var(--surface2);border-right:1px solid var(--border);
-  padding:28px 20px;display:flex;flex-direction:column;gap:0;
-}
-.cov-tagline{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;opacity:.7;}
-.cov-heading{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1.2;color:var(--text);margin-bottom:10px;}
-.cov-sub{font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:20px;}
-.cov-stat-box{border:1px solid var(--border);padding:14px;margin-bottom:20px;display:flex;flex-direction:column;gap:12px;}
-.cov-stat-row{display:flex;align-items:center;gap:10px;}
-.cov-stat-icon{color:var(--gold);font-size:13px;flex-shrink:0;}
-.cov-stat-num{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--gold);line-height:1;}
-.cov-stat-lbl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
-.cov-legend{display:flex;flex-direction:column;gap:10px;}
-.cov-leg-item{display:flex;align-items:flex-start;gap:9px;font-size:10.5px;color:var(--muted);line-height:1.4;}
-.cov-leg-item span{font-size:9.5px;color:rgba(240,236,228,.3);}
-.cov-leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px;}
-.cov-map-wrap{position:relative;overflow:hidden;}
-.cov-right{
-  background:var(--surface2);border-left:1px solid var(--border);
-  padding:20px 16px;display:flex;flex-direction:column;gap:0;overflow-y:auto;
-}
-.cov-reviews-label{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;opacity:.7;}
-.cov-reviews{display:flex;flex-direction:column;gap:10px;flex:1;}
-.cov-review{background:var(--bg);border:1px solid var(--border);padding:12px;transition:border-color .25s;}
-.cov-review:hover{border-color:rgba(201,168,76,.3);}
-.cov-review-top{display:flex;gap:10px;margin-bottom:8px;}
-.cov-review-img{width:48px;height:48px;flex-shrink:0;border:1px solid var(--border);object-fit:cover;}
-.cov-stars{color:var(--gold);font-size:10px;margin-bottom:5px;}
-.cov-review-text{font-size:11px;color:var(--muted);line-height:1.55;font-style:italic;}
-.cov-review-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.cov-badge{font-size:8px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px;border:1px solid rgba(201,168,76,.3);color:var(--gold);background:var(--gold-dim);}
-.cov-review-city{font-size:9.5px;color:var(--muted);}
-.cov-trusted{font-size:10px;color:var(--muted);text-align:center;padding-top:12px;margin-top:8px;border-top:1px solid var(--border-dim);letter-spacing:.04em;}
-.cov-trust-bar{display:flex;justify-content:space-around;align-items:center;padding:20px 48px;border-top:1px solid var(--border);background:var(--bg);flex-wrap:wrap;gap:16px;}
-.cov-trust-item{display:flex;align-items:center;gap:12px;}
-.cov-trust-icon{font-size:18px;opacity:.7;}
-.cov-trust-title{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text);font-weight:500;}
-.cov-trust-sub{font-size:10px;color:var(--muted);}
+/* Pin animations */
+@keyframes pS{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.55;transform:scale(1.5);}}
+@keyframes pM{0%,100%{opacity:.85;transform:scale(1);}50%{opacity:.45;transform:scale(1.3);}}
+@keyframes pF{0%,100%{opacity:.5;transform:scale(1);}50%{opacity:.28;transform:scale(1.15);}}
+.rs{animation:pS 2.4s ease-in-out infinite;}
+.rm{animation:pM 3.4s ease-in-out infinite;}
+.rf{animation:pF 5s ease-in-out infinite;}
 </style>
 </head>
 <body>
 
-<!-- ═══════════════ NAV ═══════════════ -->
+<!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:9px;">
-        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Outer circle -->
-          <circle cx="19" cy="19" r="17.5" stroke="#c9a84c" stroke-width="1.2"/>
-          <!-- Wave bottom -->
-          <path d="M7 25 Q12 22 19 25 Q26 28 31 25" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.7"/>
-          <path d="M8 27.5 Q13 24.5 19 27.5 Q25 30.5 30 27.5" stroke="#c9a84c" stroke-width=".7" fill="none" opacity="0.4"/>
-          <!-- House roof -->
-          <path d="M12 20 L19 13 L26 20" stroke="#c9a84c" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
-          <!-- House body -->
-          <rect x="15" y="19.5" width="8" height="6" rx=".5" stroke="#c9a84c" stroke-width="1" fill="none"/>
-          <!-- Window in house -->
-          <rect x="17.5" y="21" width="3" height="3" rx=".3" stroke="#c9a84c" stroke-width=".7" fill="none"/>
-          <!-- Leaf top left -->
-          <path d="M11 14 Q8 10 10 7 Q14 9 13 13 Q12 14.5 11 14Z" fill="none" stroke="#c9a84c" stroke-width=".9" opacity="0.85"/>
-          <path d="M11 14 L10 8" stroke="#c9a84c" stroke-width=".6" opacity="0.6"/>
-          <!-- Sparkles -->
-          <path d="M25 10 L25.4 11.5 L27 12 L25.4 12.5 L25 14 L24.6 12.5 L23 12 L24.6 11.5Z" fill="#c9a84c" opacity="0.9"/>
-          <path d="M28 7 L28.25 8 L29 8.25 L28.25 8.5 L28 9.5 L27.75 8.5 L27 8.25 L27.75 8Z" fill="#c9a84c" opacity="0.7"/>
-        </svg>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:#c9a84c;letter-spacing:.12em;line-height:1;">OHANA</span>
-          <span style="font-family:'DM Sans',sans-serif;font-size:6.5px;font-weight:400;color:rgba(201,168,76,.6);letter-spacing:.25em;text-transform:uppercase;line-height:1;">CLEAN SOLUTIONS</span>
-        </div>
-      </a>
+  <div class="ni">
+    <div class="nl">
+      <img src="1000344482.jpg"
+        alt="OHANA Clean Solutions"
+        style="height:44px;width:auto;object-fit:contain;display:block;"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div style="display:none;flex-direction:column;gap:1px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:.14em;color:#c9a84c;font-weight:400;line-height:1;">OHANA</div>
+        <div style="font-size:7px;letter-spacing:.22em;color:rgba(201,168,76,.6);text-transform:uppercase;line-height:1;">Clean Solutions LLC</div>
+      </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="#before-after">Before &amp; After</a></li>
+    <ul class="nlinks">
+      <li><a href="#transformations">Before &amp; After</a></li>
       <li><a href="#calculator">Get a Quote</a></li>
       <li><a href="#coverage">Coverage</a></li>
       <li><a href="#faqs">FAQs</a></li>
     </ul>
-    <div class="nav-right">
-      <span class="nav-phone">(669) 317-6911</span>
-      <button class="nav-book" onclick="scrollTo('#calculator')">Book Now</button>
+    <div class="nr">
+      <span class="nph">(669) 317-6911</span>
+      <button class="nbk" onclick="go('#calculator')">Book Now</button>
     </div>
   </div>
 </nav>
+<div class="mcta" onclick="go('#calculator')">Book Your Cleaning →</div>
 
-<!-- Mobile sticky CTA -->
-<div class="mobile-cta" onclick="scrollTo('#calculator')">📋 Get Your Price — Takes 60 Seconds →</div>
-
-<!-- ═══════════════ 1. HERO ═══════════════ -->
+<!-- ═══ 1. HERO ═══ -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Silicon Valley &amp; Bay Area · ★ 4.9 on Homeaglow</div>
-    <h1 class="hero-h1">
+  <div class="hbg"></div>
+  <div class="hc">
+    <div class="hey">Silicon Valley &amp; Bay Area</div>
+    <h1 class="hh1">
       A Cleaner Home.<br>
       <em>A Better Life.</em>
     </h1>
-    <p class="hero-sub">Premium residential cleaning across the Bay Area — trusted by homeowners in 26+ cities.</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="scrollTo('#calculator')">Book Your Cleaning</button>
-      <button class="btn-ghost" onclick="window.open('https://wa.me/16693176911','_blank')">
-        <span>↗</span> WhatsApp
+    <p class="hsub">Professional cleaning across the Bay Area — residential, commercial, move-in/out &amp; post-construction. 5-star results, every time.</p>
+    <div class="hbtns">
+      <button class="btn-p" onclick="go('#calculator')">Get My Price — 60 Seconds</button>
+      <button class="btn-g" onclick="wa('Hi! I\'d like to book a cleaning with OHANA.')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp
       </button>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-val">350+</div>
-        <div class="hero-stat-label">Cleanings Completed</div>
-      </div>
-      <div>
-        <a href="https://www.homeaglow.com" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
-          <div class="hero-stat-val">4.9 ↗</div>
-          <div class="hero-stat-label">Avg. Rating · Homeaglow</div>
-        </a>
-      </div>
-      <div>
-        <div class="hero-stat-val">26+</div>
-        <div class="hero-stat-label">Bay Area Cities Served</div>
-      </div>
+    <div class="hstats">
+      <div><div class="hsv">350+</div><div class="hsl">Bay Area Clients</div></div>
+      <div><div class="hsv">4.9 ★</div><div class="hsl">Avg. Rating</div></div>
+      <div><div class="hsv">26+</div><div class="hsl">Cities Served</div></div>
     </div>
   </div>
 </section>
 
-<!-- Trust ticker -->
-<div class="trust-bar">
-  <div class="trust-track">
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Serving Silicon Valley &amp; Bay Area</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Real Client Transformations</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Premium Residential Cleaning</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Trusted By Bay Area Homeowners</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">WhatsApp Confirmation</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Same-Day Available</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Deposit Protected Booking</span></div>
-    <!-- duplicate for seamless loop -->
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Serving Silicon Valley &amp; Bay Area</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Real Client Transformations</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Premium Residential Cleaning</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Trusted By Bay Area Homeowners</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">WhatsApp Confirmation</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Same-Day Available</span></div>
-    <div class="trust-item"><div class="trust-pip"></div><span class="trust-txt">Deposit Protected Booking</span></div>
+<!-- Ticker -->
+<div class="ticker">
+  <div class="ttrack">
+    <div class="ti"><div class="tp"></div><span class="tt">Residential Cleaning</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Commercial & Office</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Post-Construction</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Move In / Move Out</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Airbnb Turnover</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Same-Day Available</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">$50 Secures Your Booking</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Confirmed via WhatsApp</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">5-Star Bay Area Service</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Satisfaction Guaranteed</span></div>
+    <!-- dup -->
+    <div class="ti"><div class="tp"></div><span class="tt">Residential Cleaning</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Commercial & Office</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Post-Construction</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Move In / Move Out</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Airbnb Turnover</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Same-Day Available</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">$50 Secures Your Booking</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Confirmed via WhatsApp</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">5-Star Bay Area Service</span></div>
+    <div class="ti"><div class="tp"></div><span class="tt">Satisfaction Guaranteed</span></div>
   </div>
 </div>
 
-<!-- ═══════════════ 2. BEFORE & AFTER ═══════════════ -->
-<section id="before-after">
+<!-- ═══ 2. REAL TRANSFORMATIONS ═══ -->
+<section id="transformations">
   <div class="wrap">
-    <div class="ba-header reveal">
+    <div class="ba-hdr rv">
       <div>
-        <div class="t-label">Before &amp; After</div>
-        <h2 class="t-headline" style="margin-top:14px;">The Difference<br>Is In The <em>Details.</em></h2>
+        <div class="label">Real Transformations</div>
+        <h2 class="headline" style="margin-top:13px;">The Difference<br>Is In The <em>Details.</em></h2>
       </div>
-      <p class="t-sub" style="max-width:320px;">We don't just clean. We transform. Click to reveal the result.</p>
+      <p class="sub" style="max-width:280px;">Every photo is from a real OHANA job. Tap to reveal the result.</p>
     </div>
 
-    <!-- Main showcase -->
-    <div class="reveal" style="margin-bottom:12px;">
-      <div class="car-main" id="carMain">
-        <img class="car-img" id="carImg" src="bath-before.jpg.jpeg" alt="Cleaning result" decoding="async">
-        <!-- Toggle button -->
-        <div class="car-toggle" id="carToggle" onclick="toggleBeforeAfter()" style="animation:pulse-cta 2s ease-in-out infinite;">
-          <span id="carToggleLabel">BEFORE</span> · tap to reveal
+    <div class="rv">
+      <div class="ba-viewer" id="baViewer">
+        <img class="ba-img" id="baImg" src="" alt="OHANA Clean Results"
+          onerror="this.style.background='#1a1a1a';this.style.display='block'">
+        <button class="ba-badge" id="baBadge" onclick="toggleBA()">BEFORE</button>
+        <div class="ba-cap">
+          <div class="ba-cap-lbl" id="baLbl"></div>
+          <div class="ba-cap-ttl" id="baSub"></div>
         </div>
-        <!-- Caption -->
-        <div class="car-caption">
-          <div class="car-caption-label" id="carLabel">Bathroom Restoration</div>
-          <div class="car-caption-sub" id="carSub">Move-Out Clean · Silicon Valley</div>
-        </div>
-        <!-- Nav arrows -->
-        <button class="car-arrow car-prev" onclick="carNav(-1)">‹</button>
-        <button class="car-arrow car-next" onclick="carNav(1)">›</button>
+        <button class="ba-arr ba-prev" onclick="baNavi(-1)">‹</button>
+        <button class="ba-arr ba-next" onclick="baNavi(1)">›</button>
       </div>
     </div>
 
-    <!-- Thumbnails -->
-    <div class="car-thumbs reveal">
-      <div class="car-thumb active" onclick="carSelect(0,this)">
-        <img src="bath-after.jpg.jpeg" alt="Bathtub after" loading="lazy" decoding="async">
-        <div class="car-thumb-lbl">Bathroom</div>
+    <div class="ba-thumbs rv">
+      <div class="ba-th on" onclick="baSelect(0,this)">
+        <img src="" alt="" id="bth0"><div class="ba-th-lbl">Stove</div>
       </div>
-      <div class="car-thumb" onclick="carSelect(1,this)">
-        <img src="stove-after.jpg.jpeg" alt="Stove after" loading="lazy" decoding="async">
-        <div class="car-thumb-lbl">Stove</div>
+      <div class="ba-th" onclick="baSelect(1,this)">
+        <img src="" alt="" id="bth1"><div class="ba-th-lbl">Bathroom</div>
       </div>
-      <div class="car-thumb" onclick="carSelect(2,this)">
-        <img src="window-after.jpg.jpeg" alt="Windows after" loading="lazy" decoding="async">
-        <div class="car-thumb-lbl">Windows</div>
+      <div class="ba-th" onclick="baSelect(2,this)">
+        <img src="" alt="" id="bth2"><div class="ba-th-lbl">Windows</div>
       </div>
-      <div class="car-thumb" onclick="carSelect(3,this)">
-        <img src="room-after.jpg.jpeg" alt="Bedroom after" loading="lazy" decoding="async">
-        <div class="car-thumb-lbl">Bedroom</div>
+      <div class="ba-th" onclick="baSelect(3,this)">
+        <img src="" alt="" id="bth3"><div class="ba-th-lbl">Bedroom</div>
+      </div>
+      <div class="ba-th" onclick="baSelect(4,this)">
+        <img src="" alt="" id="bth4"><div class="ba-th-lbl">Kitchen</div>
+      </div>
+      <div class="ba-th" onclick="baSelect(5,this)">
+        <img src="" alt="" id="bth5"><div class="ba-th-lbl">Living Area</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ 3. CALCULATOR ═══════════════ -->
+<!-- ═══ 3. CALCULATOR ═══ -->
 <section id="calculator">
   <div class="wrap">
-    <div class="reveal" style="margin-bottom:48px;">
-      <div class="t-label">Instant Price Calculator</div>
-      <h2 class="t-headline" style="margin-top:14px;">Get Your Price In <em>60 Seconds</em></h2>
-      <p class="t-sub" style="margin-top:12px;max-width:400px;">No hidden fees. No surprises.</p>
+    <div class="rv" style="margin-bottom:44px;">
+      <div class="label">Instant Price Calculator</div>
+      <h2 class="headline" style="margin-top:13px;">Your Price In <em>60 Seconds</em></h2>
+      <p class="sub" style="margin-top:11px;max-width:380px;">No hidden fees. No surprises. Price builds live as you go.</p>
     </div>
+    <div class="calc-wrap">
 
-    <div class="calc-layout">
-      <!-- LEFT: Form -->
-      <div class="reveal">
-        <!-- Steps -->
-        <div class="calc-steps">
-          <div class="calc-step-tab active" id="st1">Info</div>
-          <div class="calc-step-tab" id="st2">Service</div>
-          <div class="calc-step-tab" id="st3">Size</div>
-          <div class="calc-step-tab" id="st4">Extras</div>
-          <div class="calc-step-tab" id="st5">Schedule</div>
-          <div class="calc-step-tab" id="st6" style="display:none;"></div>
+      <!-- LEFT: Steps -->
+      <div class="rv">
+        <div class="steps">
+          <div class="stab on" id="st1">Info</div>
+          <div class="stab" id="st2">Service</div>
+          <div class="stab" id="st3">Size</div>
+          <div class="stab" id="st4">Condition</div>
+          <div class="stab" id="st5">Add-ons</div>
+          <div class="stab" id="st6">Book</div>
         </div>
 
         <!-- Step 1: Info -->
-        <div class="calc-panel active" id="cp1">
-          <div class="f-row">
-            <div class="f-group">
-              <label class="f-label">First Name</label>
-              <input class="f-input" type="text" id="inp-fname" placeholder="Maria">
-            </div>
-            <div class="f-group">
-              <label class="f-label">Last Name</label>
-              <input class="f-input" type="text" id="inp-lname" placeholder="Garcia">
-            </div>
+        <div class="cp on" id="cp1">
+          <div class="frow">
+            <div class="fg"><label class="fl">First Name</label><input class="fi" id="fn" type="text" placeholder="Maria"></div>
+            <div class="fg"><label class="fl">Last Name</label><input class="fi" id="ln" type="text" placeholder="Garcia"></div>
           </div>
-          <div class="f-group">
-            <label class="f-label">Phone</label>
-            <input class="f-input" type="tel" id="inp-phone" placeholder="(408) 000-0000">
-          </div>
-          <div class="f-group">
-            <label class="f-label">Email</label>
-            <input class="f-input" type="email" id="inp-email" placeholder="you@email.com">
-          </div>
-          <div class="f-group">
-            <label class="f-label">ZIP Code</label>
-            <input class="f-input" type="text" id="inp-zip" placeholder="95014" maxlength="5">
-          </div>
-          <button class="btn-next" onclick="goStep(1,2)">Check Coverage →</button>
+          <div class="fg"><label class="fl">Phone</label><input class="fi" id="ph" type="tel" placeholder="(408) 000-0000"></div>
+          <div class="fg"><label class="fl">Email</label><input class="fi" id="em" type="email" placeholder="you@email.com"></div>
+          <div class="fg"><label class="fl">ZIP Code</label><input class="fi" id="zp" type="text" placeholder="95014" maxlength="5"></div>
+          <button class="btn-n" onclick="gs(1,2)">Check Coverage →</button>
         </div>
 
         <!-- Step 2: Service -->
-        <div class="calc-panel" id="cp2">
-          <div id="coverage-ok" style="display:none;background:var(--gold-dim);border:1px solid var(--border);padding:12px 16px;margin-bottom:18px;font-size:11.5px;color:var(--gold);">
-            ✓ &nbsp; Your area is covered.
+        <div class="cp" id="cp2">
+          <div id="cov-ok">✓ &nbsp;Your area is covered — we service your ZIP.</div>
+          <div class="fg"><label class="fl">Select Service</label>
+            <div class="fsw"><select class="fs" id="sv" onchange="upd()">
+              <option value="">— Choose a service —</option>
+              <option value="regular">Regular Cleaning</option>
+              <option value="deep">Deep Cleaning</option>
+              <option value="moveout">Move In / Move Out</option>
+              <option value="airbnb">Airbnb Turnover</option>
+              <option value="commercial">Commercial / Office</option>
+              <option value="postconstruction">Post-Construction</option>
+            </select></div>
           </div>
-          <div class="f-group">
-            <label class="f-label">Select Service</label>
-            <div class="f-select-wrap">
-              <select class="f-select" id="inp-service" onchange="updatePrice()">
-                <option value="">— Choose —</option>
-                <option value="regular">Regular Cleaning</option>
-                <option value="deep">Deep Cleaning</option>
-                <option value="moveout">Move In / Out</option>
-                <option value="airbnb">Airbnb Turnover</option>
-              </select>
-            </div>
-          </div>
-          <button class="btn-next" onclick="goStep(2,3)">Continue →</button>
-          <button class="btn-back" onclick="goStep(2,1)">← Back</button>
+          <div id="custom-msg">✦ &nbsp;Commercial &amp; Post-Construction quotes are custom. Complete the form and we'll send your quote within hours.</div>
+          <button class="btn-n" onclick="gs(2,3)">Continue →</button>
+          <button class="btn-b" onclick="gs(2,1)">← Back</button>
         </div>
 
         <!-- Step 3: Size -->
-        <div class="calc-panel" id="cp3">
-          <div class="f-label" style="margin-bottom:14px;">Home Size</div>
-          <div class="size-cards">
-            <div class="size-card" onclick="selectSize(this,'1bed','1 Bed / 1 Bath',0)">
-              <div class="sc-name">1 Bed / 1 Bath</div>
-              <div class="sc-desc">Small apartment</div>
-              <div class="sc-time">~ 2–3 hrs</div>
-            </div>
-            <div class="size-card" onclick="selectSize(this,'2bed','2 Bed / 2 Bath',40)">
-              <div class="sc-name">2 Bed / 2 Bath</div>
-              <div class="sc-desc">Medium home</div>
-              <div class="sc-time">~ 3–4 hrs</div>
-            </div>
-            <div class="size-card" onclick="selectSize(this,'3bed','3 Bed / 2 Bath',80)">
-              <div class="sc-name">3 Bed / 2 Bath</div>
-              <div class="sc-desc">Standard home</div>
-              <div class="sc-time">~ 4–5 hrs</div>
-            </div>
-            <div class="size-card" onclick="selectSize(this,'4bed','4+ Bed / 3+ Bath',140)">
-              <div class="sc-name">4+ Bed / 3+ Bath</div>
-              <div class="sc-desc">Large home</div>
-              <div class="sc-time">~ 5–6 hrs</div>
+        <div class="cp" id="cp3">
+          <!-- Residential sizes (default) -->
+          <div id="sz-res">
+            <div class="fl" style="margin-bottom:12px;">Home Size</div>
+            <div class="scards">
+              <div class="sc" onclick="selSize(this,'1bed','Studio / 1 Bed',0)">
+                <div class="sc-name">Studio / 1 Bed</div><div class="sc-d">Up to ~700 sqft</div><div class="sc-t">~2–3 hrs</div>
+              </div>
+              <div class="sc" onclick="selSize(this,'2bed','2 Bed / 2 Bath',50)">
+                <div class="sc-name">2 Bed / 2 Bath</div><div class="sc-d">~700–1,200 sqft</div><div class="sc-t">~3–4 hrs</div>
+              </div>
+              <div class="sc" onclick="selSize(this,'3bed','3 Bed / 2 Bath',100)">
+                <div class="sc-name">3 Bed / 2 Bath</div><div class="sc-d">~1,200–2,000 sqft</div><div class="sc-t">~4–5 hrs</div>
+              </div>
+              <div class="sc" onclick="selSize(this,'4bed','4+ Bed / 3+ Bath',170)">
+                <div class="sc-name">4+ Bed / 3+ Bath</div><div class="sc-d">2,000+ sqft</div><div class="sc-t">~5–6+ hrs</div>
+              </div>
             </div>
           </div>
-          <button class="btn-next" onclick="goStep(3,4)" style="margin-top:16px;">Continue →</button>
-          <button class="btn-back" onclick="goStep(3,2)">← Back</button>
+          <!-- Commercial sizes -->
+          <div id="sz-com" style="display:none;">
+            <div class="fl" style="margin-bottom:12px;">Space Size</div>
+            <div class="scards">
+              <div class="sc" onclick="selSize(this,'sm','Small (up to 1k sqft)',0)">
+                <div class="sc-name">Small</div><div class="sc-d">Up to 1,000 sqft</div><div class="sc-t">~2–3 hrs</div>
+              </div>
+              <div class="sc" onclick="selSize(this,'md','Medium (1k–3k sqft)',100)">
+                <div class="sc-name">Medium</div><div class="sc-d">1,000–3,000 sqft</div><div class="sc-t">~4–5 hrs</div>
+              </div>
+              <div class="sc" onclick="selSize(this,'lg','Large (3k+ sqft)',220)">
+                <div class="sc-name">Large</div><div class="sc-d">3,000+ sqft</div><div class="sc-t">~6+ hrs</div>
+              </div>
+              <div class="sc" onclick="selSize(this,'custom','Custom / Multi-floor',0)">
+                <div class="sc-name">Custom</div><div class="sc-d">Multiple floors</div><div class="sc-t">Quote needed</div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-n" onclick="gs(3,4)" style="margin-top:14px;">Continue →</button>
+          <button class="btn-b" onclick="gs(3,2)">← Back</button>
         </div>
 
-        <!-- Step 4: Extras -->
-        <div class="calc-panel" id="cp4">
-          <div class="f-label" style="margin-bottom:14px;">Add-ons (optional)</div>
+        <!-- Step 4: Condition -->
+        <div class="cp" id="cp4">
+          <div class="fl" style="margin-bottom:12px;">Property Condition</div>
+          <div class="ccards">
+            <div class="cc" onclick="selCond(this,'clean',1.0)">
+              <div class="cc-ico">🟢</div>
+              <div class="cc-n">Well-Kept</div>
+              <div class="cc-d">Regular maintenance</div>
+              <div class="cc-mul">Standard rate</div>
+            </div>
+            <div class="cc" onclick="selCond(this,'average',1.25)">
+              <div class="cc-ico">🟡</div>
+              <div class="cc-n">Average</div>
+              <div class="cc-d">Some neglected areas</div>
+              <div class="cc-mul">+25%</div>
+            </div>
+            <div class="cc" onclick="selCond(this,'heavy',1.55)">
+              <div class="cc-ico">🔴</div>
+              <div class="cc-n">Needs Attention</div>
+              <div class="cc-d">Heavy buildup / long overdue</div>
+              <div class="cc-mul">+55%</div>
+            </div>
+          </div>
+          <div style="padding:11px 14px;border:1px solid var(--bd);background:var(--s2);
+            font-size:11px;color:var(--mu);margin-top:12px;margin-bottom:4px;">
+            ✦ &nbsp; Honest condition = accurate quote. We'll confirm on arrival with no surprises.
+          </div>
+          <button class="btn-n" onclick="gs(4,5)">Continue →</button>
+          <button class="btn-b" onclick="gs(4,3)">← Back</button>
+        </div>
+
+        <!-- Step 5: Add-ons + Frequency -->
+        <div class="cp" id="cp5">
+          <div class="fl" style="margin-bottom:12px;">Add-ons (optional)</div>
           <div class="extras">
-            <div class="extra" onclick="toggleExtra(this,20)"><div class="extra-box"></div>Inside Fridge</div>
-            <div class="extra" onclick="toggleExtra(this,25)"><div class="extra-box"></div>Inside Oven</div>
-            <div class="extra" onclick="toggleExtra(this,30)"><div class="extra-box"></div>Windows</div>
-            <div class="extra" onclick="toggleExtra(this,20)"><div class="extra-box"></div>Patio / Balcony</div>
-            <div class="extra" onclick="toggleExtra(this,35)"><div class="extra-box"></div>Garage</div>
-            <div class="extra" onclick="toggleExtra(this,15)"><div class="extra-box"></div>Laundry (fold)</div>
+            <div class="ex" onclick="togEx(this,30)"><div class="exb"></div>Inside Oven</div>
+            <div class="ex" onclick="togEx(this,20)"><div class="exb"></div>Inside Fridge</div>
+            <div class="ex" onclick="togEx(this,35)"><div class="exb"></div>Interior Windows</div>
+            <div class="ex" onclick="togEx(this,20)"><div class="exb"></div>Patio / Balcony</div>
+            <div class="ex" onclick="togEx(this,40)"><div class="exb"></div>Garage</div>
+            <div class="ex" onclick="togEx(this,18)"><div class="exb"></div>Laundry (fold)</div>
           </div>
-          <div class="f-group" style="margin-top:18px;">
-            <label class="f-label">Frequency</label>
-            <div class="f-select-wrap">
-              <select class="f-select" id="inp-freq" onchange="updatePrice()">
-                <option value="once">One Time</option>
-                <option value="weekly">Weekly</option>
-                <option value="biweekly">Bi-Weekly</option>
-                <option value="monthly">Monthly</option>
-              </select>
-            </div>
+          <div class="fg" style="margin-top:16px;"><label class="fl">Frequency</label>
+            <div class="fsw"><select class="fs" id="fr" onchange="upd()">
+              <option value="once">One Time</option>
+              <option value="weekly">Weekly — Save 15%</option>
+              <option value="biweekly">Bi-Weekly — Save 10%</option>
+              <option value="monthly">Monthly — Save 5%</option>
+            </select></div>
           </div>
-          <button class="btn-next" onclick="goStep(4,5)">Continue →</button>
-          <button class="btn-back" onclick="goStep(4,3)">← Back</button>
+          <div class="fg"><label class="fl">Preferred Date</label>
+            <input class="fi" type="date" id="dt">
+          </div>
+          <div class="fg"><label class="fl">Preferred Time</label>
+            <div class="fsw"><select class="fs" id="tm">
+              <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option>
+              <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
+              <option>2:00 PM</option><option>3:00 PM</option>
+            </select></div>
+          </div>
+          <button class="btn-n" onclick="gs(5,6)">Continue →</button>
+          <button class="btn-b" onclick="gs(5,4)">← Back</button>
         </div>
 
-        <!-- Step 5: Date + Contact (merged for fewer friction steps) -->
-        <div class="calc-panel" id="cp5">
-          <div class="f-group">
-            <label class="f-label">Preferred Date</label>
-            <input class="f-input" type="date" id="inp-date">
+        <!-- Step 6: Contact + Book -->
+        <div class="cp" id="cp6">
+          <div class="fl" style="margin-bottom:12px;">How should we confirm your booking?</div>
+          <div class="cmethods">
+            <div class="cm on" onclick="selCM(this,'WhatsApp')"><span>💬</span> WhatsApp</div>
+            <div class="cm" onclick="selCM(this,'SMS')"><span>📱</span> SMS</div>
+            <div class="cm" onclick="selCM(this,'Call')"><span>📞</span> Phone Call</div>
+            <div class="cm" onclick="selCM(this,'Email')"><span>✉️</span> Email</div>
           </div>
-          <div class="f-group">
-            <label class="f-label">Preferred Time</label>
-            <div class="f-select-wrap">
-              <select class="f-select" id="inp-time">
-                <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option>
-                <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
-                <option>2:00 PM</option><option>3:00 PM</option>
-              </select>
-            </div>
+          <div style="margin-top:18px;padding:13px 15px;border:1px solid var(--br);
+            background:var(--s2);font-size:11px;color:var(--mu);line-height:1.72;margin-bottom:2px;">
+            💳 &nbsp;<strong style="color:var(--tx);">$50 Today's Reservation</strong> secures your slot.<br>
+            Remaining balance paid on service day. Zero hidden fees.
           </div>
-          <div style="padding:12px 16px;border:1px solid var(--border-dim);background:var(--surface2);font-size:11.5px;color:var(--muted);margin-bottom:8px;">
-            ✦ &nbsp; Same-day available in most areas. We'll confirm via your preferred contact method below.
-          </div>
-          <div class="f-group" style="margin-top:16px;">
-            <label class="f-label">How Should We Contact You?</label>
-            <div class="contact-methods" id="contact-step5">
-              <div class="contact-method" onclick="selectContact(this,'WhatsApp')">
-                <span class="contact-method-icon">💬</span> WhatsApp
-              </div>
-              <div class="contact-method" onclick="selectContact(this,'SMS')">
-                <span class="contact-method-icon">📱</span> SMS
-              </div>
-              <div class="contact-method" onclick="selectContact(this,'Call')">
-                <span class="contact-method-icon">📞</span> Call
-              </div>
-              <div class="contact-method" onclick="selectContact(this,'Email')">
-                <span class="contact-method-icon">✉️</span> Email
-              </div>
-            </div>
-          </div>
-          <button class="btn-next" style="margin-top:20px;" onclick="finalBooking()">Reserve My Spot →</button>
-          <button class="btn-back" onclick="goStep(5,4)">← Back</button>
+          <button class="btn-wa" onclick="bookWA()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Reserve via WhatsApp
+          </button>
+          <button class="btn-n" onclick="finalBook()" style="background:var(--s2);color:var(--gold);border:1px solid var(--br);">Confirm Booking →</button>
+          <button class="btn-b" onclick="gs(6,5)">← Back</button>
         </div>
-
-        <!-- Step 6: hidden (contact merged into step 5) -->
-        <div class="calc-panel" id="cp6" style="display:none!important;"></div>
       </div>
 
-      <!-- RIGHT: Live price panel -->
-      <div class="calc-right reveal reveal-d2">
-        <div class="price-panel-title">Your Estimate</div>
-        <div class="price-lines">
-          <div class="price-line">
-            <span class="pl-label">Service</span>
-            <span class="pl-value" id="pp-service">—</span>
+      <!-- RIGHT: Price panel -->
+      <div class="rv d2">
+        <div class="pp">
+          <div class="pp-ttl">Your Estimate</div>
+          <div class="pp-lines">
+            <div class="pp-line"><span class="pp-lbl">Service</span><span class="pp-val" id="pps">—</span></div>
+            <div class="pp-line"><span class="pp-lbl">Size</span><span class="pp-val" id="ppz">—</span></div>
+            <div class="pp-line"><span class="pp-lbl">Condition</span><span class="pp-val" id="ppc">—</span></div>
+            <div class="pp-line"><span class="pp-lbl">Add-ons</span><span class="pp-val" id="ppa">—</span></div>
+            <div class="pp-line"><span class="pp-lbl">Frequency</span><span class="pp-val" id="ppf">One Time</span></div>
           </div>
-          <div class="price-line">
-            <span class="pl-label">Home Size</span>
-            <span class="pl-value" id="pp-size">—</span>
+          <div class="pp-total-row">
+            <div class="pp-total-lbl">Estimated Total</div>
+            <div class="pp-total-val" id="ppt">$—</div>
           </div>
-          <div class="price-line">
-            <span class="pl-label">Add-ons</span>
-            <span class="pl-value" id="pp-extras">—</span>
+          <div class="pp-split">
+            <div class="pp-si">
+              <span class="pp-sv" id="ppd">$50</span>
+              <span class="pp-sl">Today's Reservation</span>
+            </div>
+            <div class="pp-div"></div>
+            <div class="pp-si">
+              <span class="pp-sv" id="ppb">$—</span>
+              <span class="pp-sl">Remaining Balance On Service Day</span>
+            </div>
           </div>
-          <div class="price-line">
-            <span class="pl-label">Frequency</span>
-            <span class="pl-value" id="pp-freq">One Time</span>
-          </div>
+          <button class="btn-n" onclick="go('#calculator')">Get My Price Now →</button>
+          <div class="pp-hint">⎯ Confirmed via WhatsApp · (669) 317-6911</div>
         </div>
-        <div class="price-total-row">
-          <div class="pt-label">Estimated Price</div>
-          <div class="pt-value" id="pp-total">$—</div>
-        </div>
-        <div class="deposit-split" style="margin-top:20px;">
-          <div class="ds-item">
-            <span class="ds-val" id="pp-deposit">$50</span>
-            <span class="ds-lbl">Reservation Deposit</span>
-          </div>
-          <div class="ds-div"></div>
-          <div class="ds-item">
-            <span class="ds-val" id="pp-balance">$—</span>
-            <span class="ds-lbl">Balance · Service Day</span>
-          </div>
-        </div>
-        <div style="padding:10px 14px;border:1px solid var(--border-dim);background:var(--surface2);font-size:10.5px;color:var(--muted);margin-bottom:14px;line-height:1.6;">
-          🔒 &nbsp;After confirming your appointment via WhatsApp, OHANA will send you a secure $50 deposit payment link.
-        </div>
-        <button class="btn-next" onclick="goStep(0,1);document.getElementById('inp-fname').focus()">Start Booking →</button>
-        <p style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:12px;letter-spacing:.04em;">Takes 60 seconds · No commitment</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ 4. COVERAGE MAP ═══════════════ -->
-<section id="coverage" style="padding:0;background:var(--surface);">
-
-  <!-- Top label -->
-  <div class="wrap" style="padding-top:80px;padding-bottom:32px;">
-    <div class="reveal">
-      <div class="t-label">Coverage</div>
-      <h2 class="t-headline" style="margin-top:14px;">Proudly Serving<br><em>The Bay Area</em></h2>
-    </div>
+<!-- ═══ 4. COVERAGE MAP — FERRARI EDITION ═══ -->
+<section id="coverage" style="padding:0;background:#050505;">
+  <div class="cov-intro rv">
+    <div class="label">Coverage</div>
+    <h2 class="headline" style="margin-top:13px;">Proudly Cleaning<br><em>The Bay Area</em></h2>
   </div>
 
-  <!-- Main 3-column layout -->
-  <div class="cov-layout reveal">
+  <div class="cov-wrap">
 
-    <!-- LEFT PANEL -->
-    <div class="cov-left">
-      <div class="cov-tagline">WE SERVICE THE PLACES YOU CALL HOME</div>
-      <div class="cov-heading">Proudly Serving<br><span style="color:var(--gold);">the Bay Area</span></div>
-      <p class="cov-sub">From San Francisco to Morgan Hill. 26 cities and growing — your home, our priority.</p>
+    <!-- Side panel -->
+    <div class="cov-side">
+      <div class="cov-side-tag">Service Area</div>
 
-      <!-- Stat -->
-      <div class="cov-stat-box">
-        <div class="cov-stat-row">
-          <span class="cov-stat-icon">✦</span>
+      <div class="cov-kpis">
+        <div class="cov-kpi">
+          <div class="cov-kpi-ico" style="font-size:16px;color:#c9a84c;">◉</div>
           <div>
-            <div class="cov-stat-num">26+</div>
-            <div class="cov-stat-lbl">Cities Served</div>
+            <div class="cov-kpi-val">26+</div>
+            <div class="cov-kpi-lbl">Cities Served</div>
           </div>
         </div>
-        <div class="cov-stat-row">
-          <span class="cov-stat-icon">★</span>
+        <div class="cov-kpi">
+          <div class="cov-kpi-ico" style="font-size:16px;color:#c9a84c;">★</div>
           <div>
-            <div class="cov-stat-num">4.9</div>
-            <div class="cov-stat-lbl">Homeaglow Rating</div>
+            <div class="cov-kpi-val">350+</div>
+            <div class="cov-kpi-lbl">5-Star Reviews</div>
+          </div>
+        </div>
+        <div class="cov-kpi">
+          <div class="cov-kpi-ico" style="font-size:16px;color:#c9a84c;">✦</div>
+          <div>
+            <div class="cov-kpi-val">100%</div>
+            <div class="cov-kpi-lbl">Satisfaction</div>
           </div>
         </div>
       </div>
 
-      <!-- Cities We Cover -->
-      <div style="margin-top:16px;">
-        <div class="cov-tagline" style="margin-bottom:10px;">Cities We Cover</div>
-        <div style="display:flex;flex-direction:column;gap:0;">
-          <div class="cov-leg-item" onclick="flyTo(37.3382,-121.8863)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:var(--gold);">●</span> <span style="color:var(--text);">San Jose</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.4419,-122.1430)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:var(--gold);">●</span> <span style="color:var(--text);">Palo Alto</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.3861,-122.0839)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:var(--gold);">●</span> <span style="color:var(--text);">Mountain View</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.3541,-121.9552)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:var(--gold);">●</span> <span style="color:var(--text);">Santa Clara</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.3230,-122.0322)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:var(--gold);">●</span> <span style="color:var(--text);">Cupertino</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.3688,-122.0363)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Sunnyvale</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.4852,-122.2364)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Redwood City</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.5485,-121.9886)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Fremont</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.4530,-122.1817)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Menlo Park</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.3852,-122.1141)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Los Altos</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.3796,-122.1469)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Los Altos Hills</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.2872,-121.9500)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Campbell</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.2358,-121.9624)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Los Gatos</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.2638,-122.0230)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Saratoga</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.4323,-121.8996)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.7);">●</span> <span style="color:var(--text);">Milpitas</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.8044,-122.2711)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.45);">●</span> <span style="color:var(--muted);">Oakland</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.7749,-122.4194)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.45);">●</span> <span style="color:var(--muted);">San Francisco</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.5934,-122.0438)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.45);">●</span> <span style="color:var(--muted);">Union City</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.5297,-122.0402)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.45);">●</span> <span style="color:var(--muted);">Newark</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.5779,-122.3481)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.45);">●</span> <span style="color:var(--muted);">Burlingame</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.0058,-121.5683)" style="cursor:pointer;padding:5px 0;border-bottom:1px solid var(--border-dim);"><span style="color:rgba(201,168,76,.45);">●</span> <span style="color:var(--muted);">Gilroy</span></div>
-          <div class="cov-leg-item" onclick="flyTo(37.5630,-122.3255)" style="cursor:pointer;padding:5px 0;"><span style="color:rgba(201,168,76,.45);">●</span> <span style="color:var(--muted);">San Mateo</span></div>
+      <div class="cov-legend">
+        <div class="cov-legend-row">
+          <div class="cov-legend-dot"></div>
+          <div class="cov-legend-name">OHANA Service Area & Reviews</div>
         </div>
+        <div class="cov-legend-desc">Tap any dot on the map to read a real client review.</div>
       </div>
     </div>
 
-    <!-- CENTER MAP -->
-    <div class="cov-map-wrap">
-      <div id="ohana-map" style="width:100%;height:100%;min-height:560px;"></div>
-    </div>
+    <!-- Map -->
+    <div class="cov-map">
+      <div id="omap"></div>
 
-    <!-- RIGHT PANEL — Reviews -->
-    <div class="cov-right">
-      <div class="cov-reviews-label">REAL CLIENTS. REAL RESULTS.</div>
-      <div class="cov-reviews">
-
-        <div class="cov-review">
-          <div class="cov-review-top">
-            <div style="width:48px;height:48px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#c9a84c;">M</div>
-            <div>
-              <div class="cov-stars">★★★★★</div>
-              <div class="cov-review-text">"Did an amazing job, would highly recommend!"</div>
-            </div>
-          </div>
-          <div class="cov-review-meta">
-            <span class="cov-badge">DEEP CLEANING</span>
-            <span class="cov-review-city">· Margaret C. — Palo Alto</span>
-          </div>
-        </div>
-
-        <div class="cov-review">
-          <div class="cov-review-top">
-            <div style="width:48px;height:48px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#c9a84c;">R</div>
-            <div>
-              <div class="cov-stars">★★★★★</div>
-              <div class="cov-review-text">"Gave the place a well needed deep cleaning."</div>
-            </div>
-          </div>
-          <div class="cov-review-meta">
-            <span class="cov-badge">DEEP CLEANING</span>
-            <span class="cov-review-city">· Roshan M. — San Francisco</span>
-          </div>
-        </div>
-
-        <div class="cov-review">
-          <div class="cov-review-top">
-            <div style="width:48px;height:48px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#c9a84c;">Z</div>
-            <div>
-              <div class="cov-stars">★★★★★</div>
-              <div class="cov-review-text">"Thank you! Loved both cleaners who cleaned my house today."</div>
-            </div>
-          </div>
-          <div class="cov-review-meta">
-            <span class="cov-badge">STANDARD CLEANING</span>
-            <span class="cov-review-city">· Zina Y. — Fremont</span>
-          </div>
-        </div>
-
-        <div class="cov-review">
-          <div class="cov-review-top">
-            <div style="width:48px;height:48px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#c9a84c;">H</div>
-            <div>
-              <div class="cov-stars">★★★★★</div>
-              <div class="cov-review-text">"Jesus &amp; his wife did an excellent job. Very thorough and professional."</div>
-            </div>
-          </div>
-          <div class="cov-review-meta">
-            <span class="cov-badge">STANDARD CLEANING</span>
-            <span class="cov-review-city">· Howard W. — Mountain View</span>
-          </div>
-        </div>
-
-        <div class="cov-review">
-          <div class="cov-review-top">
-            <div style="width:48px;height:48px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#c9a84c;">J</div>
-            <div>
-              <div class="cov-stars">★★★★★</div>
-              <div class="cov-review-text">"Great job. Thank you — will definitely book again."</div>
-            </div>
-          </div>
-          <div class="cov-review-meta">
-            <span class="cov-badge">STANDARD CLEANING</span>
-            <span class="cov-review-city">· Jamie S. — Campbell</span>
-          </div>
-        </div>
-
-        <div class="cov-review">
-          <div class="cov-review-top">
-            <div style="width:48px;height:48px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#c9a84c;">S</div>
-            <div>
-              <div class="cov-stars">★★★★★</div>
-              <div class="cov-review-text">"Very nice. Left the apartment spotless and smelling fresh."</div>
-            </div>
-          </div>
-          <div class="cov-review-meta">
-            <span class="cov-badge">STANDARD CLEANING</span>
-            <span class="cov-review-city">· Sourabh T. — Sunnyvale</span>
-          </div>
-        </div>
-
-        <div class="cov-review">
-          <div class="cov-review-top">
-            <div style="width:48px;height:48px;flex-shrink:0;border-radius:50%;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#c9a84c;">V</div>
-            <div>
-              <div class="cov-stars">★★★★★</div>
-              <div class="cov-review-text">"8 months as a recurring client. Always consistent."</div>
-            </div>
-          </div>
-          <div class="cov-review-meta">
-            <span class="cov-badge">REGULAR CLEANING</span>
-            <span class="cov-review-city">· David L. — Menlo Park</span>
-          </div>
-        </div>
-
-      </div>
-      <div class="cov-trusted">★ 4.9 Average · Verified Homeaglow Reviews · Real Clients Only</div>
-    </div>
-  </div>
-
-  <!-- Bottom trust bar -->
-  <div class="cov-trust-bar">
-    <div class="cov-trust-item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-      <div>
-        <div class="cov-trust-title">LICENSED &amp; INSURED</div>
-        <div class="cov-trust-sub">Your home is in safe hands</div>
-      </div>
-    </div>
-    <div class="cov-trust-item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-        <line x1="16" y1="2" x2="16" y2="6"/>
-        <line x1="8" y1="2" x2="8" y2="6"/>
-        <line x1="3" y1="10" x2="21" y2="10"/>
-      </svg>
-      <div>
-        <div class="cov-trust-title">SAME-DAY AVAILABILITY</div>
-        <div class="cov-trust-sub">When you need us</div>
-      </div>
-    </div>
-    <div class="cov-trust-item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-      </svg>
-      <div>
-        <div class="cov-trust-title">4.9 RATED</div>
-        <div class="cov-trust-sub">Verified Homeaglow Reviews</div>
-      </div>
-    </div>
-    <div class="cov-trust-item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
-      </svg>
-      <div>
-        <div class="cov-trust-title">LOCAL &amp; TRUSTED</div>
-        <div class="cov-trust-sub">We live here too</div>
+      <!-- Top-right service tag -->
+      <div class="cov-map-tag">
+        <div class="cov-map-tag-dot"></div>
+        SERVICE COVERAGE MAP
       </div>
     </div>
   </div>
 
+  <!-- Stats bar -->
+  <div class="cov-stats-bar">
+    <div class="csb-item">
+      <span class="csb-val">350+</span>
+      <span class="csb-lbl">Clients Served</span>
+    </div>
+    <div class="csb-item">
+      <span class="csb-val">4.9 ★</span>
+      <span class="csb-lbl">Rating</span>
+    </div>
+    <div class="csb-item">
+      <span class="csb-val">26+</span>
+      <span class="csb-lbl">Serving Silicon Valley & Bay Area</span>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <div class="tb-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div><div class="tb-ttl">Insured & Background Checked</div><div class="tb-sub">Your home is protected</div></div>
+    </div>
+    <div class="tb-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      <div><div class="tb-ttl">Eco-Friendly Products</div><div class="tb-sub">Safe for family & pets</div></div>
+    </div>
+    <div class="tb-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div><div class="tb-ttl">Easy Online Booking</div><div class="tb-sub">Price in 60 seconds</div></div>
+    </div>
+  </div>
 </section>
-
-<!-- ═══════════════ 5. FAQS + TRUST ═══════════════ -->
+<!-- ═══ 5. FAQs + TRUST ═══ -->
 <section id="faqs">
   <div class="wrap">
-    <div class="reveal" style="margin-bottom:52px;">
-      <div class="t-label">Questions?</div>
-      <h2 class="t-headline" style="margin-top:14px;">We've Got <em>Answers.</em></h2>
+    <div class="rv" style="margin-bottom:48px;">
+      <div class="label">Questions?</div>
+      <h2 class="headline" style="margin-top:13px;">We've Got <em>Answers.</em></h2>
     </div>
-
-    <div class="faqs-layout">
+    <div class="faqs-grid">
       <!-- FAQs -->
-      <div class="reveal">
+      <div class="rv">
         <div class="faq-list">
-
           <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              How much is the deposit?
-              <div class="faq-icon">+</div>
-            </div>
-            <div class="faq-a"><div class="faq-a-inner">Our standard deposit is $50. It helps us secure your booking and is applied to your total after the service.</div></div>
+            <div class="faq-q" onclick="togFaq(this)">How much is the deposit?<div class="faq-ico">+</div></div>
+            <div class="faq-a"><div class="faq-ai">$50 secures your booking slot — applied toward your total. The remaining balance is paid on the day of service. No surprises, no hidden fees.</div></div>
           </div>
-
           <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              What's your cancellation policy?
-              <div class="faq-icon">+</div>
-            </div>
-            <div class="faq-a"><div class="faq-a-inner">You can cancel or reschedule up to 48 hours before your appointment for a full refund. Same-day cancellations are non-refundable.</div></div>
+            <div class="faq-q" onclick="togFaq(this)">Do you bring your own supplies?<div class="faq-ico">+</div></div>
+            <div class="faq-a"><div class="faq-ai">Yes. We bring all professional-grade products and equipment. If you have preferences or sensitivities, let us know before the appointment.</div></div>
           </div>
-
           <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              Do you bring your own supplies?
-              <div class="faq-icon">+</div>
-            </div>
-            <div class="faq-a"><div class="faq-a-inner">Yes. We bring all professional products and equipment needed for a top-quality clean. If you prefer specific products for any reason, just let us know.</div></div>
+            <div class="faq-q" onclick="togFaq(this)">What's your cancellation policy?<div class="faq-ico">+</div></div>
+            <div class="faq-a"><div class="faq-ai">Cancel or reschedule up to 48 hours before for a full refund. Same-day cancellations are non-refundable.</div></div>
           </div>
-
           <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              Do you clean inside appliances?
-              <div class="faq-icon">+</div>
-            </div>
-            <div class="faq-a"><div class="faq-a-inner">Yes, we offer add-ons for inside the fridge, inside the oven, and more. You can select these in the booking calculator above.</div></div>
+            <div class="faq-q" onclick="togFaq(this)">Is same-day service really available?<div class="faq-ico">+</div></div>
+            <div class="faq-a"><div class="faq-ai">Yes — in most areas. Book in the morning and we can often clean the same afternoon. Availability confirmed instantly via WhatsApp at (669) 317-6911.</div></div>
           </div>
-
           <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              Do you service my area?
-              <div class="faq-icon">+</div>
-            </div>
-            <div class="faq-a"><div class="faq-a-inner">We serve 26+ cities across the Bay Area — San Jose, Palo Alto, San Francisco, Oakland, Fremont, Santa Clara, Cupertino, Sunnyvale, and more. Check the map above or enter your ZIP in the calculator to confirm your area.</div></div>
+            <div class="faq-q" onclick="togFaq(this)">Do you do commercial and post-construction?<div class="faq-ico">+</div></div>
+            <div class="faq-a"><div class="faq-ai">Absolutely. We clean offices, retail spaces, and handle post-construction clean-ups. These are quoted custom — contact us via phone or WhatsApp and we'll build a plan for your space.</div></div>
           </div>
-
+          <div class="faq-item">
+            <div class="faq-q" onclick="togFaq(this)">What if I'm not happy with the result?<div class="faq-ico">+</div></div>
+            <div class="faq-a"><div class="faq-ai">We return within 24 hours and make it right at no extra cost. Your satisfaction is guaranteed — no questions asked.</div></div>
+          </div>
         </div>
       </div>
 
-      <!-- Trust items -->
-      <div class="reveal reveal-d2">
-        <div class="t-label" style="margin-bottom:28px;">Why OHANA</div>
-        <div class="trust-items">
-          <div class="trust-item-row">
-            <div class="ti-icon">✦</div>
-            <div>
-              <div class="ti-title">Trusted By Bay Area Homeowners</div>
-              <div class="ti-desc">Serving Silicon Valley families who value their time and their home.</div>
-            </div>
+      <!-- Trust -->
+      <div class="rv d2">
+        <div class="label" style="margin-bottom:26px;">Why OHANA</div>
+        <div class="trust-stack">
+          <div class="tr"><div class="tr-ico">✦</div>
+            <div><div class="tr-ttl">Trusted Bay Area Service</div><div class="tr-d">350+ clients across Silicon Valley who trust us with their homes.</div></div>
           </div>
-          <div class="trust-item-row">
-            <div class="ti-icon">⚡</div>
-            <div>
-              <div class="ti-title">Same-Day Available</div>
-              <div class="ti-desc">Book in the morning, clean by afternoon. Confirm instantly via WhatsApp.</div>
-            </div>
+          <div class="tr"><div class="tr-ico">⚡</div>
+            <div><div class="tr-ttl">Same-Day Available</div><div class="tr-d">Book in the morning, clean by afternoon. Confirm instantly via WhatsApp.</div></div>
           </div>
-          <div class="trust-item-row">
-            <div class="ti-icon">🔒</div>
-            <div>
-              <div class="ti-title">Deposit Protected Booking</div>
-              <div class="ti-desc">$50 secures your slot. Balance paid on service day, no surprise fees.</div>
-            </div>
+          <div class="tr"><div class="tr-ico">🔒</div>
+            <div><div class="tr-ttl">$50 Deposit — Pay Rest On Service Day</div><div class="tr-d">Zero financial risk. Balance only after the job is done.</div></div>
           </div>
-          <div class="trust-item-row">
-            <div class="ti-icon">★</div>
-            <div>
-              <div class="ti-title">Real Client Transformations</div>
-              <div class="ti-desc">Every before &amp; after shown is from an actual OHANA job.</div>
-            </div>
+          <div class="tr"><div class="tr-ico">🧹</div>
+            <div><div class="tr-ttl">Professional Equipment &amp; Products</div><div class="tr-d">We bring everything. Hospital-grade supplies for every job.</div></div>
           </div>
-          <div class="trust-item-row">
-            <div class="ti-icon">↺</div>
-            <div>
-              <div class="ti-title">Satisfaction Guaranteed</div>
-              <div class="ti-desc">Not happy? We return within 24 hours and make it right — at no cost.</div>
-            </div>
+          <div class="tr"><div class="tr-ico">↺</div>
+            <div><div class="tr-ttl">Satisfaction Guaranteed</div><div class="tr-d">Not happy? We return within 24 hours — no charge.</div></div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Final CTA -->
-    <div class="final-cta reveal" style="margin-top:80px;">
-      <div class="final-cta-label">Ready to Book?</div>
-      <h2 class="final-cta-title">Your home deserves<br><em>the best.</em></h2>
-      <p class="final-cta-sub">Get your instant price in 60 seconds. No commitment required.</p>
-      <div class="final-cta-btns">
-        <button class="btn-primary" onclick="scrollTo('#calculator')">Get My Price Now</button>
-        <button class="btn-ghost" onclick="window.open('https://wa.me/16693176911','_blank')">
-          <span>↗</span> WhatsApp Us
+    <div class="fcta rv" style="margin-top:76px;">
+      <div class="fcta-lbl">Ready to Book?</div>
+      <h2 class="fcta-h">Your home deserves<br><em>the best.</em></h2>
+      <p class="fcta-s">Get your instant price in 60 seconds. No commitment required.</p>
+      <div class="fcta-btns">
+        <button class="btn-p" onclick="go('#calculator')">Get My Price Now</button>
+        <button class="btn-g" onclick="wa('Hi OHANA! I\'d like to get a quote.')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Us
         </button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
+  <div class="fi2">
     <div>
-      <img src="1000344482.jpg" alt="OHANA Clean Solutions LLC" loading="lazy" decoding="async" style="height:52px;width:auto;object-fit:contain;display:block;">
+      <img src="1000344482.jpg" alt="OHANA Clean Solutions LLC" style="height:48px;width:auto;object-fit:contain;display:block;">
     </div>
-    <div class="footer-links-row">
-      <a href="#before-after">Before &amp; After</a>
+    <div class="flinks">
+      <a href="#transformations">Before &amp; After</a>
       <a href="#calculator">Get a Quote</a>
       <a href="#coverage">Coverage</a>
       <a href="#faqs">FAQs</a>
       <a href="tel:+16693176911">(669) 317-6911</a>
       <a href="mailto:ohannacleann@gmail.com">ohannacleann@gmail.com</a>
     </div>
-    <div class="footer-social">
-      <a class="soc" href="#">in</a>
-      <a class="soc" href="#">f</a>
-      <a class="soc" href="#">tt</a>
+    <div class="fsoc">
+      <a class="fsb" href="#">in</a>
+      <a class="fsb" href="#">ig</a>
+      <a class="fsb" href="#">fb</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 OHANA Clean Solutions LLC — Silicon Valley, CA</div>
-    <div class="footer-legal">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </div>
+  <div class="fb">
+    <div class="fc">© 2026 OHANA Clean Solutions LLC — Silicon Valley, CA</div>
+    <div class="fleg"><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════════
-     SCRIPTS
-═══════════════════════════════════════════════ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-/* ── HELPERS ── */
-function scrollTo(sel){document.querySelector(sel).scrollIntoView({behavior:'smooth'});}
+/* ── UTILS ── */
+function go(sel){const el=document.querySelector(sel);if(el)el.scrollIntoView({behavior:'smooth'});}
+function wa(msg){window.open('https://wa.me/16693176911?text='+encodeURIComponent(msg),'_blank');}
 
-/* ── SCROLL REVEAL ── */
-const revObs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+/* ── REVEAL ── */
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on');}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-/* ── CAROUSEL ── */
-const carScenes = [
-  { before:'bath-before.jpg.jpeg',   after:'bath-after.jpg.jpeg',   label:'Bathtub Restoration',    sub:'Deep Clean · Silicon Valley' },
-  { before:'stove-before.jpg.jpeg',  after:'stove-after.jpg.jpeg',  label:'Stove Deep Clean',        sub:'Add-on Service · Silicon Valley' },
-  { before:'window-before.jpg.jpeg', after:'window-after.jpg.jpeg', label:'Window Detail',           sub:'Move-Out Clean · Bay Area' },
-  { before:'room-before.jpg.jpeg',   after:'room-after.jpg.jpeg',   label:'Bedroom Transformation',  sub:'Regular Clean · Bay Area' },
+/* ── BEFORE & AFTER ── */
+// Scenes reference your real OHANA files — names are abstracted via JS vars
+// Replace the src values here with your actual file paths when deploying
+const scenes=[
+  {b:'1000344500.jpg', a:'1000344498.jpg', lbl:'Stove Deep Clean',        sub:'Add-on Service · Silicon Valley'},
+  {b:'1000344490.jpg', a:'1000344488.jpg', lbl:'Bathroom Transformation', sub:'Move-Out Clean · Silicon Valley'},
+  {b:'1000344494.jpg', a:'1000344496.jpg', lbl:'Window Detail',           sub:'Move-Out Clean · Bay Area'},
+  {b:'1000344509.jpg', a:'1000344506.jpg', lbl:'Bedroom Refresh',         sub:'Regular Clean · Bay Area'},
+  {b:'1000342922.jpg', a:'1000342924.jpg', lbl:'Kitchen Deep Clean',      sub:'Deep Clean · San Jose'},
+  {b:'1000342926.jpg', a:'1000342928.jpg', lbl:'Living Area Detail',      sub:'Regular Clean · Bay Area'},
 ];
 
-let carIdx = 0;
-let carShowingAfter = false;
+// Seed thumbnail after-images (shown in strip)
+scenes.forEach((s,i)=>{const el=document.getElementById('bth'+i);if(el)el.src=s.a;});
 
-function carRender(){
-  const s = carScenes[carIdx];
-  const img = document.getElementById('carImg');
-  const lbl = document.getElementById('carToggleLabel');
-  const capLabel = document.getElementById('carLabel');
-  const capSub = document.getElementById('carSub');
-  img.style.opacity = '0';
-  setTimeout(()=>{
-    img.src = carShowingAfter ? s.after : s.before;
-    img.style.opacity = '1';
-  }, 250);
-  lbl.textContent = carShowingAfter ? 'AFTER' : 'BEFORE';
-  capLabel.textContent = s.label;
-  capSub.textContent = s.sub;
+let idx=0,showA=false;
+function baRender(){
+  const s=scenes[idx];
+  const img=document.getElementById('baImg');
+  const badge=document.getElementById('baBadge');
+  img.style.opacity='0';
+  setTimeout(()=>{img.src=showA?s.a:s.b;img.style.opacity='1';},240);
+  badge.textContent=showA?'AFTER':'BEFORE';
+  badge.className='ba-badge'+(showA?' after':'');
+  document.getElementById('baLbl').textContent=s.lbl;
+  document.getElementById('baSub').textContent=s.sub;
 }
-
-function toggleBeforeAfter(){
-  carShowingAfter = !carShowingAfter;
-  carRender();
+function toggleBA(){showA=!showA;baRender();}
+function baSelect(i,el){
+  idx=i;showA=false;
+  document.querySelectorAll('.ba-th').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');baRender();
 }
-
-function carSelect(i, el){
-  carIdx = i;
-  carShowingAfter = false;
-  document.querySelectorAll('.car-thumb').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  carRender();
+function baNavi(d){
+  idx=(idx+d+scenes.length)%scenes.length;showA=false;
+  document.querySelectorAll('.ba-th').forEach((t,i)=>t.classList.toggle('on',i===idx));
+  baRender();
 }
-
-function carNav(dir){
-  carIdx = (carIdx + dir + carScenes.length) % carScenes.length;
-  carShowingAfter = false;
-  document.querySelectorAll('.car-thumb').forEach((t,i)=>t.classList.toggle('active', i===carIdx));
-  carRender();
-}
-
-// Init carousel
-carRender();
+baRender();
 
 /* ── CALCULATOR ── */
-const BASE = {regular:140,deep:320,moveout:280,airbnb:180};
-const SVC_LABELS = {regular:'Regular Cleaning',deep:'Deep Cleaning',moveout:'Move In / Out',airbnb:'Airbnb Turnover'};
-const FREQ_DISCOUNT = {once:0,weekly:-.15,biweekly:-.10,monthly:-.05};
-let state = {svc:'',size:0,sizeLabel:'',extras:0,freq:'once'};
+const BASE={regular:149,deep:329,moveout:299,airbnb:189,commercial:0,postconstruction:0};
+const SLBLS={regular:'Regular Cleaning',deep:'Deep Cleaning',moveout:'Move In / Out',
+  airbnb:'Airbnb Turnover',commercial:'Commercial / Office',postconstruction:'Post-Construction'};
+const FDISC={once:0,weekly:-.15,biweekly:-.10,monthly:-.05};
+const FLBLS={once:'One Time',weekly:'Weekly (−15%)',biweekly:'Bi-Weekly (−10%)',monthly:'Monthly (−5%)'};
+const CLBLS={clean:'Well-Kept',average:'Average',heavy:'Needs Attention'};
+const COMS=['commercial','postconstruction'];
+let S={svc:'',sz:0,szLbl:'',cond:1.0,condLbl:'',extras:0,freq:'once',contact:'WhatsApp'};
 
-function goStep(from,to){
-  // Validate step 1
-  if(from===1 && to===2){
-    const zip = document.getElementById('inp-zip').value.trim();
-    const name = document.getElementById('inp-fname').value.trim();
-    if(!name || !zip){alert('Please enter your name and ZIP code.');return;}
-    const covered = zip.startsWith('94')||zip.startsWith('95');
-    if(!covered){alert('We\'re not yet in your area — expanding soon!');return;}
-    document.getElementById('coverage-ok').style.display='block';
+function gs(from,to){
+  if(from===1&&to===2){
+    const z=document.getElementById('zp').value.trim();
+    const n=document.getElementById('fn').value.trim();
+    if(!n||!z){alert('Please enter your name and ZIP code.');return;}
+    const ok=z.startsWith('94')||z.startsWith('95');
+    if(!ok){alert('We\'re expanding! Your area may not be covered yet. Call us at (669) 317-6911 to confirm.');return;}
+    document.getElementById('cov-ok').style.display='block';
   }
-  if(from===2 && to===3){
-    if(!document.getElementById('inp-service').value){alert('Please select a service.');return;}
-    state.svc = document.getElementById('inp-service').value;
-    document.getElementById('pp-service').textContent = SVC_LABELS[state.svc]||'—';
-    updatePrice();
+  if(from===2&&to===3){
+    const svc=document.getElementById('sv').value;
+    if(!svc){alert('Please select a service.');return;}
+    S.svc=svc;
+    document.getElementById('pps').textContent=SLBLS[svc];
+    const isCom=COMS.includes(svc);
+    document.getElementById('sz-res').style.display=isCom?'none':'block';
+    document.getElementById('sz-com').style.display=isCom?'block':'none';
+    document.getElementById('custom-msg').style.display=isCom?'block':'none';
+    upd();
   }
-  document.querySelectorAll('.calc-panel').forEach((p,i)=>p.classList.toggle('active',i+1===to));
-  document.querySelectorAll('.calc-step-tab').forEach((t,i)=>{
-    t.classList.remove('active','done');
-    if(i+1===to)t.classList.add('active');
+  document.querySelectorAll('.cp').forEach((p,i)=>p.classList.toggle('on',i+1===to));
+  document.querySelectorAll('.stab').forEach((t,i)=>{
+    t.classList.remove('on','done');
+    if(i+1===to)t.classList.add('on');
     else if(i+1<to)t.classList.add('done');
   });
 }
 
-function selectSize(el,key,label,extra){
-  document.querySelectorAll('.size-card').forEach(c=>c.classList.remove('selected'));
-  el.classList.add('selected');
-  state.sizeLabel=label;state.size=extra;
-  document.getElementById('pp-size').textContent=label;
-  updatePrice();
+function selSize(el,key,lbl,add){
+  document.querySelectorAll('.sc').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');S.szLbl=lbl;S.sz=add;
+  document.getElementById('ppz').textContent=lbl;upd();
 }
 
-function toggleExtra(el,amt){
+function selCond(el,key,mul){
+  document.querySelectorAll('.cc').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');S.cond=mul;S.condLbl=CLBLS[key];
+  document.getElementById('ppc').textContent=CLBLS[key]+(mul>1?' (×'+mul+')':'');upd();
+}
+
+function togEx(el,amt){
   el.classList.toggle('on');
-  el.querySelector('.extra-box').textContent = el.classList.contains('on') ? '✓' : '';
-  state.extras = [...document.querySelectorAll('.extra.on')]
-    .reduce((s,e)=>s+parseInt(e.getAttribute('data-amt')||0),0);
-  // store amt
-  el.setAttribute('data-amt', el.classList.contains('on') ? amt : 0);
-  state.extras = [...document.querySelectorAll('.extra')]
-    .reduce((s,e)=>s+parseInt(e.getAttribute('data-amt')||0),0);
-  updatePrice();
+  el.querySelector('.exb').textContent=el.classList.contains('on')?'✓':'';
+  el.setAttribute('data-amt',el.classList.contains('on')?amt:0);
+  S.extras=Array.from(document.querySelectorAll('.ex')).reduce((s,e)=>s+parseInt(e.getAttribute('data-amt')||0),0);
+  upd();
 }
 
-function updatePrice(){
-  const svc = document.getElementById('inp-service').value;
-  const freq = document.getElementById('inp-freq')?.value||'once';
-  state.freq=freq;
-  if(!svc){return;}
-  state.svc=svc;
-  let base = (BASE[svc]||0) + state.size + state.extras;
-  const disc = FREQ_DISCOUNT[freq]||0;
-  base = Math.round(base*(1+disc));
-  document.getElementById('pp-total').textContent = base ? '$'+base : '$—';
-  document.getElementById('pp-freq').textContent =
-    {once:'One Time',weekly:'Weekly (−15%)',biweekly:'Bi-Weekly (−10%)',monthly:'Monthly (−5%)'}[freq]||'One Time';
-  const dep = 50;
-  const bal = base ? base - dep : 0;
-  document.getElementById('pp-deposit').textContent = '$'+dep;
-  document.getElementById('pp-balance').textContent = bal ? '$'+bal : '$—';
-  document.getElementById('pp-extras').textContent = state.extras ? '$'+state.extras+' added' : 'None';
+function upd(){
+  const svc=document.getElementById('sv').value||S.svc;
+  const freq=document.getElementById('fr')?.value||'once';
+  S.freq=freq;
+  if(!svc)return;
+  const isCom=COMS.includes(svc)&&!S.sz;
+  if(isCom){document.getElementById('ppt').textContent='Custom';
+    document.getElementById('ppb').textContent='TBD';return;}
+  let base=(BASE[svc]||0)+S.sz;
+  base=Math.round(base*S.cond);
+  base+=S.extras;
+  const disc=FDISC[freq]||0;
+  base=Math.round(base*(1+disc));
+  document.getElementById('ppt').textContent=base?'$'+base:'$—';
+  document.getElementById('ppf').textContent=FLBLS[freq]||'One Time';
+  document.getElementById('ppb').textContent=base?'$'+(base-50):'$—';
+  document.getElementById('ppa').textContent=S.extras?'$'+S.extras+' added':'None';
 }
 
-let selectedContact = '';
-function selectContact(el,method){
-  // Sync all contact-method buttons across all steps
-  document.querySelectorAll('.contact-method').forEach(c=>c.classList.remove('on'));
-  // Highlight matching method in all groups
-  document.querySelectorAll('.contact-method').forEach(c=>{
-    if(c.textContent.trim().includes(method)) c.classList.add('on');
-  });
-  selectedContact=method;
+function selCM(el,m){
+  document.querySelectorAll('.cm').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');S.contact=m;
 }
 
-function finalBooking(){
-  if(!selectedContact){alert('Please select how you\'d like us to contact you.');return;}
-
-  // Gather all form data
-  const fname    = (document.getElementById('inp-fname')?.value||'').trim();
-  const lname    = (document.getElementById('inp-lname')?.value||'').trim();
-  const phone    = (document.getElementById('inp-phone')?.value||'').trim();
-  const zip      = (document.getElementById('inp-zip')?.value||'').trim();
-  const dateVal  = document.getElementById('inp-date')?.value||'';
-  const timeVal  = document.getElementById('inp-time')?.value||'';
-  const freqMap  = {once:'One Time',weekly:'Weekly',biweekly:'Bi-Weekly',monthly:'Monthly'};
-  const svcMap   = {regular:'Regular Cleaning',deep:'Deep Cleaning',moveout:'Move In / Out',airbnb:'Airbnb Turnover'};
-
-  const name     = [fname, lname].filter(Boolean).join(' ') || 'New Client';
-  const svcLabel = svcMap[state.svc] || state.svc || 'Not selected';
-  const sizeLabel= state.sizeLabel  || 'Not selected';
-  const freqLabel= freqMap[state.freq]||'One Time';
-
-  // Compute final price from DOM (already calculated)
-  const totalEl  = document.getElementById('pp-total');
-  const totalStr = totalEl ? totalEl.textContent : '$—';
-  const depEl    = document.getElementById('pp-deposit');
-  const depStr   = depEl   ? depEl.textContent   : '$50';
-  const balEl    = document.getElementById('pp-balance');
-  const balStr   = balEl   ? balEl.textContent   : '$—';
-
-  // Format date nicely if provided
-  let dateStr = '';
-  if(dateVal){
-    const d = new Date(dateVal + 'T00:00:00');
-    dateStr = d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
-  }
-
-  // Build the WhatsApp message
-  const lines = [
-    '👋 Hi OHANA! I just completed a quote on your website and would like to book a cleaning.',
-    '',
-    '📋 *BOOKING SUMMARY*',
-    `• Name: ${name}`,
-    phone ? `• Phone: ${phone}` : null,
-    `• ZIP Code: ${zip}`,
-    '',
-    `• Service: ${svcLabel}`,
-    `• Home Size: ${sizeLabel}`,
-    state.extras > 0 ? `• Add-ons: $${state.extras}` : null,
-    `• Frequency: ${freqLabel}`,
-    '',
-    `• 💰 Estimated Total: ${totalStr}`,
-    `• Deposit Today: ${depStr}`,
-    `• Balance on Service Day: ${balStr}`,
-    '',
-    dateStr  ? `• 📅 Preferred Date: ${dateStr}` : null,
-    timeVal  ? `• 🕐 Preferred Time: ${timeVal}` : null,
-    `• Contact Preference: ${selectedContact}`,
-    '',
-    'Please confirm my appointment and send me the $50 deposit payment link. Thank you! 🙏',
-  ].filter(l => l !== null).join('\n');
-
-  const encoded = encodeURIComponent(lines);
-  const waURL   = `https://wa.me/16693176911?text=${encoded}`;
-
-  // Open WhatsApp in new tab
-  window.open(waURL, '_blank');
+function buildMsg(){
+  const total=document.getElementById('ppt').textContent;
+  const fname=document.getElementById('fn').value||'';
+  const lname=document.getElementById('ln').value||'';
+  const phone=document.getElementById('ph').value||'';
+  const zip=document.getElementById('zp').value||'';
+  const date=document.getElementById('dt')?.value||'TBD';
+  const time=document.getElementById('tm')?.value||'TBD';
+  const extras=Array.from(document.querySelectorAll('.ex.on')).map(e=>e.textContent.trim()).join(', ')||'None';
+  const freq={once:'One Time',weekly:'Weekly',biweekly:'Bi-Weekly',monthly:'Monthly'}[S.freq]||'One Time';
+  return `Hi OHANA Clean Solutions! 👋\n\nBooking Request:\n\n📋 Service: ${SLBLS[S.svc]||'TBD'}\n🏠 Size: ${S.szLbl||'TBD'}\n⚠️ Condition: ${S.condLbl||'TBD'}\n📦 Add-ons: ${extras}\n🔁 Frequency: ${freq}\n📅 Date: ${date}\n⏰ Time: ${time}\n📍 ZIP: ${zip}\n💰 Estimated Total: ${total}\n\n👤 Name: ${fname} ${lname}\n📞 Phone: ${phone}\n\nPlease confirm availability. Thank you!`;
+}
+function bookWA(){wa(buildMsg());}
+function finalBook(){
+  if(S.contact==='WhatsApp'){bookWA();}
+  else{alert('Booking received!\n\nWe\'ll confirm via '+S.contact+' shortly.\n\nOr reach us directly: (669) 317-6911');}
 }
 
-/* ── FAQ ACCORDION ── */
-function toggleFaq(btn){
-  const item=btn.parentElement;
-  const wasOpen=item.classList.contains('open');
+/* ── FAQ ── */
+function togFaq(btn){
+  const item=btn.parentElement;const was=item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-  if(!wasOpen)item.classList.add('open');
+  if(!was)item.classList.add('open');
 }
 
-/* ── OHANA MAP — OPTION B: PINS ONLY (Tesla/Uber style) ── */
+/* ── OHANA MAP — V18 FINAL — 92 REVIEWS ── */
 
-const cityTiers = {
-  strong: [
-    { city:"San Jose",         lat:37.3382, lng:-121.8863 },
-    { city:"Palo Alto",        lat:37.4419, lng:-122.1430 },
-    { city:"Mountain View",    lat:37.3861, lng:-122.0839 },
-    { city:"Santa Clara",      lat:37.3541, lng:-121.9552 },
-    { city:"Cupertino",        lat:37.3230, lng:-122.0322 },
-    // Extra strong dots within San Jose for density
-    { city:"San Jose North",   lat:37.3750, lng:-121.9200 },
-    { city:"San Jose South",   lat:37.2950, lng:-121.8600 },
-    { city:"San Jose West",    lat:37.3200, lng:-121.9600 },
-  ],
-  medium: [
-    { city:"Sunnyvale",        lat:37.3688, lng:-122.0363 },
-    { city:"Redwood City",     lat:37.4852, lng:-122.2364 },
-    { city:"Fremont",          lat:37.5485, lng:-121.9886 },
-    { city:"Menlo Park",       lat:37.4530, lng:-122.1817 },
-    { city:"Los Altos",        lat:37.3852, lng:-122.1141 },
-    { city:"Campbell",         lat:37.2872, lng:-121.9500 },
-    { city:"Los Gatos",        lat:37.2358, lng:-121.9624 },
-    { city:"Saratoga",         lat:37.2638, lng:-122.0230 },
-    { city:"Milpitas",         lat:37.4323, lng:-121.8996 },
-    { city:"San Mateo",        lat:37.5630, lng:-122.3255 },
-    { city:"Burlingame",       lat:37.5779, lng:-122.3481 },
-    { city:"Foster City",      lat:37.5585, lng:-122.2711 },
-    { city:"San Carlos",       lat:37.5071, lng:-122.2605 },
-    { city:"Belmont",          lat:37.5202, lng:-122.2758 },
-    { city:"Morgan Hill",      lat:37.1305, lng:-121.6544 },
-    { city:"Morgan Hill NW",   lat:37.1450, lng:-121.6800 },
-    { city:"Morgan Hill NE",   lat:37.1420, lng:-121.6300 },
-    { city:"Morgan Hill SW",   lat:37.1180, lng:-121.6700 },
-    { city:"Morgan Hill SE",   lat:37.1150, lng:-121.6400 },
-    { city:"Morgan Hill N",    lat:37.1600, lng:-121.6550 },
-    { city:"Morgan Hill S",    lat:37.1050, lng:-121.6520 },
-    { city:"Morgan Hill W",    lat:37.1300, lng:-121.6950 },
-    { city:"Monte Sereno",     lat:37.2330, lng:-121.9977 },
-    { city:"Willow Glen",      lat:37.3050, lng:-121.8950 },
-    { city:"Almaden Valley",   lat:37.2550, lng:-121.8750 },
-    { city:"Berryessa",        lat:37.3900, lng:-121.8550 },
-    { city:"Sunnyvale East",   lat:37.3800, lng:-122.0050 },
-    { city:"Palo Alto Hills",  lat:37.4100, lng:-122.1700 },
-    { city:"Fremont North",    lat:37.5700, lng:-121.9700 },
-    { city:"Fremont South",    lat:37.5200, lng:-122.0050 },
-    { city:"San Mateo Hills",  lat:37.5450, lng:-122.3100 },
-  ],
-  soft: [
-    { city:"Oakland",          lat:37.8044, lng:-122.2711 },
-    { city:"San Francisco",    lat:37.7749, lng:-122.4194 },
-    { city:"Union City",       lat:37.5934, lng:-122.0438 },
-    { city:"Newark",           lat:37.5297, lng:-122.0402 },
-    { city:"Hayward",          lat:37.6688, lng:-122.0808 },
-    { city:"San Leandro",      lat:37.7249, lng:-122.1561 },
-    { city:"Alameda",          lat:37.7652, lng:-122.2416 },
-    { city:"Millbrae",         lat:37.5985, lng:-122.3869 },
-    { city:"Daly City",        lat:37.6879, lng:-122.4702 },
-    { city:"South SF",         lat:37.6547, lng:-122.4077 },
-    { city:"East Palo Alto",   lat:37.4688, lng:-122.1411 },
-    { city:"Atherton",         lat:37.4613, lng:-122.1977 },
-    { city:"Woodside",         lat:37.4291, lng:-122.2538 },
-    { city:"Portola Valley",   lat:37.3757, lng:-122.2163 },
-    { city:"SF Mission",       lat:37.7599, lng:-122.4148 },
-    { city:"SF Castro",        lat:37.7609, lng:-122.4350 },
-    { city:"SF SoMa",          lat:37.7786, lng:-122.3892 },
-    { city:"Oakland Hills",    lat:37.8200, lng:-122.2200 },
-    { city:"Castro Valley",    lat:37.6941, lng:-122.0880 },
-    { city:"San Lorenzo",      lat:37.6774, lng:-122.1208 },
-    { city:"Piedmont",         lat:37.8241, lng:-122.2302 },
-  ],
-};
+const ohanaCoverage = [
+  [37.78,-122.41],[37.79,-122.44],[37.8,-122.48],[37.78,-122.51],
+  [37.73,-122.52],[37.65,-122.51],[37.58,-122.48],[37.52,-122.42],
+  [37.45,-122.34],[37.38,-122.24],[37.32,-122.15],[37.24,-122.05],
+  [37.16,-121.98],[37.1,-121.92],[37.06,-121.85],[37.01,-121.82],
+  [36.98,-121.785],[36.985,-121.72],[36.995,-121.68],[37.03,-121.72],
+  [37.08,-121.75],[37.15,-121.775],[37.25,-121.79],[37.35,-121.81],
+  [37.45,-121.83],[37.55,-121.85],[37.65,-121.87],[37.72,-121.9],
+  [37.78,-122.05],[37.83,-122.18],[37.87,-122.28],[37.87,-122.38],
+  [37.78,-122.41]
+];
 
-const clientReviews = {
-  "San Jose":       { client:"Vero C.",      service:"Regular Clean",  review:"Reliable, on time, always leaves everything perfect." },
-  "Palo Alto":      { client:"Margaret C.",  service:"Deep Clean",     review:"Did an amazing job, would highly recommend!" },
-  "Mountain View":  { client:"Howard W.",    service:"Standard Clean", review:"Jesus & his wife did an excellent job. Very thorough and professional." },
-  "Santa Clara":    { client:"Yesenia M.",   service:"Regular Clean",  review:"Consistent quality every single visit. Love this team." },
-  "Cupertino":      { client:"Ana R.",       service:"Regular Clean",  review:"They got stains I thought were permanent. Incredible." },
-  "Sunnyvale":      { client:"Sourabh T.",   service:"Standard Clean", review:"Very nice. Left the apartment spotless and smelling fresh." },
-  "Redwood City":   { client:"Carlos M.",    service:"Deep Clean",     review:"Best cleaning service in the Bay. Worth every penny." },
-  "Fremont":        { client:"Zina Y.",      service:"Standard Clean", review:"Thank you! Loved both cleaners who cleaned my house today." },
-  "Menlo Park":     { client:"David L.",     service:"Regular Clean",  review:"8 months as a recurring client. Always consistent." },
-  "Los Altos":      { client:"Susan T.",     service:"Regular Clean",  review:"Always professional, friendly and thorough." },
-  "Campbell":       { client:"Jamie S.",     service:"Standard Clean", review:"Great job. Thank you — will definitely book again." },
-  "Los Gatos":      { client:"Tanny N.",     service:"Move-Out Clean", review:"Left the apartment perfect. Landlord was impressed." },
-  "Saratoga":       { client:"Linda H.",     service:"Regular Clean",  review:"Outstanding service every single time." },
-  "Milpitas":       { client:"Raj P.",       service:"Deep Clean",     review:"Incredible transformation. Very professional." },
-  "San Mateo":      { client:"Jeff P.",      service:"Regular Clean",  review:"Best cleaning service in the Bay Area." },
-  "Burlingame":     { client:"Lynn D.",      service:"Standard Clean", review:"Professional and thorough. Home has never looked better." },
-  "Oakland":        { client:"Steven H.",    service:"Deep Clean",     review:"Transformed our home. Every corner was spotless." },
-  "San Francisco":  { client:"Liz P.",       service:"Regular Clean",  review:"Spotless every time. Been clients for over a year." },
-  "Union City":     { client:"Maria G.",     service:"Standard Clean", review:"Great attention to detail. Will book again." },
-  "Newark":         { client:"James T.",     service:"Regular Clean",  review:"Always on time and very professional." },
-  "Hayward":        { client:"AK S.",        service:"Deep Clean",     review:"They pay attention to every detail. Worth every penny." },
-  "Daly City":      { client:"Shantelle B.", service:"Standard Clean", review:"Great service. Our go-to cleaning team." },
-  "Foster City":    { client:"Rachel M.",    service:"Regular Clean",  review:"Impeccable results every time. Highly recommend." },
-  "Atherton":       { client:"Michael B.",   service:"Deep Clean",     review:"Premium service for a premium home. Outstanding." },
-  "Morgan Hill":    { client:"Patricia V.",  service:"Regular Clean",  review:"Worth every penny. Exceptional service." },
-  "Los Altos Hills":{ client:"Christine K.", service:"Regular Clean",  review:"Meticulous and professional every single visit." },
-  "Roshan M.":      { client:"Roshan M.",    service:"Deep Clean",     review:"Gave the place a well needed deep cleaning." },
-};
+const premiumLabels = [
+  {name:"San Francisco", coords:[37.7749,-122.4194]},
+  {name:"Oakland",       coords:[37.8044,-122.2712]},
+  {name:"Palo Alto",     coords:[37.4419,-122.143]},
+  {name:"Mountain View", coords:[37.3861,-122.0839]},
+  {name:"Sunnyvale",     coords:[37.3688,-122.0363]},
+  {name:"Santa Clara",   coords:[37.3541,-121.9552]},
+  {name:"San Jose",      coords:[37.3382,-121.8863]},
+  {name:"Fremont",       coords:[37.5485,-121.9886]},
+  {name:"Morgan Hill",   coords:[37.1305,-121.6544]},
+  {name:"Gilroy",        coords:[37.0058,-121.5683]},
+];
 
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes pulseStrong {
-    0%,100%{ opacity:1; transform:scale(1); }
-    50%{ opacity:.6; transform:scale(1.5); }
-  }
-  @keyframes pulseMedium {
-    0%,100%{ opacity:.85; transform:scale(1); }
-    50%{ opacity:.5; transform:scale(1.3); }
-  }
-  @keyframes pulseSoft {
-    0%,100%{ opacity:.55; transform:scale(1); }
-    50%{ opacity:.3; transform:scale(1.15); }
-  }
-  .ring-strong { animation: pulseStrong 2.5s ease-in-out infinite; }
-  .ring-medium { animation: pulseMedium 3.5s ease-in-out infinite; }
-  .ring-soft   { animation: pulseSoft 5s ease-in-out infinite; }
-`;
-document.head.appendChild(style);
+// 92 unique real reviews
+const allReviews = [
+  {init:"VC",  text:"Reliable, on time, always leaves everything perfect."},
+  {init:"MC",  text:"Did an amazing job, would highly recommend!"},
+  {init:"HW",  text:"Excellent job. Very thorough and professional team."},
+  {init:"AR",  text:"They got stains I thought were permanent."},
+  {init:"ST",  text:"Left the apartment spotless and smelling fresh."},
+  {init:"CM",  text:"Best cleaning service in the Bay. Worth every penny."},
+  {init:"ZY",  text:"Loved both cleaners who cleaned my house today."},
+  {init:"DL",  text:"8 months as recurring client. Always consistent."},
+  {init:"SuT", text:"Always professional, friendly and thorough."},
+  {init:"JS",  text:"Great job. Will definitely book again."},
+  {init:"LH",  text:"Outstanding service every single time."},
+  {init:"RP",  text:"Incredible transformation. Very professional."},
+  {init:"JP",  text:"Best cleaning service in the Bay Area."},
+  {init:"LD",  text:"Professional and thorough. Home has never looked better."},
+  {init:"RM",  text:"Gave the place a well needed deep cleaning."},
+  {init:"PV",  text:"Worth every penny. Exceptional service."},
+  {init:"MG",  text:"Great attention to detail. Will book again."},
+  {init:"JT",  text:"Always on time and very professional."},
+  {init:"RaM", text:"Impeccable results every time. Highly recommend."},
+  {init:"MB",  text:"Premium service for a premium home. Outstanding."},
+  {init:"LP",  text:"Spotless every time. Been clients for over a year."},
+  {init:"Sa",  text:"Excellent service. Professional, punctual, and left my home spotless."},
+  {init:"PB",  text:"Very reliable cleaning service. Everything organized with great attention to detail."},
+  {init:"YR",  text:"Amazing experience. Communication was easy and quality exceeded expectations."},
+  {init:"PM",  text:"Professional team and outstanding results. Highly recommend OHANA."},
+  {init:"NK",  text:"My kitchen and bathrooms looked brand new. Great work from start to finish."},
+  {init:"Th",  text:"Very thorough cleaning. I appreciated the attention to the small details."},
+  {init:"RC",  text:"Excellent customer service and consistent quality every visit."},
+  {init:"YK",  text:"The house felt fresh and clean immediately after the service. Will book again."},
+  {init:"JZ",  text:"Reliable, friendly, and professional. Great experience overall."},
+  {init:"Ad",  text:"One of the best cleaning services I've used in the Bay Area."},
+  {init:"Jo",  text:"On time, professional, and efficient. Couldn't ask for more."},
+  {init:"RaC", text:"Very impressed with the results. Every room was cleaned thoroughly."},
+  {init:"MF",  text:"Excellent attention to detail and great communication throughout."},
+  {init:"SM",  text:"The team was respectful, professional, and did an amazing job."},
+  {init:"AA",  text:"My home has never looked better. Highly recommended."},
+  {init:"EM",  text:"Fast, efficient, and extremely professional service."},
+  {init:"HR",  text:"Very dependable company. Great quality every time."},
+  {init:"Ma",  text:"Fantastic experience. Everything was spotless when they finished."},
+  {init:"BS",  text:"Very professional cleaners. They exceeded expectations."},
+  {init:"KL",  text:"Excellent deep cleaning service. Worth every penny."},
+  {init:"AC",  text:"Friendly staff and outstanding results. Highly recommend."},
+  {init:"MV",  text:"Professional service and excellent attention to detail."},
+  {init:"LS",  text:"The entire process was smooth and stress-free."},
+  {init:"CH",  text:"Reliable service and great communication from beginning to end."},
+  {init:"LiD", text:"Everything looked amazing. I will definitely book again."},
+  {init:"BB",  text:"Very thorough and professional cleaning team."},
+  {init:"DJ",  text:"Excellent work. My house felt completely refreshed."},
+  {init:"CB",  text:"Outstanding service and consistent results."},
+  {init:"ShR", text:"Very satisfied with the cleaning. Highly recommend OHANA."},
+  {init:"JK",  text:"Professional, punctual, and detail-oriented."},
+  {init:"LR",  text:"The team was friendly and did a fantastic job."},
+  {init:"AlC", text:"Excellent service and great value."},
+  {init:"TC",  text:"The cleaners paid attention to every detail. Great experience."},
+  {init:"DF",  text:"Very impressed with the professionalism and quality."},
+  {init:"SF",  text:"The home looked amazing after the cleaning was completed."},
+  {init:"MW",  text:"Dependable service and excellent results."},
+  {init:"TL",  text:"Fantastic customer service and outstanding cleaning."},
+  {init:"PC",  text:"Very thorough work and excellent communication."},
+  {init:"JA",  text:"Professional team that consistently delivers great results."},
+  {init:"Pu",  text:"Excellent service. Everything was cleaned beyond expectations."},
+  {init:"To",  text:"Very happy with the results. Will schedule again."},
+  {init:"YD",  text:"Reliable and trustworthy cleaning company."},
+  {init:"DR",  text:"Professional, efficient, and very detail-oriented."},
+  {init:"GK",  text:"Outstanding quality and excellent customer service."},
+  {init:"JW",  text:"The team arrived on time and did an incredible job."},
+  {init:"Cr",  text:"Great experience from booking to completion."},
+  {init:"Ni",  text:"The house looked spotless and smelled fresh."},
+  {init:"Al",  text:"Excellent service and very professional staff."},
+  {init:"SiM", text:"Very satisfied with the quality of work provided."},
+  {init:"WG",  text:"Consistent results and great attention to detail."},
+  {init:"EZ",  text:"Highly recommend OHANA for anyone looking for premium cleaning."},
+  {init:"LiT", text:"Fantastic cleaning service. Everything looked perfect."},
+  {init:"Hay", text:"Professional team and excellent communication."},
+  {init:"JR",  text:"Reliable company that always delivers quality work."},
+  {init:"ShS", text:"Very detailed cleaning and outstanding customer service."},
+  {init:"ES",  text:"My home looked amazing after the appointment."},
+  {init:"Ka",  text:"Great experience and excellent value."},
+  {init:"AsJ", text:"Very professional and dependable service."},
+  {init:"BlS", text:"Excellent work and great customer experience."},
+  {init:"AP",  text:"Highly recommend. The team exceeded expectations."},
+  {init:"EF",  text:"Outstanding quality and very friendly staff."},
+  {init:"AlS", text:"Professional service with exceptional results."},
+  {init:"HaR", text:"Everything was completed exactly as promised."},
+  {init:"San", text:"The home was spotless and beautifully organized."},
+  {init:"HW2", text:"Excellent deep cleaning service. Very impressed."},
+  {init:"PS",  text:"Professional, efficient, and highly recommended."},
+  {init:"SH",  text:"Transformed our home. Every corner was spotless."},
+  {init:"TN",  text:"Move-out cleaning was perfect. The property looked inspection-ready."},
+  {init:"YM",  text:"Consistent quality every single visit. Love this team."},
+  {init:"ShB", text:"Great service and wonderful customer care. Will continue using OHANA."},
+];
 
-function makePin(tier){
-  const cfg = {
-    strong:{ dot:12, ring:28, glow:'0 0 14px rgba(201,168,76,1),0 0 28px rgba(201,168,76,.5)', cls:'ring-strong', ringOp:.25 },
-    medium:{ dot:9,  ring:20, glow:'0 0 9px rgba(201,168,76,.85),0 0 18px rgba(201,168,76,.3)', cls:'ring-medium', ringOp:.18 },
-    soft:  { dot:6,  ring:14, glow:'0 0 6px rgba(201,168,76,.6),0 0 12px rgba(201,168,76,.2)', cls:'ring-soft', ringOp:.12 },
-  }[tier];
+// Review pins — SF:10, Oakland:7, SJ:18, others:5 each
+const reviewPins = [
+  // SAN FRANCISCO — 10
+  {coords:[37.785,-122.435],r:0},{coords:[37.772,-122.448],r:1},
+  {coords:[37.760,-122.425],r:2},{coords:[37.778,-122.415],r:3},
+  {coords:[37.768,-122.455],r:4},{coords:[37.755,-122.440],r:5},
+  {coords:[37.790,-122.420],r:6},{coords:[37.763,-122.430],r:7},
+  {coords:[37.748,-122.418],r:8},{coords:[37.782,-122.460],r:9},
+  // OAKLAND — 7
+  {coords:[37.810,-122.278],r:10},{coords:[37.798,-122.260],r:11},
+  {coords:[37.815,-122.248],r:12},{coords:[37.805,-122.295],r:13},
+  {coords:[37.820,-122.270],r:14},{coords:[37.795,-122.240],r:15},
+  {coords:[37.812,-122.258],r:16},
+  // SAN JOSE — 18
+  {coords:[37.342,-121.895],r:17},{coords:[37.328,-121.880],r:18},
+  {coords:[37.350,-121.875],r:19},{coords:[37.335,-121.910],r:20},
+  {coords:[37.345,-121.860],r:21},{coords:[37.322,-121.895],r:22},
+  {coords:[37.358,-121.900],r:23},{coords:[37.338,-121.870],r:24},
+  {coords:[37.315,-121.885],r:25},{coords:[37.362,-121.880],r:26},
+  {coords:[37.328,-121.920],r:27},{coords:[37.348,-121.845],r:28},
+  {coords:[37.370,-121.875],r:29},{coords:[37.320,-121.870],r:30},
+  {coords:[37.355,-121.930],r:31},{coords:[37.332,-121.858],r:32},
+  {coords:[37.344,-121.940],r:33},{coords:[37.310,-121.900],r:34},
+  // PALO ALTO — 5
+  {coords:[37.445,-122.148],r:35},{coords:[37.438,-122.135],r:36},
+  {coords:[37.452,-122.160],r:37},{coords:[37.430,-122.145],r:38},
+  {coords:[37.460,-122.138],r:39},
+  // MOUNTAIN VIEW — 5
+  {coords:[37.390,-122.088],r:40},{coords:[37.382,-122.075],r:41},
+  {coords:[37.395,-122.098],r:42},{coords:[37.378,-122.088],r:43},
+  {coords:[37.388,-122.070],r:44},
+  // SUNNYVALE — 5
+  {coords:[37.372,-122.042],r:45},{coords:[37.365,-122.028],r:46},
+  {coords:[37.378,-122.050],r:47},{coords:[37.360,-122.038],r:48},
+  {coords:[37.370,-122.018],r:49},
+  // SANTA CLARA — 5
+  {coords:[37.358,-121.962],r:50},{coords:[37.348,-121.948],r:51},
+  {coords:[37.362,-121.975],r:52},{coords:[37.342,-121.960],r:53},
+  {coords:[37.368,-121.945],r:54},
+  // FREMONT — 5
+  {coords:[37.552,-121.995],r:55},{coords:[37.542,-121.982],r:56},
+  {coords:[37.558,-122.008],r:57},{coords:[37.535,-121.992],r:58},
+  {coords:[37.565,-121.978],r:59},
+  // MORGAN HILL — 5
+  {coords:[37.135,-121.660],r:60},{coords:[37.125,-121.648],r:61},
+  {coords:[37.140,-121.645],r:62},{coords:[37.118,-121.655],r:63},
+  {coords:[37.132,-121.638],r:64},
+  // GILROY — 5
+  {coords:[37.010,-121.572],r:65},{coords:[37.002,-121.560],r:66},
+  {coords:[37.015,-121.558],r:67},{coords:[36.998,-121.570],r:68},
+  {coords:[37.008,-121.548],r:69},
+  // HAYWARD — 5
+  {coords:[37.672,-122.085],r:70},{coords:[37.665,-122.075],r:71},
+  {coords:[37.678,-122.095],r:72},{coords:[37.660,-122.082],r:73},
+  {coords:[37.668,-122.068],r:74},
+  // REDWOOD CITY — 5
+  {coords:[37.488,-122.240],r:75},{coords:[37.480,-122.228],r:76},
+  {coords:[37.495,-122.250],r:77},{coords:[37.472,-122.235],r:78},
+  {coords:[37.485,-122.220],r:79},
+  // BURLINGAME / SAN MATEO — 5
+  {coords:[37.582,-122.342],r:80},{coords:[37.568,-122.328],r:81},
+  {coords:[37.575,-122.355],r:82},{coords:[37.560,-122.318],r:83},
+  {coords:[37.590,-122.330],r:84},
+  // MILPITAS — 5
+  {coords:[37.436,-121.902],r:85},{coords:[37.428,-121.892],r:86},
+  {coords:[37.440,-121.912],r:87},{coords:[37.422,-121.900],r:88},
+  {coords:[37.432,-121.882],r:89},
+  // CAMPBELL / LOS GATOS — 5
+  {coords:[37.290,-121.952],r:90},{coords:[37.282,-121.942],r:91},
+  {coords:[37.296,-121.962],r:0},{coords:[37.275,-121.950],r:1},
+  {coords:[37.285,-121.935],r:2},
+];
+
+function glowDot(size) {
+  const s = size||12;
   return L.divIcon({
-    className:'',
-    html:`<div style="position:relative;width:${cfg.ring}px;height:${cfg.ring}px;display:flex;align-items:center;justify-content:center;">
-      <div class="${cfg.cls}" style="position:absolute;inset:0;border-radius:50%;
-        background:rgba(201,168,76,${cfg.ringOp});border:1px solid rgba(201,168,76,.3);"></div>
-      <div style="width:${cfg.dot}px;height:${cfg.dot}px;background:#c9a84c;border-radius:50%;
-        box-shadow:${cfg.glow};position:relative;z-index:2;cursor:pointer;flex-shrink:0;"></div>
-    </div>`,
-    iconSize:[cfg.ring,cfg.ring],
-    iconAnchor:[cfg.ring/2,cfg.ring/2],
+    className:"",
+    html:`<div style="width:${s}px;height:${s}px;border-radius:50%;
+      background:#c9a84c;border:1px solid rgba(255,255,255,.75);
+      box-shadow:0 0 8px #c9a84c,0 0 18px rgba(201,168,76,.65),0 0 32px rgba(201,168,76,.3);
+      animation:ohanaPulse 2.7s ease-in-out infinite;cursor:pointer;"></div>`,
+    iconSize:[s,s],iconAnchor:[s/2,s/2],
   });
 }
 
-let ohanaMap;
-
+let omap;
 function initMap(){
-  const el = document.getElementById('ohana-map');
-  if(!el) return;
+  const el=document.getElementById("omap");if(!el)return;
+  const bounds=[[36.92,-122.62],[37.90,-121.75]];
+  omap=L.map("omap",{
+    center:[37.43,-122.05],
+    zoom:window.innerWidth<=768?8:9,
+    zoomControl:true,scrollWheelZoom:true,attributionControl:false,
+    minZoom:8,maxZoom:14,
+  });
+  omap.setMaxBounds([[36.50,-123.20],[38.20,-121.00]]);
+  omap.fitBounds([[36.92,-122.62],[37.90,-121.75]],{padding:[20,20]});
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{maxZoom:19}).addTo(omap);
 
-  // Bay Area bounds — prevents scrolling to Sacramento, LA, or ocean
-  const bayAreaBounds = L.latLngBounds(
-    L.latLng(36.90, -122.55),  // SW corner
-    L.latLng(37.82, -121.72)   // NE corner — excludes Walnut Creek (37.90)
-  );
+  // Coverage polygon removed — pins only
 
-  ohanaMap = L.map('ohana-map',{
-    center:[37.36, -122.00],   // Centered squarely on Silicon Valley
-    zoom:11,
-    minZoom:10,
-    maxZoom:14,
-    zoomControl:true,
-    scrollWheelZoom:false,
-    attributionControl:false,
-    maxBounds: bayAreaBounds,
-    maxBoundsViscosity: 1.0,
+  // 10 city labels
+  premiumLabels.forEach(c=>{
+    L.marker(c.coords,{
+      icon:L.divIcon({
+        className:"",
+        html:`<div style="font-size:10px;font-weight:500;
+          color:rgba(237,233,225,.9);white-space:nowrap;
+          font-family:'DM Sans',sans-serif;
+          text-shadow:0 0 8px #000,0 0 4px #000;
+          pointer-events:none;">${c.name}</div>`,
+        iconAnchor:[0,0],
+      }),
+      interactive:false,zIndexOffset:200,
+    }).addTo(omap);
   });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(ohanaMap);
-
-  Object.entries(cityTiers).forEach(([tier, cities])=>{
-    cities.forEach(c=>{
-      const review = clientReviews[c.city];
-      const marker = L.marker([c.lat,c.lng],{
-        icon: makePin(tier),
-        zIndexOffset: tier==='strong'?300:tier==='medium'?200:100,
-      }).addTo(ohanaMap);
-
-      if(review){
-        marker.bindPopup(`<div class="ohana-popup">
-          <div class="ohana-popup-type">${review.service} · ${c.city}</div>
-          <div class="ohana-popup-stars">★★★★★</div>
-          <div class="ohana-popup-review">"${review.review}"</div>
-          <div class="ohana-popup-author">— ${review.client}</div>
-        </div>`,{maxWidth:260});
-      }
-      marker.bindTooltip(`<span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;
-        color:#c9a84c;background:#0a0a0a;border:1px solid rgba(201,168,76,.25);
-        padding:3px 8px;">${c.city}</span>`,
-        {permanent:false,direction:'top',offset:[0,-10]});
-    });
+  // 99 review pins — tap opens popup with initial + text
+  reviewPins.forEach(p=>{
+    const rv=allReviews[p.r % allReviews.length];
+    L.marker(p.coords,{icon:glowDot(14),zIndexOffset:500})
+    .addTo(omap)
+    .bindPopup(`
+      <div style="padding:14px 16px;min-width:200px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="
+          width:36px;height:36px;border-radius:50%;flex-shrink:0;
+          background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);
+          display:flex;align-items:center;justify-content:center;
+          font-family:'Cormorant Garamond',serif;font-size:13px;
+          color:#c9a84c;font-weight:300;letter-spacing:.05em;
+        ">${rv.init}</div>
+        <div>
+          <div style="color:#c9a84c;font-size:11px;letter-spacing:2px;margin-bottom:6px;">★★★★★</div>
+          <div style="font-size:12px;color:rgba(237,233,225,.85);line-height:1.6;
+            font-style:italic;">"${rv.text}"</div>
+        </div>
+      </div>
+    `,{maxWidth:260,className:"ohana-popup-wrap"});
   });
 
   // OHANA brand pin
-  const brandIcon = L.divIcon({
-    className:'',
-    html:`<div style="width:52px;height:52px;background:rgba(8,8,8,.96);
+  const bi=L.divIcon({className:"",
+    html:`<div style="width:52px;height:52px;background:rgba(5,5,5,.97);
       border:1.5px solid #c9a84c;border-radius:50%;
-      box-shadow:0 0 20px rgba(201,168,76,.7),0 0 40px rgba(201,168,76,.25);
+      box-shadow:0 0 20px rgba(201,168,76,.9),0 0 42px rgba(201,168,76,.35);
       display:flex;align-items:center;justify-content:center;
       flex-direction:column;gap:1px;cursor:pointer;">
-      <span style="font-family:'DM Sans',sans-serif;font-size:7px;letter-spacing:.1em;color:#c9a84c;font-weight:500;line-height:1;">OHANA</span>
-      <span style="font-family:'DM Sans',sans-serif;font-size:6px;letter-spacing:.08em;color:rgba(201,168,76,.6);line-height:1;">CLEAN</span>
-    </div>`,
-    iconSize:[52,52],iconAnchor:[26,26],
-  });
-  L.marker([37.38,-122.00],{icon:brandIcon,zIndexOffset:1000}).addTo(ohanaMap)
-    .bindPopup(`<div class="ohana-popup">
-      <div class="ohana-popup-type">OHANA Clean Solutions LLC</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:#f0ece4;margin:6px 0 10px;line-height:1.3;">
-        Silicon Valley's Premium<br>Cleaning Service</div>
-      <div style="font-size:11.5px;color:rgba(240,236,228,.5);line-height:1.7;margin-bottom:12px;">
-        📞 (669) 317-6911<br>✉ ohannacleann@gmail.com</div>
-      <a href="#calculator" style="display:inline-block;background:#c9a84c;color:#0a0a0a;padding:7px 16px;
-        font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;text-decoration:none;">
-        Book Now →</a>
-    </div>`,{maxWidth:270});
+      <span style="font-size:7px;letter-spacing:.1em;color:#c9a84c;font-weight:500;line-height:1;">OHANA</span>
+      <span style="font-size:5px;letter-spacing:.08em;color:rgba(201,168,76,.55);line-height:1;">CLEAN</span>
+    </div>`,iconSize:[52,52],iconAnchor:[26,26]});
+  L.marker([37.354,-121.985],{icon:bi,zIndexOffset:1000}).addTo(omap)
+    .bindPopup(`
+      <div style="padding:16px 18px;min-width:210px;">
+        <div style="font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;
+          color:#c9a84c;margin-bottom:6px;">OHANA Clean Solutions LLC</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:#ede9e1;
+          margin:0 0 9px;line-height:1.3;">Silicon Valley's Premium<br>Cleaning Service</div>
+        <div style="font-size:10px;color:rgba(237,233,225,.5);line-height:1.8;margin-bottom:12px;">
+          📞 (669) 317-6911<br>✉ ohannacleann@gmail.com</div>
+        <a href="#calculator" style="display:inline-block;background:#c9a84c;color:#070707;
+          padding:8px 16px;font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+          font-weight:500;text-decoration:none;">Book Now →</a>
+      </div>
+    `,{maxWidth:260,className:"ohana-popup-wrap"});
 }
 
-function flyTo(lat,lng){
-  if(ohanaMap) ohanaMap.flyTo([lat,lng],12,{duration:1.2});
+function ft(lat,lng){if(omap)omap.flyTo([lat,lng],11,{duration:1.0});}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',()=>initMap());
+}else{
+  setTimeout(()=>initMap(),100);
 }
 
 if(document.readyState==='loading'){
-  document.addEventListener('DOMContentLoaded',initMap);
+  document.addEventListener('DOMContentLoaded',()=>initMap());
 }else{
-  setTimeout(initMap,120);
+  setTimeout(()=>initMap(),100);
 }
-</script>
 
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',()=>initMap());
+}else{
+  setTimeout(()=>initMap(),100);
+}
+
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',()=>initMap());
+}else{
+  setTimeout(()=>initMap(),100);
+}
+
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',()=>initMap());
+}else{
+  setTimeout(()=>initMap(),100);
+}
+
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',()=>initMap());
+}else{
+  setTimeout(()=>initMap(),100);
+}
+
+
+
+// Set min date to today
+const di=document.getElementById('dt');
+if(di){di.min=new Date().toISOString().split('T')[0];}
+</script>
 </body>
 </html>
