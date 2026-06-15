@@ -653,35 +653,42 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
         <div class="label">Real Transformations</div>
         <h2 class="headline" style="margin-top:13px;">The Difference<br>Is In The <em>Details.</em></h2>
       </div>
-      <p class="sub" style="max-width:280px;">Every photo is from a real OHANA job. Tap to reveal the result.</p>
+      <p class="sub" style="max-width:280px;">Every photo is from a real OHANA job.</p>
     </div>
 
-    <div class="rv">
-      <div class="ba-viewer" id="baViewer">
-        <img class="ba-img" id="baImg" src="" alt="OHANA Clean Results"
-          onerror="this.style.background='#1a1a1a';this.style.display='block'">
-        <button class="ba-badge" id="baBadge" onclick="toggleBA()">BEFORE</button>
-        <div class="ba-cap">
-          <div class="ba-cap-lbl" id="baLbl"></div>
-          <div class="ba-cap-ttl" id="baSub"></div>
+    <!-- Side-by-side carousel -->
+    <div class="rv" id="baCarousel">
+      <div style="display:flex;gap:4px;width:100%;aspect-ratio:16/7;min-height:220px;position:relative;">
+        <!-- BEFORE -->
+        <div style="flex:1;position:relative;overflow:hidden;">
+          <img id="baImgBefore" src="" alt="Before"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+            onerror="this.style.background='#1a1a1a'">
+          <div style="position:absolute;top:12px;left:12px;
+            background:rgba(7,7,7,.85);border:1px solid rgba(237,233,225,.2);
+            padding:4px 10px;font-size:9px;letter-spacing:.18em;
+            text-transform:uppercase;color:rgba(237,233,225,.75);">BEFORE</div>
         </div>
-        <button class="ba-arr ba-prev" onclick="baNavi(-1)">‹</button>
-        <button class="ba-arr ba-next" onclick="baNavi(1)">›</button>
+        <!-- AFTER -->
+        <div style="flex:1;position:relative;overflow:hidden;">
+          <img id="baImgAfter" src="" alt="After"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+            onerror="this.style.background='#1a1a1a'">
+          <div style="position:absolute;top:12px;right:12px;
+            background:rgba(201,168,76,.9);border:1px solid rgba(201,168,76,.6);
+            padding:4px 10px;font-size:9px;letter-spacing:.18em;
+            text-transform:uppercase;color:#070707;font-weight:500;">AFTER</div>
+        </div>
       </div>
-    </div>
 
-    <div class="ba-thumbs rv">
-      <div class="ba-th on" onclick="baSelect(0,this)">
-        <img src="" alt="" id="bth0"><div class="ba-th-lbl">Stove</div>
-      </div>
-      <div class="ba-th" onclick="baSelect(1,this)">
-        <img src="" alt="" id="bth1"><div class="ba-th-lbl">Bathroom</div>
-      </div>
-      <div class="ba-th" onclick="baSelect(2,this)">
-        <img src="" alt="" id="bth2"><div class="ba-th-lbl">Windows</div>
-      </div>
-      <div class="ba-th" onclick="baSelect(3,this)">
-        <img src="" alt="" id="bth3"><div class="ba-th-lbl">Living Area</div>
+      <!-- Caption -->
+      <div style="margin-top:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+        <div>
+          <div id="baCapLbl" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;"></div>
+          <div id="baCapSub" style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:var(--tx);"></div>
+        </div>
+        <!-- Dot indicators -->
+        <div id="baDots" style="display:flex;gap:6px;"></div>
       </div>
     </div>
   </div>
@@ -1105,50 +1112,83 @@ function wa(msg){window.open('https://wa.me/16693176911?text='+encodeURIComponen
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on');}),{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-/* ── BEFORE & AFTER ── */
-// Scenes reference your real OHANA files — names are abstracted via JS vars
-// Replace the src values here with your actual file paths when deploying
+/* ── BEFORE & AFTER — SIDE BY SIDE AUTO CAROUSEL ── */
 const scenes=[
-  {b:'oven-before.jpg.jpeg',    a:'oven-after.jpg.jpeg',    lbl:'Oven Deep Clean',         sub:'Add-on Service · Silicon Valley'},
-  {b:'stove-before.jpg.jpeg',   a:'stove-after.jpg.jpeg',   lbl:'Stove Restoration',       sub:'Deep Clean · Bay Area'},
-  {b:'tub-before.jpg.jpeg',     a:'tub-after.jpg.jpeg',     lbl:'Bathroom Transformation', sub:'Move-Out Clean · Silicon Valley'},
-  {b:'toilet-before.jpg.jpeg',  a:'toilet-after.jpg.jpeg',  lbl:'Bathroom Deep Clean',     sub:'Regular Clean · San Jose'},
-  {b:'shower-before.jpg.jpeg',  a:'shower-after.jpg.jpeg',  lbl:'Shower Detail',           sub:'Deep Clean · Bay Area'},
-  {b:'kitchen-before.jpg.jpeg', a:'kitchen-after.jpg.jpeg', lbl:'Kitchen Deep Clean',      sub:'Move-Out Clean · Silicon Valley'},
-  {b:'range-before.jpg.jpeg',   a:'range-after.jpg.jpeg',   lbl:'Range Restoration',       sub:'Add-on Service · Bay Area'},
-  {b:'burner-before.jpg.jpeg',  a:'burner-after.jpg.jpeg',  lbl:'Burner Detail Clean',     sub:'Add-on Service · Silicon Valley'},
-  {b:'living-before.jpg.jpeg',  a:'living-after.jpg.jpeg',  lbl:'Living Area',             sub:'Regular Clean · Bay Area'},
-  {b:'window-before.jpg.jpeg',  a:'window-after.jpg.jpeg',  lbl:'Window Detail',           sub:'Move-Out Clean · Bay Area'},
-  {b:'rail-before.jpg.jpeg',    a:'rail-after.jpg.jpeg',    lbl:'Rail & Detail Clean',     sub:'Deep Clean · Silicon Valley'},
+  {b:'oven-before.jpg.jpeg',    a:'oven-after.jpg.jpeg',    lbl:'OVEN DEEP CLEAN',         sub:'Add-on Service · Silicon Valley'},
+  {b:'stove-before.jpg.jpeg',   a:'stove-after.jpg.jpeg',   lbl:'STOVE RESTORATION',       sub:'Deep Clean · Bay Area'},
+  {b:'tub-before.jpg.jpeg',     a:'tub-after.jpg.jpeg',     lbl:'BATHROOM TRANSFORMATION', sub:'Move-Out Clean · Silicon Valley'},
+  {b:'toilet-before.jpg.jpeg',  a:'toilet-after.jpg.jpeg',  lbl:'BATHROOM DEEP CLEAN',     sub:'Regular Clean · San Jose'},
+  {b:'shower-before.jpg.jpeg',  a:'shower-after.jpg.jpeg',  lbl:'SHOWER DETAIL',           sub:'Deep Clean · Bay Area'},
+  {b:'kitchen-before.jpg.jpeg', a:'kitchen-after.jpg.jpeg', lbl:'KITCHEN DEEP CLEAN',      sub:'Move-Out Clean · Silicon Valley'},
+  {b:'range-before.jpg.jpeg',   a:'range-after.jpg.jpeg',   lbl:'RANGE RESTORATION',       sub:'Add-on Service · Bay Area'},
+  {b:'burner-before.jpg.jpeg',  a:'burner-after.jpg.jpeg',  lbl:'BURNER DETAIL CLEAN',     sub:'Add-on Service · Silicon Valley'},
+  {b:'living-before.jpg.jpeg',  a:'living-after.jpg.jpeg',  lbl:'LIVING AREA',             sub:'Regular Clean · Bay Area'},
+  {b:'window-before.jpg.jpeg',  a:'window-after.jpg.jpeg',  lbl:'WINDOW DETAIL',           sub:'Move-Out Clean · Bay Area'},
+  {b:'rail-before.jpg.jpeg',    a:'rail-after.jpg.jpeg',    lbl:'RAIL & DETAIL CLEAN',     sub:'Deep Clean · Silicon Valley'},
 ];
 
-// Seed thumbnail after-images (shown in strip)
-scenes.forEach((s,i)=>{const el=document.getElementById('bth'+i);if(el)el.src=s.a;});
+let baIdx = 0;
+let baTimer = null;
 
-let idx=0,showA=false;
+// Build dot indicators
+const dotsEl = document.getElementById('baDots');
+if(dotsEl){
+  scenes.forEach((_,i)=>{
+    const d = document.createElement('div');
+    d.style.cssText = `width:6px;height:6px;border-radius:50%;background:${i===0?'#c9a84c':'rgba(201,168,76,.25)'};transition:background .3s;cursor:pointer;`;
+    d.onclick = ()=>baGoto(i);
+    dotsEl.appendChild(d);
+  });
+}
+
 function baRender(){
-  const s=scenes[idx];
-  const img=document.getElementById('baImg');
-  const badge=document.getElementById('baBadge');
-  img.style.opacity='0';
-  setTimeout(()=>{img.src=showA?s.a:s.b;img.style.opacity='1';},240);
-  badge.textContent=showA?'AFTER':'BEFORE';
-  badge.className='ba-badge'+(showA?' after':'');
-  document.getElementById('baLbl').textContent=s.lbl;
-  document.getElementById('baSub').textContent=s.sub;
+  const s = scenes[baIdx];
+  const before = document.getElementById('baImgBefore');
+  const after  = document.getElementById('baImgAfter');
+  const lbl    = document.getElementById('baCapLbl');
+  const sub    = document.getElementById('baCapSub');
+
+  if(!before || !after) return;
+
+  // Fade out
+  before.style.transition = 'opacity .35s';
+  after.style.transition  = 'opacity .35s';
+  before.style.opacity = '0';
+  after.style.opacity  = '0';
+
+  setTimeout(()=>{
+    before.src = s.b;
+    after.src  = s.a;
+    before.style.opacity = '1';
+    after.style.opacity  = '1';
+    if(lbl) lbl.textContent = s.lbl;
+    if(sub) sub.textContent = s.sub;
+
+    // Update dots
+    if(dotsEl){
+      dotsEl.querySelectorAll('div').forEach((d,i)=>{
+        d.style.background = i===baIdx ? '#c9a84c' : 'rgba(201,168,76,.25)';
+      });
+    }
+  }, 350);
 }
-function toggleBA(){showA=!showA;baRender();}
-function baSelect(i,el){
-  idx=i;showA=false;
-  document.querySelectorAll('.ba-th').forEach(t=>t.classList.remove('on'));
-  el.classList.add('on');baRender();
+
+function baGoto(i){
+  baIdx = i;
+  baRender();
+  // Reset timer
+  if(baTimer) clearInterval(baTimer);
+  baTimer = setInterval(baNext, 3000);
 }
-function baNavi(d){
-  idx=(idx+d+scenes.length)%scenes.length;showA=false;
-  document.querySelectorAll('.ba-th').forEach((t,i)=>t.classList.toggle('on',i===idx));
+
+function baNext(){
+  baIdx = (baIdx + 1) % scenes.length;
   baRender();
 }
+
+// Init
 baRender();
+baTimer = setInterval(baNext, 3000);
 
 /* ── CALCULATOR ── */
 const BASE={regular:149,deep:329,moveout:299,airbnb:189,commercial:0,postconstruction:0};
