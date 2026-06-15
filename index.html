@@ -9,11 +9,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="OHANA Clean Solutions — Silicon Valley Premium Cleaning">
 <meta property="og:description" content="Trusted by Bay Area homeowners. Book in 60 seconds. Deep clean, move-out, Airbnb turnover.">
-<meta property="og:image" content="https://ohana-website-woad.vercel.app/bath-after.jpg.jpeg">
+<meta property="og:image" content="https://ohana-website-woad.vercel.app/shower-after.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ohana-website-woad.vercel.app/bath-after.jpg.jpeg">
+<meta name="twitter:image" content="https://ohana-website-woad.vercel.app/shower-after.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"OHANA Clean Solutions LLC","telephone":"+16693176911","email":"ohannacleann@gmail.com","address":{"@type":"PostalAddress","addressRegion":"CA","addressCountry":"US"},"areaServed":["San Jose","Palo Alto","Mountain View","Santa Clara","Cupertino","Sunnyvale","Fremont","Oakland","San Francisco","Redwood City","Menlo Park","Burlingame","San Mateo"],"priceRange":"$$","serviceType":["Residential Cleaning","Deep Cleaning","Move-Out Cleaning","Airbnb Turnover"]}
 </script>
@@ -573,7 +573,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
 <nav>
   <div class="ni">
     <div class="nl">
-      <img src="1000344482.jpg" alt="OHANA Clean Solutions" style="height:44px;width:auto;object-fit:contain;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="logo-ohana.jpg" alt="OHANA Clean Solutions" style="height:44px;width:auto;object-fit:contain;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div style="display:none;flex-direction:column;gap:1px;">
         <div style="font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:.14em;color:#c9a84c;font-weight:400;line-height:1;">OHANA</div>
         <div style="font-size:7px;letter-spacing:.22em;color:rgba(201,168,76,.6);text-transform:uppercase;line-height:1;">Clean Solutions LLC</div>
@@ -1073,7 +1073,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
 <footer>
   <div class="fi2">
     <div>
-      <img src="1000344482.jpg" alt="OHANA Clean Solutions LLC" style="height:48px;width:auto;object-fit:contain;display:block;">
+      <img src="logo-ohana.jpg" alt="OHANA Clean Solutions LLC" style="height:48px;width:auto;object-fit:contain;display:block;">
     </div>
     <div class="flinks">
       <a href="#transformations">Before &amp; After</a>
@@ -1109,12 +1109,17 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 // Scenes reference your real OHANA files — names are abstracted via JS vars
 // Replace the src values here with your actual file paths when deploying
 const scenes=[
-  {b:'stove-before.jpg.jpeg',  a:'stove-after.jpg.jpeg',  lbl:'Stove Deep Clean',        sub:'Add-on Service · Silicon Valley'},
-  {b:'bath-before.jpg.jpeg',   a:'bath-after.jpg.jpeg',   lbl:'Bathroom Transformation', sub:'Move-Out Clean · Silicon Valley'},
-  {b:'window-before.jpg.jpeg', a:'window-after.jpg.jpeg', lbl:'Window Detail',           sub:'Move-Out Clean · Bay Area'},
-  {b:'room-before.jpg.jpeg',   a:'room-after.jpg.jpeg',   lbl:'Living Area',             sub:'Regular Clean · Bay Area'},
-  {b:'bath-before.jpg.jpeg',   a:'bath-after.jpg.jpeg',   lbl:'Bathroom Deep Clean',     sub:'Deep Clean · San Jose'},
-  {b:'stove-before.jpg.jpeg',  a:'stove-after.jpg.jpeg',  lbl:'Kitchen Restoration',     sub:'Regular Clean · Bay Area'},
+  {b:'oven-before.jpg',    a:'oven-after.jpg',    lbl:'Oven Deep Clean',         sub:'Add-on Service · Silicon Valley'},
+  {b:'stove-before.jpg',   a:'stove-after.jpg',   lbl:'Stove Restoration',       sub:'Deep Clean · Bay Area'},
+  {b:'tub-before.jpg',     a:'tub-after.jpg',     lbl:'Bathroom Transformation', sub:'Move-Out Clean · Silicon Valley'},
+  {b:'toilet-before.jpg',  a:'toilet-after.jpg',  lbl:'Bathroom Deep Clean',     sub:'Regular Clean · San Jose'},
+  {b:'shower-before.jpg',  a:'shower-after.jpg',  lbl:'Shower Detail',           sub:'Deep Clean · Bay Area'},
+  {b:'kitchen-before.jpg', a:'kitchen-after.jpg', lbl:'Kitchen Deep Clean',      sub:'Move-Out Clean · Silicon Valley'},
+  {b:'range-before.jpg',   a:'range-after.jpg',   lbl:'Range Restoration',       sub:'Add-on Service · Bay Area'},
+  {b:'burner-before.jpg',  a:'burner-after.jpg',  lbl:'Burner Detail Clean',     sub:'Add-on Service · Silicon Valley'},
+  {b:'living-before.jpg',  a:'living-after.jpg',  lbl:'Living Area',             sub:'Regular Clean · Bay Area'},
+  {b:'window-before.jpg',  a:'window-after.jpg',  lbl:'Window Detail',           sub:'Move-Out Clean · Bay Area'},
+  {b:'rail-before.jpg',    a:'rail-after.jpg',    lbl:'Rail & Detail Clean',     sub:'Deep Clean · Silicon Valley'},
 ];
 
 // Seed thumbnail after-images (shown in strip)
