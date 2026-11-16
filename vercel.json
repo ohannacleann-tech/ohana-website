@@ -17,15 +17,11 @@
         "Referrer-Policy": "strict-origin-when-cross-origin"
       },
       "dest": "/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/ohana-v12.html"
     }
   ],
   "headers": [
     {
-      "source": "/(.*\\.jpg|.*\\.webp|.*\\.png|.*\\.woff2)",
+      "source": "/(.*\\.jpg|.*\\.jpeg|.*\\.webp|.*\\.png|.*\\.woff2)",
       "headers": [
         {
           "key": "Cache-Control",
