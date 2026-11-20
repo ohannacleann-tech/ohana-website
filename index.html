@@ -227,7 +227,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:2000;height:64px;
 .cc-mul{font-size:9px;color:var(--gold);margin-top:4px;letter-spacing:.06em;}
 
 /* Extras */
-.extras{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:4px;}
+.extras{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:7px;margin-bottom:4px;}
 .ex{display:flex;align-items:center;gap:8px;background:var(--s2);
   border:1px solid var(--bd);padding:10px 12px;cursor:pointer;
   font-size:11.5px;color:var(--mu);transition:all .2s;}
@@ -265,6 +265,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:2000;height:64px;
 /* ZIP check notice (shown under the ZIP field) */
 .zip-msg{display:none;margin-top:8px;font-size:11px;line-height:1.55;color:var(--gold);letter-spacing:.03em;}
 .zip-msg a.btn-n{display:block;text-align:center;text-decoration:none;}
+/* Booking notice (shown under Confirm Booking) */
+.book-msg{display:none;margin-top:12px;padding:13px 15px;border:1px solid var(--br);
+  background:var(--gold-d);font-size:11px;color:var(--mu);line-height:1.65;}
+.book-msg strong{color:var(--gold);font-weight:500;font-size:12px;}
+.book-msg .bm-num{display:block;font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);margin:2px 0 4px;}
+.book-msg a.btn-n,.book-msg a.btn-wa{text-decoration:none;}
+.book-msg a.btn-n{display:block;text-align:center;}
+.book-msg a+div{margin-top:14px;}
 #custom-msg{display:none;padding:11px 15px;border:1px solid var(--bd);
   background:var(--s2);font-size:11px;color:var(--mu);margin-bottom:12px;}
 
@@ -734,7 +742,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
         <div class="cp" id="cp2">
           <div id="cov-ok">✓ &nbsp;Your area is covered — we service your ZIP.</div>
           <div class="fg"><label class="fl">Select Service</label>
-            <div class="fsw"><select class="fs" id="sv" onchange="upd()">
+            <div class="fsw"><select class="fs" id="sv" onchange="svcChanged()">
               <option value="">— Choose a service —</option>
               <option value="regular">Regular Cleaning</option>
               <option value="deep">Deep Cleaning</option>
@@ -874,6 +882,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
             Reserve via WhatsApp
           </button>
           <button class="btn-n" onclick="finalBook()" style="background:var(--s2);color:var(--gold);border:1px solid var(--br);">Confirm Booking →</button>
+          <div id="book-msg" class="book-msg" aria-live="polite"></div>
           <button class="btn-b" onclick="gs(6,5)">← Back</button>
         </div>
       </div>
@@ -989,7 +998,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
   <!-- Trust bar -->
   <div class="trust-bar">
     <div class="tb-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
       <div><div class="tb-ttl">Owner on Every Job</div><div class="tb-sub">The owner personally leads every cleaning</div></div>
     </div>
     <div class="tb-item">
@@ -1054,7 +1063,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
             <div><div class="tr-ttl">$50 Deposit — Pay the Rest on Service Day</div><div class="tr-d">Zero financial risk. Balance only after the job is done.</div></div>
           </div>
           <div class="tr"><div class="tr-ico">🧹</div>
-            <div><div class="tr-ttl">Professional Equipment &amp; Products</div><div class="tr-d">We bring everything. Hospital-grade supplies for every job.</div></div>
+            <div><div class="tr-ttl">Professional Equipment &amp; Products</div><div class="tr-d">We bring everything. Professional-grade supplies for every job.</div></div>
           </div>
           <div class="tr"><div class="tr-ico">↺</div>
             <div><div class="tr-ttl">Satisfaction Guaranteed</div><div class="tr-d">Not happy? We return within 24 hours — no charge.</div></div>
@@ -1316,6 +1325,14 @@ function selSize(el,key,lbl,add){
   document.getElementById('ppz').textContent=lbl;upd();
 }
 
+// When the service changes, clear the size picked before (it may not apply).
+function svcChanged(){
+  document.querySelectorAll('.sc').forEach(c=>c.classList.remove('on'));
+  S.sz=0;S.szKey='';S.szLbl='';
+  document.getElementById('ppz').textContent='—';
+  upd();
+}
+
 function selCond(el,key,mul){
   document.querySelectorAll('.cc').forEach(c=>c.classList.remove('on'));
   el.classList.add('on');S.cond=mul;S.condLbl=CLBLS[key];
@@ -1335,7 +1352,7 @@ function upd(){
   const freq=document.getElementById('fr')?.value||'once';
   S.freq=freq;
   if(!svc)return;
-  const isCom=COMS.includes(svc)&&!S.sz;
+  const isCom=COMS.includes(svc); // Commercial / Post-Construction: always a custom quote
   if(isCom){document.getElementById('ppt').textContent='Custom';
     document.getElementById('ppb').textContent='TBD';return;}
   // Residential: fixed table (Studio/1 Bed price until a size is picked). Commercial: unchanged.
@@ -1353,6 +1370,7 @@ function upd(){
 function selCM(el,m){
   document.querySelectorAll('.cm').forEach(c=>c.classList.remove('on'));
   el.classList.add('on');S.contact=m;
+  const bm=document.getElementById('book-msg');bm.textContent='';bm.style.display='none';
 }
 
 function buildMsg(){
@@ -1367,10 +1385,49 @@ function buildMsg(){
   const freq={once:'One Time',weekly:'Weekly',biweekly:'Bi-Weekly',monthly:'Monthly'}[S.freq]||'One Time';
   return `Hi OHANA Clean Solutions! 👋\n\nBooking Request:\n\n📋 Service: ${SLBLS[S.svc]||'TBD'}\n🏠 Size: ${S.szLbl||'TBD'}\n⚠️ Condition: ${S.condLbl||'TBD'}\n📦 Add-ons: ${extras}\n🔁 Frequency: ${freq}\n📅 Date: ${date}\n⏰ Time: ${time}\n📍 ZIP: ${zip}\n💰 Estimated Total: ${total}\n\n👤 Name: ${fname} ${lname}\n📞 Phone: ${phone}\n\nPlease confirm availability. Thank you!`;
 }
-function bookWA(){wa(buildMsg());}
+/* ── BOOKING: send the request by the chosen method ── */
+const OHANA_TEL='+16693176911',OHANA_EMAIL='ohannacleann@gmail.com';
+function openURL(u){window.location.href=u;}
+function bmEl(tag,txt,cls){const e=document.createElement(tag);if(txt)e.textContent=txt;if(cls)e.className=cls;return e;}
+function waBackupBtn(label){
+  const a=bmEl('a',label,'btn-wa');a.target='_blank';a.rel='noopener';
+  a.href='https://wa.me/16693176911?text='+encodeURIComponent(buildMsg());return a;
+}
+// Shown only after WhatsApp, SMS, email or the call has been opened.
+function showBooked(how){
+  const m=document.getElementById('book-msg');m.textContent='';
+  m.appendChild(bmEl('strong','Booking received!'));
+  m.appendChild(bmEl('div','Your '+how+' is ready — just tap send and we\'ll confirm shortly. Or reach us directly: (669) 317-6911'));
+  m.style.display='block';
+}
+function bookWA(){wa(buildMsg());showBooked('WhatsApp message');}
+function bookSMS(){openURL('sms:'+OHANA_TEL+'?&body='+encodeURIComponent(buildMsg()));showBooked('text message');}
+function bookEmail(){
+  openURL('mailto:'+OHANA_EMAIL+'?subject='+encodeURIComponent('New Booking Request – OHANA')+'&body='+encodeURIComponent(buildMsg()));
+  showBooked('email');
+}
+function bookCall(){
+  const m=document.getElementById('book-msg');m.textContent='';
+  m.appendChild(bmEl('div','Call us to confirm your booking:'));
+  m.appendChild(bmEl('span','(669) 317-6911','bm-num'));
+  const call=bmEl('a','Call (669) 317-6911','btn-n');call.href='tel:'+OHANA_TEL;
+  call.addEventListener('click',()=>{
+    m.textContent='';
+    m.appendChild(bmEl('strong','Booking received!'));
+    m.appendChild(bmEl('div','We\'re expecting your call at (669) 317-6911. Can\'t talk right now? Send your booking details on WhatsApp instead:'));
+    m.appendChild(waBackupBtn('Send details on WhatsApp'));
+  });
+  m.appendChild(call);
+  m.appendChild(bmEl('div','Prefer to write? Your booking details are ready to send on WhatsApp:'));
+  m.appendChild(waBackupBtn('Send details on WhatsApp'));
+  m.style.display='block';
+}
 function finalBook(){
-  if(S.contact==='WhatsApp'){bookWA();}
-  else{alert('Booking received!\n\nWe\'ll confirm via '+S.contact+' shortly.\n\nOr reach us directly: (669) 317-6911');}
+  const c=S.contact;
+  if(c==='SMS')bookSMS();
+  else if(c==='Email')bookEmail();
+  else if(c==='Call')bookCall();
+  else bookWA();
 }
 
 /* ── FAQ ── */
