@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.ohanacleansolutions.com/shower-after.jpg.jpeg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"OHANA Clean Solutions LLC","telephone":"+16693176911","email":"ohannacleann@gmail.com","address":{"@type":"PostalAddress","addressRegion":"CA","addressCountry":"US"},"areaServed":["San Jose","Palo Alto","Mountain View","Santa Clara","Cupertino","Sunnyvale","Fremont","Oakland","San Francisco","Redwood City","Menlo Park","Burlingame","San Mateo"],"priceRange":"$$","serviceType":["Residential Cleaning","Deep Cleaning","Move-Out Cleaning","Airbnb Turnover"]}
+{"@context":"https://schema.org","@type":"HouseCleaning","name":"OHANA Clean Solutions LLC","url":"https://www.ohanacleansolutions.com","telephone":"+16693176911","email":"ohannacleann@gmail.com","address":{"@type":"PostalAddress","addressRegion":"CA","addressCountry":"US"},"areaServed":["San Francisco","Daly City","Burlingame","San Mateo","Redwood City","Menlo Park","Palo Alto","Mountain View","Sunnyvale","Cupertino","Santa Clara","San Jose","Campbell","Los Gatos","Milpitas","Morgan Hill","Gilroy","Fremont","Hayward","Oakland","Berkeley","Antioch"],"priceRange":"$119–$519","sameAs":["https://www.instagram.com/ohanaclean_solutionsllc","https://www.facebook.com/profile.php?id=61560363654454"],"serviceType":["Residential Cleaning","Deep Cleaning","Move-Out Cleaning","Airbnb Turnover"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -262,6 +262,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:2000;height:64px;
 /* coverage banner */
 #cov-ok{display:none;background:var(--gold-d);border:1px solid var(--br);
   padding:11px 15px;margin-bottom:16px;font-size:11px;color:var(--gold);}
+/* ZIP check notice (shown under the ZIP field) */
+.zip-msg{display:none;margin-top:8px;font-size:11px;line-height:1.55;color:var(--gold);letter-spacing:.03em;}
+.zip-msg a.btn-n{display:block;text-align:center;text-decoration:none;}
 #custom-msg{display:none;padding:11px 15px;border:1px solid var(--bd);
   background:var(--s2);font-size:11px;color:var(--mu);margin-bottom:12px;}
 
@@ -613,7 +616,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
     <div class="hstats">
       <div><div class="hsv">350+</div><div class="hsl">Bay Area Clients</div></div>
       <div><div class="hsv">4.9 ★</div><div class="hsl">Avg. Rating</div></div>
-      <div><div class="hsv">26+</div><div class="hsl">Cities Served</div></div>
+      <div><div class="hsv">22</div><div class="hsl">Cities Served</div></div>
     </div>
   </div>
 </section>
@@ -723,7 +726,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
           </div>
           <div class="fg"><label class="fl">Phone</label><input class="fi" id="ph" type="tel" placeholder="(408) 000-0000"></div>
           <div class="fg"><label class="fl">Email</label><input class="fi" id="em" type="email" placeholder="you@email.com"></div>
-          <div class="fg"><label class="fl">ZIP Code</label><input class="fi" id="zp" type="text" placeholder="95014" maxlength="5"></div>
+          <div class="fg"><label class="fl">ZIP Code</label><input class="fi" id="zp" type="text" placeholder="95014" maxlength="5"><div id="zip-msg" class="zip-msg" aria-live="polite"></div></div>
           <button class="btn-n" onclick="gs(1,2)">Check Coverage →</button>
         </div>
 
@@ -823,19 +826,19 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
         <div class="cp" id="cp5">
           <div class="fl" style="margin-bottom:12px;">Add-ons (optional)</div>
           <div class="extras">
-            <div class="ex" onclick="togEx(this,30)"><div class="exb"></div>Inside Oven</div>
-            <div class="ex" onclick="togEx(this,20)"><div class="exb"></div>Inside Fridge</div>
-            <div class="ex" onclick="togEx(this,35)"><div class="exb"></div>Interior Windows</div>
-            <div class="ex" onclick="togEx(this,20)"><div class="exb"></div>Patio / Balcony</div>
-            <div class="ex" onclick="togEx(this,40)"><div class="exb"></div>Garage</div>
-            <div class="ex" onclick="togEx(this,18)"><div class="exb"></div>Laundry (fold)</div>
+            <div class="ex" onclick="togEx(this,50)"><div class="exb"></div>Inside Oven · $50</div>
+            <div class="ex" onclick="togEx(this,50)"><div class="exb"></div>Inside Fridge · $50</div>
+            <div class="ex" onclick="togEx(this,60)"><div class="exb"></div>Interior Windows (up to 10) · $60</div>
+            <div class="ex" onclick="togEx(this,40)"><div class="exb"></div>Patio / Balcony · $40</div>
+            <div class="ex" onclick="togEx(this,75)"><div class="exb"></div>Garage · $75</div>
+            <div class="ex" onclick="togEx(this,30)"><div class="exb"></div>Laundry (per load) · $30</div>
           </div>
           <div class="fg" style="margin-top:16px;"><label class="fl">Frequency</label>
             <div class="fsw"><select class="fs" id="fr" onchange="upd()">
               <option value="once">One Time</option>
-              <option value="weekly">Weekly — Save 15%</option>
-              <option value="biweekly">Bi-Weekly — Save 10%</option>
-              <option value="monthly">Monthly — Save 5%</option>
+              <option value="weekly">Weekly — Save 20%</option>
+              <option value="biweekly">Bi-Weekly — Save 15%</option>
+              <option value="monthly">Monthly — Save 10%</option>
             </select></div>
           </div>
           <div class="fg"><label class="fl">Preferred Date</label>
@@ -926,7 +929,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
         <div class="cov-kpi">
           <div class="cov-kpi-ico" style="font-size:16px;color:#c9a84c;">◉</div>
           <div>
-            <div class="cov-kpi-val">26+</div>
+            <div class="cov-kpi-val">22</div>
             <div class="cov-kpi-lbl">Cities Served</div>
           </div>
         </div>
@@ -978,7 +981,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
       <span class="csb-lbl">Rating</span>
     </div>
     <div class="csb-item">
-      <span class="csb-val">26+</span>
+      <span class="csb-val">22</span>
       <span class="csb-lbl">Serving Silicon Valley & Bay Area</span>
     </div>
   </div>
@@ -987,7 +990,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
   <div class="trust-bar">
     <div class="tb-item">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <div><div class="tb-ttl">Insured & Background Checked</div><div class="tb-sub">Your home is protected</div></div>
+      <div><div class="tb-ttl">Owner on Every Job</div><div class="tb-sub">The owner personally leads every cleaning</div></div>
     </div>
     <div class="tb-item">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
@@ -1048,7 +1051,7 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
             <div><div class="tr-ttl">Same-Day Available</div><div class="tr-d">Book in the morning, clean by afternoon. Confirm instantly via WhatsApp.</div></div>
           </div>
           <div class="tr"><div class="tr-ico">🔒</div>
-            <div><div class="tr-ttl">$50 Deposit — Pay Rest On Service Day</div><div class="tr-d">Zero financial risk. Balance only after the job is done.</div></div>
+            <div><div class="tr-ttl">$50 Deposit — Pay the Rest on Service Day</div><div class="tr-d">Zero financial risk. Balance only after the job is done.</div></div>
           </div>
           <div class="tr"><div class="tr-ico">🧹</div>
             <div><div class="tr-ttl">Professional Equipment &amp; Products</div><div class="tr-d">We bring everything. Hospital-grade supplies for every job.</div></div>
@@ -1091,14 +1094,13 @@ footer{background:var(--s1);border-top:1px solid var(--br);padding:40px 0 22px;}
       <a href="mailto:ohannacleann@gmail.com">ohannacleann@gmail.com</a>
     </div>
     <div class="fsoc">
-      <a class="fsb" href="#">in</a>
-      <a class="fsb" href="#">ig</a>
-      <a class="fsb" href="#">fb</a>
+      <a class="fsb" href="https://www.instagram.com/ohanaclean_solutionsllc" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      <a class="fsb" href="https://www.facebook.com/profile.php?id=61560363654454" target="_blank" rel="noopener" aria-label="Facebook">fb</a>
     </div>
   </div>
   <div class="fb">
     <div class="fc">© 2026 OHANA Clean Solutions LLC — Silicon Valley, CA</div>
-    <div class="fleg"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    <div class="fleg"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
   </div>
 </footer>
 
@@ -1192,21 +1194,101 @@ baTimer = setInterval(baNext, 3000);
 
 /* ── CALCULATOR ── */
 const BASE={regular:149,deep:329,moveout:299,airbnb:189,commercial:0,postconstruction:0};
+// Residential prices: fixed price per service and home size.
+const PRICES={
+  regular: {'1bed':149,'2bed':219,'3bed':289,'4bed':369},
+  deep:    {'1bed':199,'2bed':289,'3bed':369,'4bed':459},
+  moveout: {'1bed':239,'2bed':339,'3bed':419,'4bed':519},
+  airbnb:  {'1bed':119,'2bed':159,'3bed':209,'4bed':269}
+};
 const SLBLS={regular:'Regular Cleaning',deep:'Deep Cleaning',moveout:'Move In / Out',
   airbnb:'Airbnb Turnover',commercial:'Commercial / Office',postconstruction:'Post-Construction'};
-const FDISC={once:0,weekly:-.15,biweekly:-.10,monthly:-.05};
-const FLBLS={once:'One Time',weekly:'Weekly (−15%)',biweekly:'Bi-Weekly (−10%)',monthly:'Monthly (−5%)'};
+const FDISC={once:0,weekly:-.20,biweekly:-.15,monthly:-.10};
+const FLBLS={once:'One Time',weekly:'Weekly (−20%)',biweekly:'Bi-Weekly (−15%)',monthly:'Monthly (−10%)'};
 const CLBLS={clean:'Well-Kept',average:'Average',heavy:'Needs Attention'};
 const COMS=['commercial','postconstruction'];
-let S={svc:'',sz:0,szLbl:'',cond:1.0,condLbl:'',extras:0,freq:'once',contact:'WhatsApp'};
+let S={svc:'',sz:0,szKey:'',szLbl:'',cond:1.0,condLbl:'',extras:0,freq:'once',contact:'WhatsApp'};
+
+// ===== ZIP-CHECK-START =====
+// Service area: ZIP codes we cover. Edit this list to add or remove areas.
+const COVERED_ZIPS=new Set([
+  // San Francisco
+  '94102','94103','94104','94105','94107','94108','94109','94110','94111','94112','94114','94115','94116','94117','94118','94121','94122','94123','94124','94127','94131','94132','94133','94134','94158',
+  // Daly City
+  '94014','94015',
+  // Burlingame
+  '94010',
+  // San Mateo
+  '94401','94402','94403','94404',
+  // Redwood City
+  '94061','94062','94063','94065',
+  // Menlo Park
+  '94025',
+  // Palo Alto
+  '94301','94303','94304','94306',
+  // Mountain View
+  '94040','94041','94043',
+  // Sunnyvale
+  '94085','94086','94087','94089',
+  // Cupertino
+  '95014',
+  // Santa Clara
+  '95050','95051','95054',
+  // San Jose
+  '95110','95111','95112','95113','95116','95117','95118','95119','95120','95121','95122','95123','95124','95125','95126','95127','95128','95129','95130','95131','95132','95133','95134','95135','95136','95138','95139','95148',
+  // Campbell
+  '95008',
+  // Los Gatos
+  '95030','95032',
+  // Milpitas
+  '95035',
+  // Morgan Hill
+  '95037',
+  // Gilroy
+  '95020',
+  // Fremont
+  '94536','94538','94539','94555',
+  // Hayward
+  '94541','94542','94544','94545',
+  // Oakland
+  '94601','94602','94603','94605','94606','94607','94608','94609','94610','94611','94612','94618','94619','94621',
+  // Berkeley
+  '94702','94703','94704','94705','94707','94708','94709','94710',
+  // Antioch
+  '94509','94531'
+]);
+// Returns 'invalid' (not exactly 5 digits), 'covered' or 'uncovered'.
+function zipStatus(z){
+  if(!/^\d{5}$/.test(z))return 'invalid';
+  return COVERED_ZIPS.has(z)?'covered':'uncovered';
+}
+// ===== ZIP-CHECK-END =====
 
 function gs(from,to){
   if(from===1&&to===2){
     const z=document.getElementById('zp').value.trim();
     const n=document.getElementById('fn').value.trim();
     if(!n||!z){alert('Please enter your name and ZIP code.');return;}
-    const ok=z.startsWith('94')||z.startsWith('95');
-    if(!ok){alert('We\'re expanding! Your area may not be covered yet. Call us at (669) 317-6911 to confirm.');return;}
+    const zm=document.getElementById('zip-msg');
+    const st=zipStatus(z);
+    zm.textContent='';zm.style.display='none';
+    if(st!=='covered'){
+      document.getElementById('cov-ok').style.display='none';
+      const p=document.createElement('p');
+      if(st==='invalid'){
+        p.textContent='Please enter a valid 5-digit ZIP code.';
+        zm.appendChild(p);
+      }else{
+        p.textContent='We don\'t see ZIP '+z+' on our service list yet. Message us on WhatsApp and we\'ll confirm.';
+        const a=document.createElement('a');
+        a.className='btn-n';a.target='_blank';a.rel='noopener';
+        a.href='https://wa.me/16693176911?text='+encodeURIComponent('Hi OHANA! I\'d like to confirm if you service ZIP '+z+'. My name is '+n+'.');
+        a.textContent='Message us on WhatsApp';
+        zm.appendChild(p);zm.appendChild(a);
+      }
+      zm.style.display='block';
+      return;
+    }
     document.getElementById('cov-ok').style.display='block';
   }
   if(from===2&&to===3){
@@ -1230,7 +1312,7 @@ function gs(from,to){
 
 function selSize(el,key,lbl,add){
   document.querySelectorAll('.sc').forEach(c=>c.classList.remove('on'));
-  el.classList.add('on');S.szLbl=lbl;S.sz=add;
+  el.classList.add('on');S.szLbl=lbl;S.sz=add;S.szKey=key;
   document.getElementById('ppz').textContent=lbl;upd();
 }
 
@@ -1256,7 +1338,8 @@ function upd(){
   const isCom=COMS.includes(svc)&&!S.sz;
   if(isCom){document.getElementById('ppt').textContent='Custom';
     document.getElementById('ppb').textContent='TBD';return;}
-  let base=(BASE[svc]||0)+S.sz;
+  // Residential: fixed table (Studio/1 Bed price until a size is picked). Commercial: unchanged.
+  let base=PRICES[svc]?(PRICES[svc][S.szKey]||PRICES[svc]['1bed']):(BASE[svc]||0)+S.sz;
   base=Math.round(base*S.cond);
   base+=S.extras;
   const disc=FDISC[freq]||0;
